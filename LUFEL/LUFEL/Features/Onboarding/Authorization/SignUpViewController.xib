@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="LUFEL" customModuleProvider="target">
             <connections>
+                <outlet property="logInButton" destination="qxR-0Q-51A" id="zjP-TP-l7k"/>
+                <outlet property="signUpButton" destination="7db-yK-VXy" id="WwN-UG-RAi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

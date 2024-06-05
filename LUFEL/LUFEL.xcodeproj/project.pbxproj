@@ -19,6 +19,8 @@
 		D05D7D682C10A8AB00E2A126 /* UnauthorizedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D672C10A8AB00E2A126 /* UnauthorizedCoordinator.swift */; };
 		D05D7D6B2C10AA4600E2A126 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D6A2C10AA4600E2A126 /* NotificationNameExtension.swift */; };
 		D05D7D6D2C10AA7900E2A126 /* MainAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D6C2C10AA7900E2A126 /* MainAppCoordinator.swift */; };
+		D05D7D702C10B33A00E2A126 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D6F2C10B33A00E2A126 /* UIViewControllerExtensions.swift */; };
+		D05D7D722C10B38000E2A126 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D712C10B38000E2A126 /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		D05D7D672C10A8AB00E2A126 /* UnauthorizedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnauthorizedCoordinator.swift; sourceTree = "<group>"; };
 		D05D7D6A2C10AA4600E2A126 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 		D05D7D6C2C10AA7900E2A126 /* MainAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppCoordinator.swift; sourceTree = "<group>"; };
+		D05D7D6F2C10B33A00E2A126 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		D05D7D712C10B38000E2A126 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 				D05D7D552C107F8E00E2A126 /* App */,
 				D05D7D562C107FDD00E2A126 /* Features */,
 				D05D7D5E2C109F9300E2A126 /* Utils */,
+				D05D7D6E2C10B31E00E2A126 /* Extensions */,
 				D05D7D572C10800100E2A126 /* Resources */,
 				D05D7D4F2C107D4A00E2A126 /* Info.plist */,
 			);
@@ -173,6 +178,15 @@
 			path = NotificationCenter;
 			sourceTree = "<group>";
 		};
+		D05D7D6E2C10B31E00E2A126 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D05D7D6F2C10B33A00E2A126 /* UIViewControllerExtensions.swift */,
+				D05D7D712C10B38000E2A126 /* UIViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -244,8 +258,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D05D7D722C10B38000E2A126 /* UIViewExtensions.swift in Sources */,
 				D05D7D652C10A4FE00E2A126 /* SignUpViewController.swift in Sources */,
 				D05D7D462C107D4900E2A126 /* SplashScreenViewController.swift in Sources */,
+				D05D7D702C10B33A00E2A126 /* UIViewControllerExtensions.swift in Sources */,
 				D05D7D612C109FCC00E2A126 /* UserDefaultsKeys.swift in Sources */,
 				D05D7D422C107D4900E2A126 /* AppDelegate.swift in Sources */,
 				D05D7D442C107D4900E2A126 /* SceneDelegate.swift in Sources */,
