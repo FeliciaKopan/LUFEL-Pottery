@@ -56,15 +56,39 @@
 		D05D7D402C107D4900E2A126 /* LUFEL */ = {
 			isa = PBXGroup;
 			children = (
-				D05D7D412C107D4900E2A126 /* AppDelegate.swift */,
-				D05D7D432C107D4900E2A126 /* SceneDelegate.swift */,
-				D05D7D452C107D4900E2A126 /* ViewController.swift */,
-				D05D7D472C107D4900E2A126 /* Main.storyboard */,
-				D05D7D4A2C107D4A00E2A126 /* Assets.xcassets */,
+				D05D7D552C107F8E00E2A126 /* App */,
+				D05D7D562C107FDD00E2A126 /* Features */,
+				D05D7D572C10800100E2A126 /* Resources */,
 				D05D7D4C2C107D4A00E2A126 /* LaunchScreen.storyboard */,
 				D05D7D4F2C107D4A00E2A126 /* Info.plist */,
 			);
 			path = LUFEL;
+			sourceTree = "<group>";
+		};
+		D05D7D552C107F8E00E2A126 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D05D7D412C107D4900E2A126 /* AppDelegate.swift */,
+				D05D7D432C107D4900E2A126 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D05D7D562C107FDD00E2A126 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D05D7D452C107D4900E2A126 /* ViewController.swift */,
+				D05D7D472C107D4900E2A126 /* Main.storyboard */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		D05D7D572C10800100E2A126 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D05D7D4A2C107D4A00E2A126 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
