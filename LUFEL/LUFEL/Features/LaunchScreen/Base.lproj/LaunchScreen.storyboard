@@ -14,8 +14,22 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lufelLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Nqm-A2-EP6">
+                                <rect key="frame" x="76.666666666666686" y="374.66666666666669" width="240" height="128"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Uwb-kp-eab"/>
+                                    <constraint firstAttribute="width" constant="240" id="qJJ-hg-eiu"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Nqm-A2-EP6" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="QxF-y5-bgc"/>
+                            <constraint firstItem="Nqm-A2-EP6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pOQ-Fz-kbu"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -23,4 +37,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lufelLogo" width="657" height="379"/>
+    </resources>
 </document>
