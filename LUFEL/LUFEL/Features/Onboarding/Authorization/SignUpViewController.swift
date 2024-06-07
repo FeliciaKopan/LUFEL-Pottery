@@ -14,6 +14,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
 
+    @Injected(\.unauthorizedProvider) private var unauthorizedProvider: UnauthorizedProviding
+
     // MARK: - Lifecycle
 
     override func loadView() {
@@ -23,6 +25,21 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupLabels()
+    }
 
+    @IBAction func logInButtonAction(_ sender: Any) {
+
+    }
+
+    @IBAction func signInButtonAction(_ sender: Any) {
+        unauthorizedProvider.goToPasswordSignInScreen()
+    }
+    
+    // MARK: - Private Properties
+
+    private func setupLabels() {
+        signUpButton.setTitle(L10n.SignUp.signInButton, for: .normal)
+        logInButton.setTitle(L10n.SignUp.logInButton, for: .normal)
     }
 }

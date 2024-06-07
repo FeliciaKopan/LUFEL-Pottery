@@ -1,0 +1,13 @@
+//
+//  Localizable.strings
+//  LUFEL
+//
+//  Created by Felicia Alamorean on 06.06.2024.
+//
+
+// MARK: - SIGN UP - DONE TW_V01
+
+"signUp.signInButton" = "Sign in";
+"signUp.logInButton" = "Log in";
+"signUp.email" = "Email";
+"signUp.password" = "Password";

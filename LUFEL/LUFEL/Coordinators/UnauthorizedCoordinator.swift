@@ -15,11 +15,15 @@ final class UnauthorizedCoordinator: Coordinator {
     private let navigationController: AppNavigationController
     private var cancellables = Set<AnyCancellable>()
 
+    // MARK: - Coordinator methods
+
+    @Injected(\.unauthorizedProvider) private var unauthorizedProvider: UnauthorizedProviding
+
     // MARK: - Init
 
     init(navigationController: AppNavigationController) {
         self.navigationController = navigationController
-//        setupStreams()
+        setupStreams()
     }
 
     // MARK: - Coordinator methods
@@ -30,8 +34,16 @@ final class UnauthorizedCoordinator: Coordinator {
         navigationController.setViewControllers([signUpViewController], animated: false)
     }
 
-    private func goToSignUpScreen() {
-        let signUpViewController = SignUpViewController()
-        navigationController.pushViewController(signUpViewController, animated: true)
+    private func goToSignInScreen() {
+        let passwordSignInViewController = PasswordSignInViewController()
+        navigationController.pushViewController(passwordSignInViewController, animated: true)
+    }
+
+    private func setupStreams() {
+        unauthorizedProvider.goToPasswordSignInScreenPublisher
+            .sink { [weak self] in
+                self?.goToSignInScreen()
+            }
+            .store(in: &cancellables)
     }
 }

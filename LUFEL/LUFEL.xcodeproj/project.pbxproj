@@ -21,6 +21,15 @@
 		D05D7D6D2C10AA7900E2A126 /* MainAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D6C2C10AA7900E2A126 /* MainAppCoordinator.swift */; };
 		D05D7D702C10B33A00E2A126 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D6F2C10B33A00E2A126 /* UIViewControllerExtensions.swift */; };
 		D05D7D722C10B38000E2A126 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D712C10B38000E2A126 /* UIViewExtensions.swift */; };
+		D05D7D752C11AC4E00E2A126 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D742C11AC4E00E2A126 /* L10n.swift */; };
+		D05D7D782C11B19600E2A126 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D05D7D772C11B19600E2A126 /* Localizable.strings */; };
+		D05D7D7C2C130FCF00E2A126 /* UnauthorizedProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D7B2C130FCF00E2A126 /* UnauthorizedProviding.swift */; };
+		D05D7D7E2C130FE200E2A126 /* UnauthorizedProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D7D2C130FE200E2A126 /* UnauthorizedProvider.swift */; };
+		D05D7D812C13104800E2A126 /* InjectionKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D802C13104800E2A126 /* InjectionKey.swift */; };
+		D05D7D832C13107700E2A126 /* InjectedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D822C13107700E2A126 /* InjectedValues.swift */; };
+		D05D7D852C13109200E2A126 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D842C13109200E2A126 /* Injected.swift */; };
+		D05D7D882C1312AE00E2A126 /* PasswordSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D862C1312AE00E2A126 /* PasswordSignInViewController.swift */; };
+		D05D7D892C1312AE00E2A126 /* PasswordSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05D7D872C1312AE00E2A126 /* PasswordSignInViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +49,15 @@
 		D05D7D6C2C10AA7900E2A126 /* MainAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppCoordinator.swift; sourceTree = "<group>"; };
 		D05D7D6F2C10B33A00E2A126 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		D05D7D712C10B38000E2A126 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		D05D7D742C11AC4E00E2A126 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
+		D05D7D772C11B19600E2A126 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		D05D7D7B2C130FCF00E2A126 /* UnauthorizedProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnauthorizedProviding.swift; sourceTree = "<group>"; };
+		D05D7D7D2C130FE200E2A126 /* UnauthorizedProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnauthorizedProvider.swift; sourceTree = "<group>"; };
+		D05D7D802C13104800E2A126 /* InjectionKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionKey.swift; sourceTree = "<group>"; };
+		D05D7D822C13107700E2A126 /* InjectedValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectedValues.swift; sourceTree = "<group>"; };
+		D05D7D842C13109200E2A126 /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
+		D05D7D862C1312AE00E2A126 /* PasswordSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignInViewController.swift; sourceTree = "<group>"; };
+		D05D7D872C1312AE00E2A126 /* PasswordSignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordSignInViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				D05D7D5B2C109D1700E2A126 /* Coordinators */,
+				D05D7D792C130F8D00E2A126 /* Services */,
 				D05D7D552C107F8E00E2A126 /* App */,
 				D05D7D562C107FDD00E2A126 /* Features */,
 				D05D7D5E2C109F9300E2A126 /* Utils */,
@@ -104,6 +123,7 @@
 		D05D7D572C10800100E2A126 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D05D7D762C11B17A00E2A126 /* Localization */,
 				D05D7D4A2C107D4A00E2A126 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -147,6 +167,8 @@
 		D05D7D5E2C109F9300E2A126 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D05D7D7F2C13103200E2A126 /* DependencyInjection */,
+				D05D7D732C11AC3F00E2A126 /* Localization */,
 				D05D7D692C10AA3400E2A126 /* NotificationCenter */,
 				D05D7D5F2C109FC200E2A126 /* UserDefaults */,
 			);
@@ -166,6 +188,8 @@
 			children = (
 				D05D7D632C10A4FE00E2A126 /* SignUpViewController.swift */,
 				D05D7D642C10A4FE00E2A126 /* SignUpViewController.xib */,
+				D05D7D862C1312AE00E2A126 /* PasswordSignInViewController.swift */,
+				D05D7D872C1312AE00E2A126 /* PasswordSignInViewController.xib */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -185,6 +209,49 @@
 				D05D7D712C10B38000E2A126 /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D05D7D732C11AC3F00E2A126 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				D05D7D742C11AC4E00E2A126 /* L10n.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		D05D7D762C11B17A00E2A126 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				D05D7D772C11B19600E2A126 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		D05D7D792C130F8D00E2A126 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D05D7D7A2C130FA300E2A126 /* Unauthorized */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D05D7D7A2C130FA300E2A126 /* Unauthorized */ = {
+			isa = PBXGroup;
+			children = (
+				D05D7D7B2C130FCF00E2A126 /* UnauthorizedProviding.swift */,
+				D05D7D7D2C130FE200E2A126 /* UnauthorizedProvider.swift */,
+			);
+			path = Unauthorized;
+			sourceTree = "<group>";
+		};
+		D05D7D7F2C13103200E2A126 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				D05D7D802C13104800E2A126 /* InjectionKey.swift */,
+				D05D7D822C13107700E2A126 /* InjectedValues.swift */,
+				D05D7D842C13109200E2A126 /* Injected.swift */,
+			);
+			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,7 +312,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D05D7D892C1312AE00E2A126 /* PasswordSignInViewController.xib in Resources */,
 				D05D7D4B2C107D4A00E2A126 /* Assets.xcassets in Resources */,
+				D05D7D782C11B19600E2A126 /* Localizable.strings in Resources */,
 				D05D7D662C10A4FE00E2A126 /* SignUpViewController.xib in Resources */,
 				D05D7D4E2C107D4A00E2A126 /* Base in Resources */,
 			);
@@ -259,14 +328,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D05D7D722C10B38000E2A126 /* UIViewExtensions.swift in Sources */,
+				D05D7D812C13104800E2A126 /* InjectionKey.swift in Sources */,
 				D05D7D652C10A4FE00E2A126 /* SignUpViewController.swift in Sources */,
+				D05D7D852C13109200E2A126 /* Injected.swift in Sources */,
 				D05D7D462C107D4900E2A126 /* SplashScreenViewController.swift in Sources */,
 				D05D7D702C10B33A00E2A126 /* UIViewControllerExtensions.swift in Sources */,
+				D05D7D832C13107700E2A126 /* InjectedValues.swift in Sources */,
 				D05D7D612C109FCC00E2A126 /* UserDefaultsKeys.swift in Sources */,
 				D05D7D422C107D4900E2A126 /* AppDelegate.swift in Sources */,
 				D05D7D442C107D4900E2A126 /* SceneDelegate.swift in Sources */,
 				D05D7D682C10A8AB00E2A126 /* UnauthorizedCoordinator.swift in Sources */,
+				D05D7D752C11AC4E00E2A126 /* L10n.swift in Sources */,
 				D05D7D5D2C109D3700E2A126 /* ApplicationCoordinator.swift in Sources */,
+				D05D7D882C1312AE00E2A126 /* PasswordSignInViewController.swift in Sources */,
+				D05D7D7E2C130FE200E2A126 /* UnauthorizedProvider.swift in Sources */,
+				D05D7D7C2C130FCF00E2A126 /* UnauthorizedProviding.swift in Sources */,
 				D05D7D6D2C10AA7900E2A126 /* MainAppCoordinator.swift in Sources */,
 				D05D7D6B2C10AA4600E2A126 /* NotificationNameExtension.swift in Sources */,
 			);
