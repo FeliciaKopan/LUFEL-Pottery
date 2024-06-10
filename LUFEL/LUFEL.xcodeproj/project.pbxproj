@@ -30,6 +30,10 @@
 		D05D7D852C13109200E2A126 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D842C13109200E2A126 /* Injected.swift */; };
 		D05D7D882C1312AE00E2A126 /* PasswordSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D862C1312AE00E2A126 /* PasswordSignInViewController.swift */; };
 		D05D7D892C1312AE00E2A126 /* PasswordSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05D7D872C1312AE00E2A126 /* PasswordSignInViewController.xib */; };
+		D05D7D8B2C1316EA00E2A126 /* CustomPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D8A2C1316EA00E2A126 /* CustomPlaceholderTextView.swift */; };
+		D05D7D8D2C13178F00E2A126 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D8C2C13178F00E2A126 /* UILabelExtensions.swift */; };
+		D05D7D902C131D7F00E2A126 /* OnboardingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D8F2C131D7F00E2A126 /* OnboardingProvider.swift */; };
+		D05D7D922C131D8D00E2A126 /* OnboardingProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D912C131D8D00E2A126 /* OnboardingProviding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +62,10 @@
 		D05D7D842C13109200E2A126 /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
 		D05D7D862C1312AE00E2A126 /* PasswordSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignInViewController.swift; sourceTree = "<group>"; };
 		D05D7D872C1312AE00E2A126 /* PasswordSignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordSignInViewController.xib; sourceTree = "<group>"; };
+		D05D7D8A2C1316EA00E2A126 /* CustomPlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlaceholderTextView.swift; sourceTree = "<group>"; };
+		D05D7D8C2C13178F00E2A126 /* UILabelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
+		D05D7D8F2C131D7F00E2A126 /* OnboardingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProvider.swift; sourceTree = "<group>"; };
+		D05D7D912C131D8D00E2A126 /* OnboardingProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProviding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +150,7 @@
 			children = (
 				D05D7D5A2C10960100E2A126 /* SplashScreenViewController */,
 				D05D7D622C10A42400E2A126 /* Authorization */,
+				D05D7D8A2C1316EA00E2A126 /* CustomPlaceholderTextView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -207,6 +216,7 @@
 			children = (
 				D05D7D6F2C10B33A00E2A126 /* UIViewControllerExtensions.swift */,
 				D05D7D712C10B38000E2A126 /* UIViewExtensions.swift */,
+				D05D7D8C2C13178F00E2A126 /* UILabelExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -230,6 +240,7 @@
 		D05D7D792C130F8D00E2A126 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D05D7D8E2C131D6900E2A126 /* Onboarding */,
 				D05D7D7A2C130FA300E2A126 /* Unauthorized */,
 			);
 			path = Services;
@@ -252,6 +263,15 @@
 				D05D7D842C13109200E2A126 /* Injected.swift */,
 			);
 			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		D05D7D8E2C131D6900E2A126 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				D05D7D8F2C131D7F00E2A126 /* OnboardingProvider.swift */,
+				D05D7D912C131D8D00E2A126 /* OnboardingProviding.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,16 +348,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D05D7D722C10B38000E2A126 /* UIViewExtensions.swift in Sources */,
+				D05D7D902C131D7F00E2A126 /* OnboardingProvider.swift in Sources */,
 				D05D7D812C13104800E2A126 /* InjectionKey.swift in Sources */,
 				D05D7D652C10A4FE00E2A126 /* SignUpViewController.swift in Sources */,
 				D05D7D852C13109200E2A126 /* Injected.swift in Sources */,
+				D05D7D922C131D8D00E2A126 /* OnboardingProviding.swift in Sources */,
 				D05D7D462C107D4900E2A126 /* SplashScreenViewController.swift in Sources */,
 				D05D7D702C10B33A00E2A126 /* UIViewControllerExtensions.swift in Sources */,
 				D05D7D832C13107700E2A126 /* InjectedValues.swift in Sources */,
 				D05D7D612C109FCC00E2A126 /* UserDefaultsKeys.swift in Sources */,
 				D05D7D422C107D4900E2A126 /* AppDelegate.swift in Sources */,
 				D05D7D442C107D4900E2A126 /* SceneDelegate.swift in Sources */,
+				D05D7D8B2C1316EA00E2A126 /* CustomPlaceholderTextView.swift in Sources */,
 				D05D7D682C10A8AB00E2A126 /* UnauthorizedCoordinator.swift in Sources */,
+				D05D7D8D2C13178F00E2A126 /* UILabelExtensions.swift in Sources */,
 				D05D7D752C11AC4E00E2A126 /* L10n.swift in Sources */,
 				D05D7D5D2C109D3700E2A126 /* ApplicationCoordinator.swift in Sources */,
 				D05D7D882C1312AE00E2A126 /* PasswordSignInViewController.swift in Sources */,
