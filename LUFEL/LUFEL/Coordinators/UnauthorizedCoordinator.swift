@@ -35,8 +35,8 @@ final class UnauthorizedCoordinator: Coordinator {
     }
 
     private func goToSignInScreen() {
-        let passwordSignInViewController = SignInViewController()
-        navigationController.pushViewController(passwordSignInViewController, animated: true)
+        let signInViewController = SignInViewController()
+        navigationController.pushViewController(signInViewController, animated: true)
     }
 
     private func setupStreams() {

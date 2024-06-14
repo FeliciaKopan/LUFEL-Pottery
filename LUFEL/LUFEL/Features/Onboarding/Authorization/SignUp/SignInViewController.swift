@@ -33,11 +33,13 @@ final class SignInViewController: UIViewController {
     // MARK: - Button Action
 
     @IBAction func signInButtonAction(_ sender: Any) {
-
+        let viewController = SetNameViewController()
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true)
     }
 
     @IBAction func goBackButton(_ sender: Any) {
-        
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Private Properties
