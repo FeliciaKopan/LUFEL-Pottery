@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PasswordSignInViewController: UIViewController {
+final class SignInViewController: UIViewController {
 
     // MARK: - Views
 
@@ -36,5 +36,9 @@ final class PasswordSignInViewController: UIViewController {
 
     }
 
+    @IBAction func goBackButton(_ sender: Any) {
+        
+    }
+    
     // MARK: - Private Properties
 }

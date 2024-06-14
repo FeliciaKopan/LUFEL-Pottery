@@ -7,13 +7,15 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class LogInViewController: UIViewController {
 
     // MARK: - Views
 
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
-
+    @IBOutlet weak var emailTextField: CustomPlaceholderTextView!
+    @IBOutlet weak var passwordTextField: CustomPlaceholderTextView!
+    
     @Injected(\.unauthorizedProvider) private var unauthorizedProvider: UnauthorizedProviding
 
     // MARK: - Lifecycle

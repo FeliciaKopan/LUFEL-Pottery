@@ -30,12 +30,12 @@ final class UnauthorizedCoordinator: Coordinator {
 
     // Set default view controller for coordinator
     func start() {
-        let signUpViewController = SignUpViewController()
+        let signUpViewController = LogInViewController()
         navigationController.setViewControllers([signUpViewController], animated: false)
     }
 
     private func goToSignInScreen() {
-        let passwordSignInViewController = PasswordSignInViewController()
+        let passwordSignInViewController = SignInViewController()
         navigationController.pushViewController(passwordSignInViewController, animated: true)
     }
 

@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PasswordSignInViewController" customModule="LUFEL" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInViewController" customModule="LUFEL" customModuleProvider="target">
             <connections>
                 <outlet property="backButton" destination="xKS-8m-Esa" id="S6w-DA-Ca4"/>
                 <outlet property="buttonBottomConstraint" destination="xSy-mB-Zg7" id="4Mb-LD-AXE"/>
@@ -32,6 +32,9 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="backArrow"/>
+                    <connections>
+                        <action selector="goBackButton:" destination="-1" eventType="touchUpInside" id="JAQ-87-sQE"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JQ-yC-Vl9">
                     <rect key="frame" x="24" y="131" width="345" height="39"/>

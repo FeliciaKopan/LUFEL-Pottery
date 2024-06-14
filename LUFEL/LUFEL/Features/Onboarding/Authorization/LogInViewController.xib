@@ -3,13 +3,16 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="LUFEL" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogInViewController" customModule="LUFEL" customModuleProvider="target">
             <connections>
+                <outlet property="emailTextField" destination="Ue3-GA-PYL" id="ZUz-U3-Rv8"/>
                 <outlet property="logInButton" destination="qxR-0Q-51A" id="zjP-TP-l7k"/>
+                <outlet property="passwordTextField" destination="Yg9-G1-rIa" id="oAx-hl-s7l"/>
                 <outlet property="signUpButton" destination="7db-yK-VXy" id="WwN-UG-RAi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,7 +30,7 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxR-0Q-51A" userLabel="logInButton">
-                    <rect key="frame" x="24" y="602" width="345" height="60"/>
+                    <rect key="frame" x="24" y="668" width="345" height="60"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="BsL-tO-paS"/>
@@ -49,14 +52,13 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7db-yK-VXy" userLabel="signInButton">
-                    <rect key="frame" x="24" y="694" width="345" height="60"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="100" y="752" width="193" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="lUJ-ic-grv"/>
+                        <constraint firstAttribute="height" constant="30" id="lUJ-ic-grv"/>
                     </constraints>
-                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" name="lufelRed"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Sign up"/>
+                    <buttonConfiguration key="configuration" style="plain" title="I don't have an acount"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="30"/>
@@ -70,22 +72,59 @@
                         <action selector="signInButtonAction:" destination="-1" eventType="touchUpInside" id="nt3-J9-3p0"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in with email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogI-IV-i8X">
+                    <rect key="frame" x="24" y="287" width="171.66666666666666" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ue3-GA-PYL" userLabel="emailView" customClass="CustomPlaceholderTextView" customModule="LUFEL" customModuleProvider="target">
+                    <rect key="frame" x="24" y="340" width="345" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="GmM-cP-1vw"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yg9-G1-rIa" userLabel="passwordView" customClass="CustomPlaceholderTextView" customModule="LUFEL" customModuleProvider="target">
+                    <rect key="frame" x="24" y="428" width="345" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="FfK-R3-GmS"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid credentials. Please try again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SD1-vV-KW1">
+                    <rect key="frame" x="23.999999999999986" y="504" width="226.66666666666663" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" name="lufelRed"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
+                <constraint firstItem="Ue3-GA-PYL" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="0uK-7F-HI1"/>
+                <constraint firstItem="Ue3-GA-PYL" firstAttribute="top" secondItem="ogI-IV-i8X" secondAttribute="bottom" constant="24" id="3ht-5l-ccl"/>
+                <constraint firstItem="Yg9-G1-rIa" firstAttribute="top" secondItem="Ue3-GA-PYL" secondAttribute="bottom" constant="24" id="45S-Um-cy8"/>
+                <constraint firstItem="SD1-vV-KW1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="5Qz-hd-uEy"/>
+                <constraint firstItem="ogI-IV-i8X" firstAttribute="top" secondItem="sye-sm-8IW" secondAttribute="bottom" constant="36" id="Cd6-Ef-RR1"/>
+                <constraint firstItem="Yg9-G1-rIa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Ids-Xg-XrM"/>
+                <constraint firstItem="Ue3-GA-PYL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Jzk-4S-cnZ"/>
                 <constraint firstItem="qxR-0Q-51A" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="KPy-2y-Jet"/>
                 <constraint firstItem="7db-yK-VXy" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="cFg-8l-I3D"/>
                 <constraint firstItem="qxR-0Q-51A" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="crP-CB-CAG"/>
-                <constraint firstItem="7db-yK-VXy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="dww-cU-8we"/>
+                <constraint firstItem="Yg9-G1-rIa" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="dNl-bg-lcZ"/>
+                <constraint firstItem="7db-yK-VXy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="dww-cU-8we"/>
                 <constraint firstItem="sye-sm-8IW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="64" id="gH9-rM-kDq"/>
-                <constraint firstItem="7db-yK-VXy" firstAttribute="top" secondItem="qxR-0Q-51A" secondAttribute="bottom" constant="32" id="l0j-Wi-ihY"/>
+                <constraint firstItem="SD1-vV-KW1" firstAttribute="top" secondItem="Yg9-G1-rIa" secondAttribute="bottom" constant="12" id="lBw-SH-zkG"/>
+                <constraint firstItem="7db-yK-VXy" firstAttribute="top" secondItem="qxR-0Q-51A" secondAttribute="bottom" constant="24" id="phv-cx-K1b"/>
                 <constraint firstItem="sye-sm-8IW" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="qEl-kl-D3X"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7db-yK-VXy" secondAttribute="bottom" constant="64" id="wgj-eR-HvV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7db-yK-VXy" secondAttribute="bottom" constant="36" id="wgj-eR-HvV"/>
+                <constraint firstItem="ogI-IV-i8X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="y7i-LJ-XNc"/>
             </constraints>
             <point key="canvasLocation" x="140" y="20"/>
         </view>
     </objects>
     <resources>
         <image name="lufelLogo" width="657" height="379"/>
+        <namedColor name="lufelRed">
+            <color red="0.88627450980392153" green="0.24313725490196078" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
