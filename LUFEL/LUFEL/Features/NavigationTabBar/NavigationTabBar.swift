@@ -16,7 +16,7 @@ class NavigationTabBar: UITabBar, NibLoadable {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var homeView: CustomTabBarItemView!
     @IBOutlet weak var cartView: CustomTabBarItemView!
-    @IBOutlet weak var listView: UIView!
+    @IBOutlet weak var listView: CustomTabBarItemView!
     @IBOutlet weak var wishListView: CustomTabBarItemView!
     @IBOutlet weak var profileView: CustomTabBarItemView!
 
@@ -64,6 +64,11 @@ class NavigationTabBar: UITabBar, NibLoadable {
                 guard let self = self else { return }
                 self.tabBarItemTap(sender: self.cartView)
             }.store(in: &cancellables)
+        listView.publisher(for: .touchUpInside)
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                self.tabBarItemTap(sender: self.listView)
+            }.store(in: &cancellables)
         wishListView.publisher(for: .touchUpInside)
             .sink { [weak self] _ in
                 guard let self = self else { return }
@@ -88,6 +93,10 @@ class NavigationTabBar: UITabBar, NibLoadable {
                 cartView.tag = index
                 cartView.set(image: .cart)
                 cartView.setSelectedView(isSelected: false)
+            case 2:
+                listView.tag = index
+                listView.set(image: .menuList)
+                listView.setSelectedView(isSelected: false)
             case 3:
                 wishListView.tag = index
                 wishListView.set(image: .wishlist)

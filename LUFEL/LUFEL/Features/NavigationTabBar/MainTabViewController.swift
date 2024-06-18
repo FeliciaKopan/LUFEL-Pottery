@@ -12,6 +12,7 @@ class MainTabViewController: UITabBarController {
     // MARK: - Views
 
     private var customTabBar = NavigationTabBar()
+    private var productListButton = UIButton()
 
     // MARK: - Properties
 
@@ -45,8 +46,8 @@ class MainTabViewController: UITabBarController {
         homeViewController.tabBarItem = .init(title: "", image: nil, tag: 0)
         let cartViewController = CartViewController()
         cartViewController.tabBarItem = .init(title: "", image: nil, tag: 1)
-        let emptyViewController = UIViewController()
-        emptyViewController.tabBarItem.isEnabled = false
+        let productsListViewController = ProductsListViewController()
+        productsListViewController.tabBarItem = .init(title: "", image: nil, tag: 2)
         let wishListViewController = WishListViewController()
         wishListViewController.tabBarItem = .init(title: "", image: nil, tag: 3)
         let profileViewController = UserProfileViewController()
@@ -55,7 +56,7 @@ class MainTabViewController: UITabBarController {
         controllers = [
             homeViewController,
             cartViewController,
-            emptyViewController,
+            productsListViewController,
             wishListViewController,
             profileViewController
         ]

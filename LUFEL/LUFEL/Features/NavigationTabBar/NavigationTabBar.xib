@@ -13,7 +13,7 @@
                 <outlet property="backgroundView" destination="4j8-mk-IOM" id="Ica-h7-ZHn"/>
                 <outlet property="cartView" destination="phg-DQ-JsG" id="IZf-kM-i0D"/>
                 <outlet property="homeView" destination="nwQ-Ho-ifw" id="yDb-xS-0Dp"/>
-                <outlet property="listView" destination="iUM-Eb-dsO" id="1vo-SA-b96"/>
+                <outlet property="listView" destination="iUM-Eb-dsO" id="MFs-N6-wNz"/>
                 <outlet property="profileView" destination="ub1-zQ-xBW" id="Qi3-QD-Kfx"/>
                 <outlet property="stackView" destination="AEP-8T-e2h" id="POw-0H-wAw"/>
                 <outlet property="wishListView" destination="6jh-QP-GJf" id="F2q-Zw-A31"/>
@@ -58,9 +58,18 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUM-Eb-dsO">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUM-Eb-dsO" customClass="CustomTabBarItemView" customModule="LUFEL" customModuleProvider="target">
                             <rect key="frame" x="163.33333333333334" y="0.0" width="66.333333333333343" height="64"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="32"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6jh-QP-GJf" customClass="CustomTabBarItemView" customModule="LUFEL" customModuleProvider="target">
                             <rect key="frame" x="244.66666666666666" y="0.0" width="66.666666666666657" height="64"/>
@@ -90,6 +99,7 @@
                         </view>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="iUM-Eb-dsO" firstAttribute="height" secondItem="AEP-8T-e2h" secondAttribute="height" id="E5z-5R-Ma4"/>
                         <constraint firstItem="phg-DQ-JsG" firstAttribute="height" secondItem="AEP-8T-e2h" secondAttribute="height" id="YKV-nm-pje"/>
                         <constraint firstItem="nwQ-Ho-ifw" firstAttribute="height" secondItem="AEP-8T-e2h" secondAttribute="height" id="aRX-QO-GQg"/>
                         <constraint firstItem="ub1-zQ-xBW" firstAttribute="height" secondItem="AEP-8T-e2h" secondAttribute="height" id="d61-mG-5bZ"/>

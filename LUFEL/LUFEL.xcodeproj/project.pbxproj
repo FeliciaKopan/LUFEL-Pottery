@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0245A5F2C21B5EC005456AA /* ProductsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0245A5E2C21B5EC005456AA /* ProductsListViewController.xib */; };
+		D0245A602C21B5EC005456AA /* ProductsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A5D2C21B5EC005456AA /* ProductsListViewController.swift */; };
 		D05D7D422C107D4900E2A126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D412C107D4900E2A126 /* AppDelegate.swift */; };
 		D05D7D442C107D4900E2A126 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D432C107D4900E2A126 /* SceneDelegate.swift */; };
 		D05D7D462C107D4900E2A126 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D452C107D4900E2A126 /* SplashScreenViewController.swift */; };
@@ -56,6 +58,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D0245A5D2C21B5EC005456AA /* ProductsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListViewController.swift; sourceTree = "<group>"; };
+		D0245A5E2C21B5EC005456AA /* ProductsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsListViewController.xib; sourceTree = "<group>"; };
 		D05D7D3E2C107D4900E2A126 /* LUFEL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LUFEL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D05D7D412C107D4900E2A126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D05D7D432C107D4900E2A126 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +121,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0245A5C2C21B5C7005456AA /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				D0245A5D2C21B5EC005456AA /* ProductsListViewController.swift */,
+				D0245A5E2C21B5EC005456AA /* ProductsListViewController.xib */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
 		D05D7D352C107D4900E2A126 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				D05D7DB62C20392100E2A126 /* NavigationTabBar */,
+				D0245A5C2C21B5C7005456AA /* ProductList */,
 				D05D7D972C1C42E200E2A126 /* UserProfile */,
 				D05D7D962C1C42CB00E2A126 /* WishList */,
 				D05D7D942C1C428100E2A126 /* Cart */,
@@ -491,6 +505,7 @@
 				D06F9E3F2C204E460051087D /* CustomTabBarItemView.xib in Resources */,
 				D05D7D4B2C107D4A00E2A126 /* Assets.xcassets in Resources */,
 				D05D7D782C11B19600E2A126 /* Localizable.strings in Resources */,
+				D0245A5F2C21B5EC005456AA /* ProductsListViewController.xib in Resources */,
 				D05D7DAB2C1C43B400E2A126 /* UserProfileViewController.xib in Resources */,
 				D05D7DB32C1C723400E2A126 /* SetNameViewController.xib in Resources */,
 				D05D7D662C10A4FE00E2A126 /* LogInViewController.xib in Resources */,
@@ -540,6 +555,7 @@
 				D05D7D6D2C10AA7900E2A126 /* MainAppCoordinator.swift in Sources */,
 				D06F9E3A2C204D440051087D /* NavigationTabBar.swift in Sources */,
 				D05D7DA22C1C438400E2A126 /* CheckoutViewController.swift in Sources */,
+				D0245A602C21B5EC005456AA /* ProductsListViewController.swift in Sources */,
 				D05D7D6B2C10AA4600E2A126 /* NotificationNameExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
