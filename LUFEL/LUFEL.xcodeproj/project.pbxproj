@@ -46,6 +46,13 @@
 		D05D7DAB2C1C43B400E2A126 /* UserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05D7DA92C1C43B400E2A126 /* UserProfileViewController.xib */; };
 		D05D7DB22C1C723400E2A126 /* SetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7DB02C1C723400E2A126 /* SetNameViewController.swift */; };
 		D05D7DB32C1C723400E2A126 /* SetNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05D7DB12C1C723400E2A126 /* SetNameViewController.xib */; };
+		D06F9E382C2045390051087D /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F9E372C2045390051087D /* NibLoadable.swift */; };
+		D06F9E3A2C204D440051087D /* NavigationTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F9E392C204D440051087D /* NavigationTabBar.swift */; };
+		D06F9E3D2C204E340051087D /* CustomTabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F9E3C2C204E340051087D /* CustomTabBarItemView.swift */; };
+		D06F9E3F2C204E460051087D /* CustomTabBarItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D06F9E3E2C204E460051087D /* CustomTabBarItemView.xib */; };
+		D06F9E432C2055170051087D /* CombineUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F9E422C2055170051087D /* CombineUIKit.swift */; };
+		D06F9E452C2057DB0051087D /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F9E442C2057DB0051087D /* MainTabViewController.swift */; };
+		D06F9E472C216ECB0051087D /* NavigationTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D06F9E462C216ECB0051087D /* NavigationTabBar.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +97,13 @@
 		D05D7DA92C1C43B400E2A126 /* UserProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileViewController.xib; sourceTree = "<group>"; };
 		D05D7DB02C1C723400E2A126 /* SetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameViewController.swift; sourceTree = "<group>"; };
 		D05D7DB12C1C723400E2A126 /* SetNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetNameViewController.xib; sourceTree = "<group>"; };
+		D06F9E372C2045390051087D /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		D06F9E392C204D440051087D /* NavigationTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTabBar.swift; sourceTree = "<group>"; };
+		D06F9E3C2C204E340051087D /* CustomTabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarItemView.swift; sourceTree = "<group>"; };
+		D06F9E3E2C204E460051087D /* CustomTabBarItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTabBarItemView.xib; sourceTree = "<group>"; };
+		D06F9E422C2055170051087D /* CombineUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineUIKit.swift; sourceTree = "<group>"; };
+		D06F9E442C2057DB0051087D /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		D06F9E462C216ECB0051087D /* NavigationTabBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationTabBar.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +160,7 @@
 		D05D7D562C107FDD00E2A126 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				D05D7DB62C20392100E2A126 /* NavigationTabBar */,
 				D05D7D972C1C42E200E2A126 /* UserProfile */,
 				D05D7D962C1C42CB00E2A126 /* WishList */,
 				D05D7D942C1C428100E2A126 /* Cart */,
@@ -203,6 +218,7 @@
 		D05D7D5E2C109F9300E2A126 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D06F9E362C2045220051087D /* Protocols */,
 				D05D7D7F2C13103200E2A126 /* DependencyInjection */,
 				D05D7D732C11AC3F00E2A126 /* Localization */,
 				D05D7D692C10AA3400E2A126 /* NotificationCenter */,
@@ -244,6 +260,7 @@
 				D05D7D6F2C10B33A00E2A126 /* UIViewControllerExtensions.swift */,
 				D05D7D712C10B38000E2A126 /* UIViewExtensions.swift */,
 				D05D7D8C2C13178F00E2A126 /* UILabelExtensions.swift */,
+				D06F9E422C2055170051087D /* CombineUIKit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -382,6 +399,34 @@
 			path = CustomTextView;
 			sourceTree = "<group>";
 		};
+		D05D7DB62C20392100E2A126 /* NavigationTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D06F9E3B2C204DFA0051087D /* CustomTabBarItem */,
+				D06F9E392C204D440051087D /* NavigationTabBar.swift */,
+				D06F9E462C216ECB0051087D /* NavigationTabBar.xib */,
+				D06F9E442C2057DB0051087D /* MainTabViewController.swift */,
+			);
+			path = NavigationTabBar;
+			sourceTree = "<group>";
+		};
+		D06F9E362C2045220051087D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D06F9E372C2045390051087D /* NibLoadable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D06F9E3B2C204DFA0051087D /* CustomTabBarItem */ = {
+			isa = PBXGroup;
+			children = (
+				D06F9E3C2C204E340051087D /* CustomTabBarItemView.swift */,
+				D06F9E3E2C204E460051087D /* CustomTabBarItemView.xib */,
+			);
+			path = CustomTabBarItem;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -443,6 +488,7 @@
 				D05D7DA32C1C438400E2A126 /* CheckoutViewController.xib in Resources */,
 				D05D7D892C1312AE00E2A126 /* SignInViewController.xib in Resources */,
 				D05D7DA72C1C439D00E2A126 /* WishListViewController.xib in Resources */,
+				D06F9E3F2C204E460051087D /* CustomTabBarItemView.xib in Resources */,
 				D05D7D4B2C107D4A00E2A126 /* Assets.xcassets in Resources */,
 				D05D7D782C11B19600E2A126 /* Localizable.strings in Resources */,
 				D05D7DAB2C1C43B400E2A126 /* UserProfileViewController.xib in Resources */,
@@ -450,6 +496,7 @@
 				D05D7D662C10A4FE00E2A126 /* LogInViewController.xib in Resources */,
 				D05D7D4E2C107D4A00E2A126 /* Base in Resources */,
 				D05D7D9F2C1C435C00E2A126 /* CartViewController.xib in Resources */,
+				D06F9E472C216ECB0051087D /* NavigationTabBar.xib in Resources */,
 				D05D7D9B2C1C433F00E2A126 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +511,7 @@
 				D05D7D722C10B38000E2A126 /* UIViewExtensions.swift in Sources */,
 				D05D7D902C131D7F00E2A126 /* OnboardingProvider.swift in Sources */,
 				D05D7D812C13104800E2A126 /* InjectionKey.swift in Sources */,
+				D06F9E382C2045390051087D /* NibLoadable.swift in Sources */,
 				D05D7D652C10A4FE00E2A126 /* LogInViewController.swift in Sources */,
 				D05D7D9E2C1C435C00E2A126 /* CartViewController.swift in Sources */,
 				D05D7D852C13109200E2A126 /* Injected.swift in Sources */,
@@ -475,6 +523,9 @@
 				D05D7D832C13107700E2A126 /* InjectedValues.swift in Sources */,
 				D05D7DA62C1C439D00E2A126 /* WishListViewController.swift in Sources */,
 				D05D7D612C109FCC00E2A126 /* UserDefaultsKeys.swift in Sources */,
+				D06F9E3D2C204E340051087D /* CustomTabBarItemView.swift in Sources */,
+				D06F9E432C2055170051087D /* CombineUIKit.swift in Sources */,
+				D06F9E452C2057DB0051087D /* MainTabViewController.swift in Sources */,
 				D05D7D422C107D4900E2A126 /* AppDelegate.swift in Sources */,
 				D05D7D442C107D4900E2A126 /* SceneDelegate.swift in Sources */,
 				D05D7D8B2C1316EA00E2A126 /* CustomPlaceholderTextView.swift in Sources */,
@@ -487,6 +538,7 @@
 				D05D7D7E2C130FE200E2A126 /* UnauthorizedProvider.swift in Sources */,
 				D05D7D7C2C130FCF00E2A126 /* UnauthorizedProviding.swift in Sources */,
 				D05D7D6D2C10AA7900E2A126 /* MainAppCoordinator.swift in Sources */,
+				D06F9E3A2C204D440051087D /* NavigationTabBar.swift in Sources */,
 				D05D7DA22C1C438400E2A126 /* CheckoutViewController.swift in Sources */,
 				D05D7D6B2C10AA4600E2A126 /* NotificationNameExtension.swift in Sources */,
 			);

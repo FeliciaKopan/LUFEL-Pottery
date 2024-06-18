@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationTabBar" customModule="LUFEL" customModuleProvider="target">
+            <connections>
+                <outlet property="cartView" destination="phg-DQ-JsG" id="IZf-kM-i0D"/>
+                <outlet property="homeView" destination="nwQ-Ho-ifw" id="yDb-xS-0Dp"/>
+                <outlet property="listView" destination="iUM-Eb-dsO" id="1vo-SA-b96"/>
+                <outlet property="profileView" destination="ub1-zQ-xBW" id="Qi3-QD-Kfx"/>
+                <outlet property="stackView" destination="AEP-8T-e2h" id="POw-0H-wAw"/>
+                <outlet property="wishListView" destination="6jh-QP-GJf" id="F2q-Zw-A31"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UITabBar">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="64"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="AEP-8T-e2h">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="64"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwQ-Ho-ifw" customClass="CustomTabBarItemView" customModule="LUFEL" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="64"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phg-DQ-JsG" customClass="CustomTabBarItemView" customModule="LUFEL" customModuleProvider="target">
+                            <rect key="frame" x="81.666666666666657" y="0.0" width="66.666666666666657" height="64"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUM-Eb-dsO">
+                            <rect key="frame" x="163.33333333333334" y="0.0" width="66.333333333333343" height="64"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6jh-QP-GJf" customClass="CustomTabBarItemView" customModule="LUFEL" customModuleProvider="target">
+                            <rect key="frame" x="244.66666666666666" y="0.0" width="66.666666666666657" height="64"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ub1-zQ-xBW" customClass="CustomTabBarItemView" customModule="LUFEL" customModuleProvider="target">
+                            <rect key="frame" x="326.33333333333331" y="0.0" width="66.666666666666686" height="64"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="phg-DQ-JsG" firstAttribute="height" secondItem="AEP-8T-e2h" secondAttribute="height" id="YKV-nm-pje"/>
+                        <constraint firstItem="nwQ-Ho-ifw" firstAttribute="height" secondItem="AEP-8T-e2h" secondAttribute="height" id="aRX-QO-GQg"/>
+                        <constraint firstItem="ub1-zQ-xBW" firstAttribute="height" secondItem="AEP-8T-e2h" secondAttribute="height" id="d61-mG-5bZ"/>
+                        <constraint firstItem="6jh-QP-GJf" firstAttribute="height" secondItem="AEP-8T-e2h" secondAttribute="height" id="i1F-C9-EMp"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AEP-8T-e2h" secondAttribute="trailing" id="ThX-zI-Xy5"/>
+                <constraint firstAttribute="bottom" secondItem="AEP-8T-e2h" secondAttribute="bottom" id="efZ-oP-2Fn"/>
+                <constraint firstItem="AEP-8T-e2h" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="emE-5M-q2R"/>
+                <constraint firstItem="AEP-8T-e2h" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="l2B-x7-UJK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="35.877862595419849" y="323.94366197183098"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
