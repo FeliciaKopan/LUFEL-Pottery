@@ -31,7 +31,7 @@ class LogInViewController: UIViewController {
     }
 
     @IBAction func logInButtonAction(_ sender: Any) {
-        let viewController = HomeViewController()
+        let viewController = MainTabViewController()
         viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true)
     }

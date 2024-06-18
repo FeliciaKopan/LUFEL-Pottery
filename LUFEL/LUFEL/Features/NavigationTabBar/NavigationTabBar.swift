@@ -12,6 +12,7 @@ class NavigationTabBar: UITabBar, NibLoadable {
 
     // MARK: - Views
 
+    @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var homeView: CustomTabBarItemView!
     @IBOutlet weak var cartView: CustomTabBarItemView!
@@ -42,6 +43,12 @@ class NavigationTabBar: UITabBar, NibLoadable {
         addItems(items: items ?? [])
         super.setItems(items, animated: animated)
         bringSubviewToFront(stackView)
+    }
+
+    // MARK: - Public methods
+
+    public func set(stylesheet: UIColor) {
+        backgroundView.backgroundColor = UIColor.tintColor
     }
 
     // MARK: - Private methods

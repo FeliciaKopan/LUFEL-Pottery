@@ -19,7 +19,7 @@ class SetNameViewController: UIViewController {
     }
 
     @IBAction func goToNextScreen(_ sender: Any) {
-        let viewController = HomeViewController()
+        let viewController = MainTabViewController()
         viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true)
     }

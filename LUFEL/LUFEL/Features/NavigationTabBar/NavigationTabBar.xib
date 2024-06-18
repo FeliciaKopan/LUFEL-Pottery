@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationTabBar" customModule="LUFEL" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="4j8-mk-IOM" id="Ica-h7-ZHn"/>
                 <outlet property="cartView" destination="phg-DQ-JsG" id="IZf-kM-i0D"/>
                 <outlet property="homeView" destination="nwQ-Ho-ifw" id="yDb-xS-0Dp"/>
                 <outlet property="listView" destination="iUM-Eb-dsO" id="1vo-SA-b96"/>
@@ -23,16 +24,39 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="64"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4j8-mk-IOM" userLabel="backgroundView">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="64"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="AEP-8T-e2h">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="64"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwQ-Ho-ifw" customClass="CustomTabBarItemView" customModule="LUFEL" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="64"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="32"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phg-DQ-JsG" customClass="CustomTabBarItemView" customModule="LUFEL" customModuleProvider="target">
                             <rect key="frame" x="81.666666666666657" y="0.0" width="66.666666666666657" height="64"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="32"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUM-Eb-dsO">
                             <rect key="frame" x="163.33333333333334" y="0.0" width="66.333333333333343" height="64"/>
@@ -41,10 +65,28 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6jh-QP-GJf" customClass="CustomTabBarItemView" customModule="LUFEL" customModuleProvider="target">
                             <rect key="frame" x="244.66666666666666" y="0.0" width="66.666666666666657" height="64"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="32"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ub1-zQ-xBW" customClass="CustomTabBarItemView" customModule="LUFEL" customModuleProvider="target">
                             <rect key="frame" x="326.33333333333331" y="0.0" width="66.666666666666686" height="64"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="32"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
                     <constraints>
@@ -58,10 +100,14 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="4j8-mk-IOM" secondAttribute="bottom" id="GaD-9h-RcA"/>
+                <constraint firstItem="4j8-mk-IOM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ThM-IY-p7f"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AEP-8T-e2h" secondAttribute="trailing" id="ThX-zI-Xy5"/>
                 <constraint firstAttribute="bottom" secondItem="AEP-8T-e2h" secondAttribute="bottom" id="efZ-oP-2Fn"/>
                 <constraint firstItem="AEP-8T-e2h" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="emE-5M-q2R"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4j8-mk-IOM" secondAttribute="trailing" id="k6R-Pt-RDR"/>
                 <constraint firstItem="AEP-8T-e2h" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="l2B-x7-UJK"/>
+                <constraint firstItem="4j8-mk-IOM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="rl4-nP-14t"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="35.877862595419849" y="323.94366197183098"/>

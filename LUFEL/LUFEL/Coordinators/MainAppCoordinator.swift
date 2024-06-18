@@ -25,7 +25,7 @@ final class MainAppCoordinator: Coordinator {
 
     // Set default view controller for coordinator
     func start() {
-//        let viewController = MainTabViewController()
-//        navigationController.setViewControllers([viewController], animated: true)
+        let viewController = MainTabViewController()
+        navigationController.setViewControllers([viewController], animated: true)
     }
 }
