@@ -1,70 +1,25 @@
 # Xcode
+#
 build/
 DerivedData/
-*.xcworkspace
-*.xcuserdata
-*.xcuserstate
-*.moved-aside
 *.hmap
 *.ipa
-*.dsym
-# Xcode 8 and earlier
-*.xcdebugger/
-# Xcode 9
-*.xcconfigdatav3
-# Xcode 10
+*.xcuserstate
+
+# User settings
+#
+xcuserdata/
+
+# Other
+#
+*.moved-aside
+*.xcuserdatad
 *.xcscmblueprint
-# Xcode 11
-.swiftpm/
-# Xcode 14
-.xcresult/
+.idea/
 
 # Swift Package Manager
+#
 .build/
-Package.resolved
-xcshareddata/xcschemes/*
-
-# CocoaPods
-Pods/
-Podfile.lock
-
-# Carthage
-Carthage/Build/
-
-# fastlane
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots
-
-# Code Injection
-KZBootstrap
-iOSInjectionProject/
-
-# App specific
-*.keychain
-*.storyboardc
-*.swiftdoc
-*.swiftsourceinfo
-*.xcodeproj/project.xcworkspace/
-!default.mode1v3
-!default.mode2v3
-!default.pbxuser
-!default.perspectivev3
-
-# Playground
-timeline.xctimeline
-playground.xcworkspace
-
-# User-specific files
-*.rs
-*.sfl
-*.mode1v3
-*.mode2v3
-*.perspectivev3
-xcuserdata/
-*.moved-aside
-*.hmap
-
-# SwiftPM
-.swiftpm/xcode/package.xcworkspace/xcshareddata/swiftpm/
-
+Packages/
+*.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/
+*.xcodeproj/xcuserdata/
