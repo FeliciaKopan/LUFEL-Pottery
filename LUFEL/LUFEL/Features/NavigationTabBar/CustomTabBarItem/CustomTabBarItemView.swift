@@ -11,6 +11,7 @@ class CustomTabBarItemView: UIControl, NibLoadable {
 
     // MARK: - Views
 
+    @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
@@ -39,6 +40,6 @@ class CustomTabBarItemView: UIControl, NibLoadable {
     }
 
     func setSelectedView(isSelected: Bool) {
-        backgroundColor = isSelected ? .darkBrown : .lightGrey
+        backgroundView.backgroundColor = isSelected ? .darkBrown : .lightGrey
     }
 }

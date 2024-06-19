@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -34,67 +33,52 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwQ-Ho-ifw" customClass="CustomTabBarItemView" customModule="LUFEL" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="64"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="32"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="NO"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phg-DQ-JsG" customClass="CustomTabBarItemView" customModule="LUFEL" customModuleProvider="target">
                             <rect key="frame" x="81.666666666666657" y="0.0" width="66.666666666666657" height="64"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="32"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="NO"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUM-Eb-dsO" customClass="CustomTabBarItemView" customModule="LUFEL" customModuleProvider="target">
                             <rect key="frame" x="163.33333333333334" y="0.0" width="66.333333333333343" height="64"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="32"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="NO"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6jh-QP-GJf" customClass="CustomTabBarItemView" customModule="LUFEL" customModuleProvider="target">
                             <rect key="frame" x="244.66666666666666" y="0.0" width="66.666666666666657" height="64"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="32"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="NO"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ub1-zQ-xBW" customClass="CustomTabBarItemView" customModule="LUFEL" customModuleProvider="target">
                             <rect key="frame" x="326.33333333333331" y="0.0" width="66.666666666666686" height="64"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="32"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="NO"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
@@ -123,9 +107,4 @@
             <point key="canvasLocation" x="35.877862595419849" y="323.94366197183098"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
