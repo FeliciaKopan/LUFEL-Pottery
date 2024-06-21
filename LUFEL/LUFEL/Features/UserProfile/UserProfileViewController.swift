@@ -23,7 +23,7 @@ class UserProfileViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        (parent as? MainTabViewController)?.update(stylesheet: .black)
+        (parent as? MainTabViewController)?.update(color: .black)
     }
 
 }

@@ -27,8 +27,8 @@ class MainTabViewController: UITabBarController {
         setTabBarViewControllers()
     }
 
-    public func update(stylesheet: UIColor) {
-        customTabBar.set(stylesheet: stylesheet)
+    public func update(color: UIColor) {
+        customTabBar.set(color: color)
     }
 
     // MARK: - Private methods

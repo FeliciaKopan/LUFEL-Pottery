@@ -47,7 +47,7 @@ class NavigationTabBar: UITabBar, NibLoadable {
 
     // MARK: - Public methods
 
-    public func set(stylesheet: UIColor) {
+    public func set(color: UIColor) {
         backgroundView.backgroundColor = UIColor.tintColor
     }
 
