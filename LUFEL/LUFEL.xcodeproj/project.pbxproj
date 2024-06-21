@@ -13,6 +13,10 @@
 		D0245A6B2C257FFC005456AA /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A682C257FFC005456AA /* ProductCollectionViewCell.swift */; };
 		D0245A6D2C258433005456AA /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A6C2C258433005456AA /* UICollectionView.swift */; };
 		D0245A6F2C25845F005456AA /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A6E2C25845F005456AA /* UITableView.swift */; };
+		D0245A722C259263005456AA /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = D0245A712C259263005456AA /* Products.json */; };
+		D0245A762C2598CD005456AA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A752C2598CD005456AA /* Product.swift */; };
+		D0245A782C25995C005456AA /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A772C25995C005456AA /* Products.swift */; };
+		D0245A7A2C259D38005456AA /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A792C259D38005456AA /* UIImageExtensions.swift */; };
 		D05D7D422C107D4900E2A126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D412C107D4900E2A126 /* AppDelegate.swift */; };
 		D05D7D442C107D4900E2A126 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D432C107D4900E2A126 /* SceneDelegate.swift */; };
 		D05D7D462C107D4900E2A126 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D452C107D4900E2A126 /* SplashScreenViewController.swift */; };
@@ -68,6 +72,10 @@
 		D0245A692C257FFC005456AA /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		D0245A6C2C258433005456AA /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		D0245A6E2C25845F005456AA /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		D0245A712C259263005456AA /* Products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
+		D0245A752C2598CD005456AA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		D0245A772C25995C005456AA /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		D0245A792C259D38005456AA /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		D05D7D3E2C107D4900E2A126 /* LUFEL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LUFEL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D05D7D412C107D4900E2A126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D05D7D432C107D4900E2A126 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +156,31 @@
 			path = ProductCellView;
 			sourceTree = "<group>";
 		};
+		D0245A702C259240005456AA /* JsonFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D0245A712C259263005456AA /* Products.json */,
+			);
+			path = JsonFiles;
+			sourceTree = "<group>";
+		};
+		D0245A732C259746005456AA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D0245A742C259762005456AA /* Products */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D0245A742C259762005456AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0245A752C2598CD005456AA /* Product.swift */,
+				D0245A772C25995C005456AA /* Products.swift */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
 		D05D7D352C107D4900E2A126 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +203,7 @@
 				D05D7D5B2C109D1700E2A126 /* Coordinators */,
 				D05D7D792C130F8D00E2A126 /* Services */,
 				D05D7D552C107F8E00E2A126 /* App */,
+				D0245A732C259746005456AA /* Models */,
 				D05D7D562C107FDD00E2A126 /* Features */,
 				D05D7D5E2C109F9300E2A126 /* Utils */,
 				D05D7D6E2C10B31E00E2A126 /* Extensions */,
@@ -206,6 +240,7 @@
 		D05D7D572C10800100E2A126 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D0245A702C259240005456AA /* JsonFiles */,
 				D05D7D762C11B17A00E2A126 /* Localization */,
 				D05D7D4A2C107D4A00E2A126 /* Assets.xcassets */,
 			);
@@ -295,6 +330,7 @@
 				D06F9E422C2055170051087D /* CombineUIKit.swift */,
 				D0245A6C2C258433005456AA /* UICollectionView.swift */,
 				D0245A6E2C25845F005456AA /* UITableView.swift */,
+				D0245A792C259D38005456AA /* UIImageExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -528,6 +564,7 @@
 				D05D7D782C11B19600E2A126 /* Localizable.strings in Resources */,
 				D0245A5F2C21B5EC005456AA /* ProductsListViewController.xib in Resources */,
 				D05D7DAB2C1C43B400E2A126 /* UserProfileViewController.xib in Resources */,
+				D0245A722C259263005456AA /* Products.json in Resources */,
 				D05D7DB32C1C723400E2A126 /* SetNameViewController.xib in Resources */,
 				D05D7D662C10A4FE00E2A126 /* LogInViewController.xib in Resources */,
 				D05D7D4E2C107D4A00E2A126 /* Base in Resources */,
@@ -563,6 +600,7 @@
 				D05D7D612C109FCC00E2A126 /* UserDefaultsKeys.swift in Sources */,
 				D06F9E3D2C204E340051087D /* CustomTabBarItemView.swift in Sources */,
 				D06F9E432C2055170051087D /* CombineUIKit.swift in Sources */,
+				D0245A762C2598CD005456AA /* Product.swift in Sources */,
 				D06F9E452C2057DB0051087D /* MainTabViewController.swift in Sources */,
 				D05D7D422C107D4900E2A126 /* AppDelegate.swift in Sources */,
 				D05D7D442C107D4900E2A126 /* SceneDelegate.swift in Sources */,
@@ -570,12 +608,14 @@
 				D05D7DAA2C1C43B400E2A126 /* UserProfileViewController.swift in Sources */,
 				D05D7D682C10A8AB00E2A126 /* UnauthorizedCoordinator.swift in Sources */,
 				D05D7D8D2C13178F00E2A126 /* UILabelExtensions.swift in Sources */,
+				D0245A7A2C259D38005456AA /* UIImageExtensions.swift in Sources */,
 				D05D7D752C11AC4E00E2A126 /* L10n.swift in Sources */,
 				D05D7D5D2C109D3700E2A126 /* ApplicationCoordinator.swift in Sources */,
 				D05D7D882C1312AE00E2A126 /* SignInViewController.swift in Sources */,
 				D05D7D7E2C130FE200E2A126 /* UnauthorizedProvider.swift in Sources */,
 				D05D7D7C2C130FCF00E2A126 /* UnauthorizedProviding.swift in Sources */,
 				D0245A6D2C258433005456AA /* UICollectionView.swift in Sources */,
+				D0245A782C25995C005456AA /* Products.swift in Sources */,
 				D05D7D6D2C10AA7900E2A126 /* MainAppCoordinator.swift in Sources */,
 				D06F9E3A2C204D440051087D /* NavigationTabBar.swift in Sources */,
 				D05D7DA22C1C438400E2A126 /* CheckoutViewController.swift in Sources */,

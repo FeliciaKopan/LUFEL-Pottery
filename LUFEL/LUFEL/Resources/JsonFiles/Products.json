@@ -1,0 +1,60 @@
+{
+  "sections": [
+    {
+      "title": "Căni",
+      "products": [
+        {
+          "id": 1,
+          "title": "Cana Personalizata",
+          "price": "50 lei",
+          "image_url": "https://chicville.ro/media/catalog/product/cache/1/image/370x370/9df78eab33525d08d6e5fb8d27136e95/c/a/cana-ceramica-crem-din-ceramica-10-cm.jpg"
+        },
+        {
+          "id": 2,
+          "title": "Cana Rustic",
+          "price": "60 lei",
+          "image_url": "https://cdn.www.kitchenshop.ro/images/thumbs/0071273_cana-ceramica-280-ml-essential-gri-nuova-r2s_550.jpeg"
+        },
+        {
+          "id": 3,
+          "title": "Cana Rustic",
+          "price": "60 lei",
+          "image_url": "https://cdn.www.kitchenshop.ro/images/thumbs/0071273_cana-ceramica-280-ml-essential-gri-nuova-r2s_550.jpeg"
+        }
+      ]
+    },
+    {
+      "title": "Boluri",
+      "products": [
+        {
+          "id": 4,
+          "title": "Bol Mare",
+          "price": "80 lei",
+          "image_url": "https://www.decodepot.ro/images/detailed/34/decodepot_bol_ceramica_4007698380106.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Farfurii",
+      "products": [
+        {
+          "id": 5,
+          "title": "Farfurie Decorativa",
+          "price": "90 lei",
+          "image_url": "https://rotdesign.ro/wp-content/uploads/2022/03/Farfurie-mica-alba-hand-made-din-gresie-ceramica-1-scaled.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Vaze",
+      "products": [
+        {
+          "id": 6,
+          "title": "Vas Ceramic",
+          "price": "120 lei",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNiVcyeSS--sdDBtQpEZJugyUqQluM_7lTww&s"
+        }
+      ]
+    }
+  ]
+}

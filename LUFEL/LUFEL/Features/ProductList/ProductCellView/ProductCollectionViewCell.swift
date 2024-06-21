@@ -9,6 +9,12 @@ import UIKit
 
 class ProductCollectionViewCell: UICollectionViewCell {
 
+    struct Identifier {
+        let imageUrl: URL?
+        let title: String
+        let price: String
+    }
+
     // MARK: - Views
 
     @IBOutlet weak var imageView: UIImageView!
@@ -24,10 +30,12 @@ class ProductCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Public methods
 
-    func configure(image: UIImage, title: String, price: String) {
-        imageView.image = image
-        titleLabel.text = title
-        priceLabel.text = price
+    func configure(with identifier: Identifier) {
+        if let url = identifier.imageUrl {
+            imageView.load(url: url)
+        }
+        titleLabel.text = identifier.title
+        priceLabel.text = identifier.price
     }
 
 }
