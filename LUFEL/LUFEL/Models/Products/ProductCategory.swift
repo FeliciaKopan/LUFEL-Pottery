@@ -7,23 +7,23 @@
 
 import Foundation
 
-struct Products: Decodable {
+struct ProductCategory: Decodable {
     let title: String
-    let products: [Product]
+    let category: [Product]
 
     enum CodingKeys: String, CodingKey {
-        case title, products
+        case title, category
     }
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         title = try values.decode(String.self, forKey: .title)
-        products = try values.decode([Product].self, forKey: .products)
+        category = try values.decode([Product].self, forKey: .category)
     }
 }
 
 struct SectionsResponse: Decodable {
-    let sections: [Products]
+    let sections: [ProductCategory]
 
     enum CodingKeys: String, CodingKey {
         case sections
@@ -31,6 +31,6 @@ struct SectionsResponse: Decodable {
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        sections = try values.decode([Products].self, forKey: .sections)
+        sections = try values.decode([ProductCategory].self, forKey: .sections)
     }
 }

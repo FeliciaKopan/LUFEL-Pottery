@@ -15,7 +15,7 @@
 		D0245A6F2C25845F005456AA /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A6E2C25845F005456AA /* UITableView.swift */; };
 		D0245A722C259263005456AA /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = D0245A712C259263005456AA /* Products.json */; };
 		D0245A762C2598CD005456AA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A752C2598CD005456AA /* Product.swift */; };
-		D0245A782C25995C005456AA /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A772C25995C005456AA /* Products.swift */; };
+		D0245A782C25995C005456AA /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A772C25995C005456AA /* ProductCategory.swift */; };
 		D0245A7A2C259D38005456AA /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A792C259D38005456AA /* UIImageExtensions.swift */; };
 		D05D7D422C107D4900E2A126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D412C107D4900E2A126 /* AppDelegate.swift */; };
 		D05D7D442C107D4900E2A126 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D432C107D4900E2A126 /* SceneDelegate.swift */; };
@@ -74,7 +74,7 @@
 		D0245A6E2C25845F005456AA /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		D0245A712C259263005456AA /* Products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
 		D0245A752C2598CD005456AA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		D0245A772C25995C005456AA /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		D0245A772C25995C005456AA /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 		D0245A792C259D38005456AA /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		D05D7D3E2C107D4900E2A126 /* LUFEL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LUFEL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D05D7D412C107D4900E2A126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				D0245A752C2598CD005456AA /* Product.swift */,
-				D0245A772C25995C005456AA /* Products.swift */,
+				D0245A772C25995C005456AA /* ProductCategory.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -615,7 +615,7 @@
 				D05D7D7E2C130FE200E2A126 /* UnauthorizedProvider.swift in Sources */,
 				D05D7D7C2C130FCF00E2A126 /* UnauthorizedProviding.swift in Sources */,
 				D0245A6D2C258433005456AA /* UICollectionView.swift in Sources */,
-				D0245A782C25995C005456AA /* Products.swift in Sources */,
+				D0245A782C25995C005456AA /* ProductCategory.swift in Sources */,
 				D05D7D6D2C10AA7900E2A126 /* MainAppCoordinator.swift in Sources */,
 				D06F9E3A2C204D440051087D /* NavigationTabBar.swift in Sources */,
 				D05D7DA22C1C438400E2A126 /* CheckoutViewController.swift in Sources */,

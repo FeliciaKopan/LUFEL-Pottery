@@ -15,7 +15,7 @@ class ProductsListViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var sections: [Products] = []
+    private var sections: [ProductCategory] = []
 
     // MARK: - Lifecycle
 
@@ -65,19 +65,17 @@ extension ProductsListViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sections[section].products.count
+        return sections[section].category.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueCell(withType: ProductCollectionViewCell.self, for: indexPath) as? ProductCollectionViewCell else {
             return UICollectionViewCell()
         }
-        let product = sections[indexPath.section].products[indexPath.item]
+        let product = sections[indexPath.section].category[indexPath.item]
         if let imageUrl = product.imageUrl,
-           let url = URL(string: imageUrl),
-           let title = product.title,
-           let price = product.price {
-            cell.configure(with: .init(imageUrl: url, title: title, price: price))
+           let url = URL(string: imageUrl) {
+            cell.configure(with: .init(imageUrl: url, title: product.title, price: product.price))
         }
         return cell
     }
