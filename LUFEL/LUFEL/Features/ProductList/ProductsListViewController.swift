@@ -48,7 +48,7 @@ class ProductsListViewController: UIViewController {
         guard let path = Bundle.main.path(forResource: "Products", ofType: "json") else { return }
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: path))
-            let decodedResponse = try JSONDecoder().decode(SectionsResponse.self, from: data)
+            let decodedResponse = try JSONDecoder().decode(CategoryResponse.self, from: data)
             sections = decodedResponse.sections
             collectionView.reloadData()
         } catch {
@@ -65,14 +65,14 @@ extension ProductsListViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sections[section].category.count
+        return sections[section].products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueCell(withType: ProductCollectionViewCell.self, for: indexPath) as? ProductCollectionViewCell else {
             return UICollectionViewCell()
         }
-        let product = sections[indexPath.section].category[indexPath.item]
+        let product = sections[indexPath.section].products[indexPath.item]
         if let imageUrl = product.imageUrl,
            let url = URL(string: imageUrl) {
             cell.configure(with: .init(imageUrl: url, title: product.title, price: product.price))

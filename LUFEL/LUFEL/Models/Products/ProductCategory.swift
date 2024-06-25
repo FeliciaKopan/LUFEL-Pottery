@@ -9,20 +9,20 @@ import Foundation
 
 struct ProductCategory: Decodable {
     let title: String
-    let category: [Product]
+    let products: [Product]
 
     enum CodingKeys: String, CodingKey {
-        case title, category
+        case title, products
     }
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         title = try values.decode(String.self, forKey: .title)
-        category = try values.decode([Product].self, forKey: .category)
+        products = try values.decode([Product].self, forKey: .products)
     }
 }
 
-struct SectionsResponse: Decodable {
+struct CategoryResponse: Decodable {
     let sections: [ProductCategory]
 
     enum CodingKeys: String, CodingKey {

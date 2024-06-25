@@ -2,7 +2,7 @@
   "sections": [
     {
       "title": "Căni",
-      "category": [
+      "products": [
         {
           "id": 1,
           "title": "Cana Personalizata",
@@ -25,7 +25,7 @@
     },
     {
       "title": "Boluri",
-      "category": [
+      "products": [
         {
           "id": 4,
           "title": "Bol Mare",
@@ -36,7 +36,7 @@
     },
     {
       "title": "Farfurii",
-      "category": [
+      "products": [
         {
           "id": 5,
           "title": "Farfurie Decorativa",
@@ -47,7 +47,7 @@
     },
     {
       "title": "Vaze",
-      "category": [
+      "products": [
         {
           "id": 6,
           "title": "Vas Ceramic",
