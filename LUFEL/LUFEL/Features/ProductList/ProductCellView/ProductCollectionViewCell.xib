@@ -33,8 +33,19 @@
                     </label>
                     <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sf6-NF-AYu">
                         <rect key="frame" x="24" y="300" width="144" height="20"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVe-UT-0e1">
+                                <rect key="frame" x="24" y="4" width="96" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="uVe-UT-0e1" firstAttribute="centerX" secondItem="sf6-NF-AYu" secondAttribute="centerX" id="FaL-sl-pqp"/>
+                            <constraint firstItem="uVe-UT-0e1" firstAttribute="centerY" secondItem="sf6-NF-AYu" secondAttribute="centerY" id="IYp-go-fKY"/>
+                            <constraint firstItem="uVe-UT-0e1" firstAttribute="leading" secondItem="sf6-NF-AYu" secondAttribute="leading" constant="24" id="Mkf-fr-TRm"/>
                             <constraint firstAttribute="height" constant="20" id="fKC-38-hhg"/>
                         </constraints>
                     </view>
