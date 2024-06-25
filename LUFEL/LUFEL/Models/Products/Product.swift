@@ -9,8 +9,8 @@ import Foundation
 
 struct Product: Decodable, Hashable {
     let id: Int
-    let title: String
-    let price: String
+    let title: String?
+    let price: String?
     let imageUrl: String?
 
     enum CodingKeys: String, CodingKey {
@@ -20,8 +20,8 @@ struct Product: Decodable, Hashable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decode(Int.self, forKey: .id)
-        title = try values.decode(String.self, forKey: .title)
-        price = try values.decode(String.self, forKey: .price)
+        title = try values.decode(String?.self, forKey: .title)
+        price = try values.decode(String?.self, forKey: .price)
         imageUrl = try values.decode(String?.self, forKey: .imageUrl)
     }
 }

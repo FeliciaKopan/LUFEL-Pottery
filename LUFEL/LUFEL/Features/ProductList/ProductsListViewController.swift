@@ -45,40 +45,26 @@ class ProductsListViewController: UIViewController {
     }
 
     private func loadProducts() {
-        guard let path = Bundle.main.path(forResource: "Products", ofType: "json") else {
-            print("Products.json not found")
-            return
-        }
-
-        print("JSON file path: \(path)")
-
+        guard let path = Bundle.main.path(forResource: "Products", ofType: "json") else { return }
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: path))
-            print("Loaded data: \(String(data: data, encoding: .utf8) ?? "No data")")
-
             let decodedResponse = try JSONDecoder().decode(SectionsResponse.self, from: data)
             sections = decodedResponse.sections
-            print("Decoded sections: \(sections)")
-
             collectionView.reloadData()
         } catch {
             print("Error decoding JSON: \(error)")
         }
     }
-
-
 }
 
 // MARK: - Extensions
 
 extension ProductsListViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        print("nr sectiuni \(sections.count)")
         return sections.count
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("nr produse sectiuni \(sections[section].products.count)")
         return sections[section].products.count
     }
     
@@ -88,10 +74,16 @@ extension ProductsListViewController: UICollectionViewDataSource {
         }
         let product = sections[indexPath.section].products[indexPath.item]
         if let imageUrl = product.imageUrl,
-           let url = URL(string: imageUrl) {
-            cell.configure(with: .init(imageUrl: url, title: product.title, price: product.price))
+           let url = URL(string: imageUrl),
+           let title = product.title,
+           let price = product.price {
+            cell.configure(with: .init(imageUrl: url, title: title, price: price))
         }
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (UIScreen.main.bounds.width / 2) - 30, height: ((UIScreen.main.bounds.width / 2) - 30) * 1.4 + 40)
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -99,7 +91,8 @@ extension ProductsListViewController: UICollectionViewDataSource {
         headerView.subviews.forEach { $0.removeFromSuperview() }
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: collectionView.frame.width, height: 40))
         label.text = sections[indexPath.section].title
-        label.textAlignment = .center
+        label.textAlignment = .left
+        label.textColor = .white
         headerView.addSubview(label)
         return headerView
     }
