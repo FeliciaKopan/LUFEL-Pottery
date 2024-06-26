@@ -17,6 +17,8 @@
 		D0245A762C2598CD005456AA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A752C2598CD005456AA /* Product.swift */; };
 		D0245A782C25995C005456AA /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A772C25995C005456AA /* ProductCategory.swift */; };
 		D0245A7A2C259D38005456AA /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A792C259D38005456AA /* UIImageExtensions.swift */; };
+		D0245A7E2C2C2095005456AA /* WishListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0245A7D2C2C2095005456AA /* WishListTableViewCell.xib */; };
+		D0245A7F2C2C2095005456AA /* WishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A7C2C2C2095005456AA /* WishListTableViewCell.swift */; };
 		D05D7D422C107D4900E2A126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D412C107D4900E2A126 /* AppDelegate.swift */; };
 		D05D7D442C107D4900E2A126 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D432C107D4900E2A126 /* SceneDelegate.swift */; };
 		D05D7D462C107D4900E2A126 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D452C107D4900E2A126 /* SplashScreenViewController.swift */; };
@@ -76,6 +78,8 @@
 		D0245A752C2598CD005456AA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D0245A772C25995C005456AA /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 		D0245A792C259D38005456AA /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		D0245A7C2C2C2095005456AA /* WishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTableViewCell.swift; sourceTree = "<group>"; };
+		D0245A7D2C2C2095005456AA /* WishListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListTableViewCell.xib; sourceTree = "<group>"; };
 		D05D7D3E2C107D4900E2A126 /* LUFEL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LUFEL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D05D7D412C107D4900E2A126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D05D7D432C107D4900E2A126 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +183,15 @@
 				D0245A772C25995C005456AA /* ProductCategory.swift */,
 			);
 			path = Products;
+			sourceTree = "<group>";
+		};
+		D0245A7B2C2C2057005456AA /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				D0245A7C2C2C2095005456AA /* WishListTableViewCell.swift */,
+				D0245A7D2C2C2095005456AA /* WishListTableViewCell.xib */,
+			);
+			path = CellView;
 			sourceTree = "<group>";
 		};
 		D05D7D352C107D4900E2A126 = {
@@ -419,6 +432,7 @@
 		D05D7D962C1C42CB00E2A126 /* WishList */ = {
 			isa = PBXGroup;
 			children = (
+				D0245A7B2C2C2057005456AA /* CellView */,
 				D05D7DA42C1C439D00E2A126 /* WishListViewController.swift */,
 				D05D7DA52C1C439D00E2A126 /* WishListViewController.xib */,
 			);
@@ -563,6 +577,7 @@
 				D05D7D4B2C107D4A00E2A126 /* Assets.xcassets in Resources */,
 				D05D7D782C11B19600E2A126 /* Localizable.strings in Resources */,
 				D0245A5F2C21B5EC005456AA /* ProductsListViewController.xib in Resources */,
+				D0245A7E2C2C2095005456AA /* WishListTableViewCell.xib in Resources */,
 				D05D7DAB2C1C43B400E2A126 /* UserProfileViewController.xib in Resources */,
 				D0245A722C259263005456AA /* Products.json in Resources */,
 				D05D7DB32C1C723400E2A126 /* SetNameViewController.xib in Resources */,
@@ -621,6 +636,7 @@
 				D05D7DA22C1C438400E2A126 /* CheckoutViewController.swift in Sources */,
 				D0245A602C21B5EC005456AA /* ProductsListViewController.swift in Sources */,
 				D05D7D6B2C10AA4600E2A126 /* NotificationNameExtension.swift in Sources */,
+				D0245A7F2C2C2095005456AA /* WishListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
