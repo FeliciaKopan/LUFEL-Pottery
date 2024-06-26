@@ -33,7 +33,7 @@ class WishListViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        wishListProducts = favoriteProvider.getFavorites()
+        wishListProducts = favoriteProvider.getFavorites().products
         tableView.reloadData()
         (parent as? MainTabViewController)?.update(color: .black)
     }
@@ -72,7 +72,8 @@ extension WishListViewController: UITableViewDataSource {
                                        title: product.title,
                                        price: product.price,
                                        description: "descriere"
-                                      ))
+                                      ), 
+                           product: product)
         }
         return cell
     }

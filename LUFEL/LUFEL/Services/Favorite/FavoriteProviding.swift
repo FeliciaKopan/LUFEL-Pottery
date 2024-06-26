@@ -10,5 +10,5 @@ import Foundation
 protocol FavoriteProviding {
     func addFavorite(_ product: Product)
     func removeFavorite(_ product: Product)
-    func getFavorites() -> [Product]
+    func getFavorites() -> WishListProducts
 }

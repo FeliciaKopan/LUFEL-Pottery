@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct WishListProducts: Decodable, Hashable {
-    let products: [Product]
+struct WishListProducts: Codable, Hashable {
+    var products: [Product]
 
     enum CodingKeys: String, CodingKey {
         case products
@@ -17,5 +17,9 @@ struct WishListProducts: Decodable, Hashable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         products = try values.decode([Product].self, forKey: .products)
+    }
+
+    init(products: [Product] = []) {
+        self.products = products
     }
 }

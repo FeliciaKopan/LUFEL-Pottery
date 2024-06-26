@@ -9,38 +9,44 @@ import Foundation
 
 final class FavoriteProvider: FavoriteProviding {
 
-    private var favorites: [Product] = []
+    private var favorites: WishListProducts = WishListProducts()
 
     init() {
         loadFavorites()
     }
 
     func addFavorite(_ product: Product) {
-        if !favorites.contains(where: { $0.id == product.id }) {
-            favorites.append(product)
+        if !favorites.products.contains(where: { $0.id == product.id }) {
+            favorites.products.append(product)
             saveFavorites()
         }
     }
 
     func removeFavorite(_ product: Product) {
-        favorites.removeAll { $0.id == product.id }
+        favorites.products.removeAll { $0.id == product.id }
         saveFavorites()
     }
 
-    func getFavorites() -> [Product] {
+    func getFavorites() -> WishListProducts {
         return favorites
     }
 
     private func saveFavorites() {
-        if let encoded = try? JSONEncoder().encode(favorites) {
+        do {
+            let encoded = try JSONEncoder().encode(favorites)
             UserDefaults.standard.set(encoded, forKey: "favorites")
+            UserDefaults.standard.synchronize()
+        } catch {
+            print("Failed to save favorites: \(error)")
         }
     }
 
     private func loadFavorites() {
         if let data = UserDefaults.standard.data(forKey: "favorites"),
-           let decoded = try? JSONDecoder().decode([Product].self, from: data) {
+           let decoded = try? JSONDecoder().decode(WishListProducts.self, from: data) {
             favorites = decoded
+        } else {
+            favorites = WishListProducts()
         }
     }
 }

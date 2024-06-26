@@ -25,6 +25,12 @@ class WishListTableViewCell: UITableViewCell {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var addToCartButton: UIButton!
 
+    // MARK: - Properties
+
+    private var currentProduct: Product?
+
+    @Injected(\.favoriteProvider) var favoriteProvider: FavoriteProviding
+
     // MARK: - Lifecycle
 
     override func awakeFromNib() {
@@ -41,6 +47,9 @@ class WishListTableViewCell: UITableViewCell {
     // MARK: - Actions
 
     @IBAction func deleteProduct(_ sender: Any) {
+        if let product = currentProduct {
+            favoriteProvider.removeFavorite(product)
+        }
     }
     
     @IBAction func addProductToCart(_ sender: Any) {
@@ -48,13 +57,14 @@ class WishListTableViewCell: UITableViewCell {
 
     // MARK: - Public methods
 
-    func configure(with identifier: Identifier) {
+    func configure(with identifier: Identifier, product: Product) {
         if let url = identifier.imageUrl, let description = identifier.description {
             productImageView.load(url: url)
             descriptionLabel.text = description
         }
         nameLabel.text = identifier.title
         priceLabel.text = identifier.price
+        currentProduct = product
     }
 
     // MARK: - Private methods
