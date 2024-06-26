@@ -75,13 +75,13 @@ extension ProductsListViewController: UICollectionViewDataSource {
         let product = sections[indexPath.section].products[indexPath.item]
         if let imageUrl = product.imageUrl,
            let url = URL(string: imageUrl) {
-            cell.configure(with: .init(imageUrl: url, title: product.title, price: product.price))
+            cell.configure(with: .init(imageUrl: url, title: product.title, price: product.price), product: product)
         }
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (UIScreen.main.bounds.width / 2) - 30, height: ((UIScreen.main.bounds.width / 2) - 30) * 1.4 + 40)
+        return CGSize(width: (UIScreen.main.bounds.width / 2) - 30, height: ((UIScreen.main.bounds.width / 2) - 30) * 1.4 + 80)
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

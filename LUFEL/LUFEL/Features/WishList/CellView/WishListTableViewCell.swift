@@ -49,12 +49,12 @@ class WishListTableViewCell: UITableViewCell {
     // MARK: - Public methods
 
     func configure(with identifier: Identifier) {
-        if let url = identifier.imageUrl {
+        if let url = identifier.imageUrl, let description = identifier.description {
             productImageView.load(url: url)
+            descriptionLabel.text = description
         }
         nameLabel.text = identifier.title
         priceLabel.text = identifier.price
-        descriptionLabel.text = identifier.description
     }
 
     // MARK: - Private methods

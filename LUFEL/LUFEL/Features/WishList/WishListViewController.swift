@@ -12,7 +12,13 @@ class WishListViewController: UIViewController {
     // MARK: - Views
 
     @IBOutlet weak var tableView: UITableView!
-    
+
+    // MARK: - Properties
+
+    private var wishListProducts: [Product] = []
+
+    @Injected(\.favoriteProvider) var favoriteProvider: FavoriteProviding
+
     // MARK: - Lifecycle
 
     override func loadView() {
@@ -27,6 +33,8 @@ class WishListViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        wishListProducts = favoriteProvider.getFavorites()
+        tableView.reloadData()
         (parent as? MainTabViewController)?.update(color: .black)
     }
 
@@ -48,12 +56,24 @@ extension WishListViewController: UITableViewDelegate {
 
 extension WishListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return wishListProducts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
-    
+        guard let cell = tableView.dequeueReusableCell(of: WishListTableViewCell.self, for: indexPath) as? WishListTableViewCell else {
+            return UITableViewCell()
+        }
 
+        let product = wishListProducts[indexPath.row]
+
+        if let imageUrl = product.imageUrl,
+           let url = URL(string: imageUrl) {
+            cell.configure(with: .init(imageUrl: url,
+                                       title: product.title,
+                                       price: product.price,
+                                       description: "descriere"
+                                      ))
+        }
+        return cell
+    }
 }

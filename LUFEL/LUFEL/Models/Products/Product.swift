@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct Product: Decodable, Hashable {
+struct Product: Codable, Hashable {
     let id: Int
     let title: String
     let price: String
     let imageUrl: String?
+//    let description: String?
 
     enum CodingKeys: String, CodingKey {
         case id, title, price, imageUrl = "image_url"
@@ -23,5 +24,6 @@ struct Product: Decodable, Hashable {
         title = try values.decode(String.self, forKey: .title)
         price = try values.decode(String.self, forKey: .price)
         imageUrl = try values.decode(String?.self, forKey: .imageUrl)
+//        description = try values.decode(String?.self, forKey: .description)
     }
 }
