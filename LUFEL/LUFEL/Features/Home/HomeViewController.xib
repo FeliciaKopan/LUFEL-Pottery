@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="LUFEL" customModuleProvider="target">
             <connections>
+                <outlet property="playerView" destination="g0f-bk-SMa" id="CdW-zZ-IIG"/>
+                <outlet property="swipeUpView" destination="hvg-TQ-KMz" id="s5w-65-J14"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,17 +19,53 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgn-Ja-xIt">
-                    <rect key="frame" x="173" y="361" width="46" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0f-bk-SMa" userLabel="PlayerView">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvg-TQ-KMz" userLabel="SwipeView">
+                    <rect key="frame" x="70" y="718" width="253" height="100"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swipeUp" translatesAutoresizingMaskIntoConstraints="NO" id="kpd-gF-XaH">
+                            <rect key="frame" x="101.66666666666666" y="16" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="GNN-2o-oUe"/>
+                                <constraint firstAttribute="height" constant="50" id="X38-6m-5J1"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQz-9U-vhJ">
+                            <rect key="frame" x="24" y="79" width="205" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="xQz-9U-vhJ" firstAttribute="centerX" secondItem="hvg-TQ-KMz" secondAttribute="centerX" id="Fcb-Wy-xoD"/>
+                        <constraint firstItem="kpd-gF-XaH" firstAttribute="top" secondItem="hvg-TQ-KMz" secondAttribute="top" constant="16" id="JWA-Ru-bm7"/>
+                        <constraint firstAttribute="bottom" secondItem="xQz-9U-vhJ" secondAttribute="bottom" id="QXa-YY-Ad9"/>
+                        <constraint firstItem="kpd-gF-XaH" firstAttribute="centerX" secondItem="hvg-TQ-KMz" secondAttribute="centerX" id="YeZ-5D-WXg"/>
+                        <constraint firstAttribute="height" constant="100" id="eXl-Gm-LVb"/>
+                        <constraint firstItem="xQz-9U-vhJ" firstAttribute="leading" secondItem="hvg-TQ-KMz" secondAttribute="leading" constant="24" id="zM8-fm-gwE"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="g0f-bk-SMa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3EB-Y1-0Gn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="g0f-bk-SMa" secondAttribute="trailing" id="CUB-Cz-kdl"/>
+                <constraint firstItem="hvg-TQ-KMz" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Qx7-tF-6dn"/>
+                <constraint firstItem="hvg-TQ-KMz" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Yae-b3-pj9"/>
+                <constraint firstItem="hvg-TQ-KMz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="cPa-7y-mHm"/>
+                <constraint firstItem="g0f-bk-SMa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="f6l-yD-Fem"/>
+                <constraint firstAttribute="bottom" secondItem="g0f-bk-SMa" secondAttribute="bottom" id="jsS-XF-ahO"/>
+            </constraints>
             <point key="canvasLocation" x="120" y="20"/>
         </view>
     </objects>
+    <resources>
+        <image name="swipeUp" width="32" height="32"/>
+    </resources>
 </document>

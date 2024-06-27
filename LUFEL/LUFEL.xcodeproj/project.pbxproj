@@ -23,6 +23,8 @@
 		D05972A12C2C29680023ADB5 /* WishListProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05972A02C2C29680023ADB5 /* WishListProducts.swift */; };
 		D05972A42C2C5A600023ADB5 /* FavoriteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05972A32C2C5A600023ADB5 /* FavoriteProvider.swift */; };
 		D05972A62C2C5A710023ADB5 /* FavoriteProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05972A52C2C5A710023ADB5 /* FavoriteProviding.swift */; };
+		D05972A92C2D771E0023ADB5 /* HomeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05972A82C2D771E0023ADB5 /* HomeDetailsView.swift */; };
+		D05972AB2C2D773B0023ADB5 /* HomeDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05972AA2C2D773B0023ADB5 /* HomeDetailsView.xib */; };
 		D05D7D422C107D4900E2A126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D412C107D4900E2A126 /* AppDelegate.swift */; };
 		D05D7D442C107D4900E2A126 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D432C107D4900E2A126 /* SceneDelegate.swift */; };
 		D05D7D462C107D4900E2A126 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D7D452C107D4900E2A126 /* SplashScreenViewController.swift */; };
@@ -88,6 +90,8 @@
 		D05972A02C2C29680023ADB5 /* WishListProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListProducts.swift; sourceTree = "<group>"; };
 		D05972A32C2C5A600023ADB5 /* FavoriteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProvider.swift; sourceTree = "<group>"; };
 		D05972A52C2C5A710023ADB5 /* FavoriteProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProviding.swift; sourceTree = "<group>"; };
+		D05972A82C2D771E0023ADB5 /* HomeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsView.swift; sourceTree = "<group>"; };
+		D05972AA2C2D773B0023ADB5 /* HomeDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDetailsView.xib; sourceTree = "<group>"; };
 		D05D7D3E2C107D4900E2A126 /* LUFEL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LUFEL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D05D7D412C107D4900E2A126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D05D7D432C107D4900E2A126 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +223,15 @@
 				D05972A52C2C5A710023ADB5 /* FavoriteProviding.swift */,
 			);
 			path = Favorite;
+			sourceTree = "<group>";
+		};
+		D05972A72C2D76F20023ADB5 /* HomeDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				D05972A82C2D771E0023ADB5 /* HomeDetailsView.swift */,
+				D05972AA2C2D773B0023ADB5 /* HomeDetailsView.xib */,
+			);
+			path = HomeDetailsView;
 			sourceTree = "<group>";
 		};
 		D05D7D352C107D4900E2A126 = {
@@ -432,6 +445,7 @@
 		D05D7D932C1C427500E2A126 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D05972A72C2D76F20023ADB5 /* HomeDetailsView */,
 				D05D7D982C1C433F00E2A126 /* HomeViewController.swift */,
 				D05D7D992C1C433F00E2A126 /* HomeViewController.xib */,
 			);
@@ -601,6 +615,7 @@
 				D05D7D892C1312AE00E2A126 /* SignInViewController.xib in Resources */,
 				D0245A6A2C257FFC005456AA /* ProductCollectionViewCell.xib in Resources */,
 				D05D7DA72C1C439D00E2A126 /* WishListViewController.xib in Resources */,
+				D05972AB2C2D773B0023ADB5 /* HomeDetailsView.xib in Resources */,
 				D059729E2C2C28BC0023ADB5 /* WishList.json in Resources */,
 				D06F9E3F2C204E460051087D /* CustomTabBarItemView.xib in Resources */,
 				D05D7D4B2C107D4A00E2A126 /* Assets.xcassets in Resources */,
@@ -628,6 +643,7 @@
 				D05D7D722C10B38000E2A126 /* UIViewExtensions.swift in Sources */,
 				D05D7D902C131D7F00E2A126 /* OnboardingProvider.swift in Sources */,
 				D0245A6B2C257FFC005456AA /* ProductCollectionViewCell.swift in Sources */,
+				D05972A92C2D771E0023ADB5 /* HomeDetailsView.swift in Sources */,
 				D0245A6F2C25845F005456AA /* UITableView.swift in Sources */,
 				D05D7D812C13104800E2A126 /* InjectionKey.swift in Sources */,
 				D06F9E382C2045390051087D /* NibLoadable.swift in Sources */,
