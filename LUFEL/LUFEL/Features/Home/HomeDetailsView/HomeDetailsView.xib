@@ -3,12 +3,15 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeDetailsView" customModule="LUFEL" customModuleProvider="target">
             <connections>
+                <outlet property="mapView" destination="yiz-ne-hyj" id="psh-S0-yZM"/>
+                <outlet property="stackView" destination="KJA-Ur-Me1" id="zaf-q7-R1l"/>
                 <outlet property="swipeDownView" destination="Sb1-0p-08x" id="mAg-tf-jyz"/>
             </connections>
         </placeholder>
@@ -17,13 +20,6 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cwf-FD-468">
-                    <rect key="frame" x="175" y="322" width="51" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sb1-0p-08x" userLabel="SwipeView">
                     <rect key="frame" x="70" y="59" width="253" height="100"/>
                     <subviews>
@@ -52,6 +48,102 @@
                         <constraint firstAttribute="bottom" secondItem="ST3-gJ-Ger" secondAttribute="bottom" constant="16" id="mnG-3S-0rg"/>
                     </constraints>
                 </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ren-q5-Upf">
+                    <rect key="frame" x="0.0" y="159" width="393" height="659"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRa-Hd-Xye">
+                            <rect key="frame" x="24" y="0.0" width="345" height="271.66666666666669"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDo-Up-mn6">
+                                    <rect key="frame" x="0.0" y="170" width="345" height="101.66666666666669"/>
+                                    <string key="text">Descoperă magia ceramicii lucrate manual la roata olarului. Fiecare piesa este creată cu grijă și pasiune într-un atelier local. Iti oferim produse unice și autentice, realizate cu dragoste pentru traditie si arta. </string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lufelLogo" translatesAutoresizingMaskIntoConstraints="NO" id="a2y-7q-wke">
+                                    <rect key="frame" x="50" y="0.0" width="245" height="128"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="128" id="Mzm-ks-JsO"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="a2y-7q-wke" firstAttribute="centerX" secondItem="vRa-Hd-Xye" secondAttribute="centerX" id="Bpt-Kz-5if"/>
+                                <constraint firstItem="VDo-Up-mn6" firstAttribute="top" secondItem="a2y-7q-wke" secondAttribute="bottom" constant="42" id="E4Z-qM-j1Y"/>
+                                <constraint firstItem="VDo-Up-mn6" firstAttribute="leading" secondItem="vRa-Hd-Xye" secondAttribute="leading" id="HB7-Ig-DoB"/>
+                                <constraint firstAttribute="bottom" secondItem="VDo-Up-mn6" secondAttribute="bottom" id="OnF-X0-LWr"/>
+                                <constraint firstItem="a2y-7q-wke" firstAttribute="top" secondItem="vRa-Hd-Xye" secondAttribute="top" id="Ooe-Gf-VJ0"/>
+                                <constraint firstItem="a2y-7q-wke" firstAttribute="leading" secondItem="vRa-Hd-Xye" secondAttribute="leading" constant="50" id="ZGp-XN-qLD"/>
+                                <constraint firstItem="VDo-Up-mn6" firstAttribute="centerX" secondItem="vRa-Hd-Xye" secondAttribute="centerX" id="plf-Ul-7eK"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KJA-Ur-Me1">
+                            <rect key="frame" x="24" y="295.66666666666669" width="345" height="117.66666666666669"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eu sunt Felicia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3c-Br-bDQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="345" height="20.333333333333332"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ma poti contacta si la numarul de teleron: 0751023443" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQU-Pv-VDd">
+                                    <rect key="frame" x="0.0" y="28.333333333333311" width="345" height="40.666666666666657"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atelierul se afla in Medias, pe strada Bucegi 33" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGk-6s-O1D">
+                                    <rect key="frame" x="0.0" y="76.999999999999943" width="345" height="40.666666666666657"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yiz-ne-hyj">
+                            <rect key="frame" x="24" y="502" width="345" height="150"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="2oR-bY-E4A"/>
+                            </constraints>
+                            <standardMapConfiguration key="preferredConfiguration"/>
+                        </mapView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sAn-qi-D4e">
+                            <rect key="frame" x="24" y="437.33333333333337" width="345" height="40.666666666666686"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram: lufel.pottery" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWc-4c-E8k">
+                                    <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="40.666666666666664"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook:             LUFEL" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cu-Ve-w4V">
+                                    <rect key="frame" x="176.66666666666663" y="0.0" width="168.33333333333337" height="40.666666666666664"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="yiz-ne-hyj" firstAttribute="leading" secondItem="ren-q5-Upf" secondAttribute="leading" constant="24" id="1nH-AF-GFJ"/>
+                        <constraint firstItem="KJA-Ur-Me1" firstAttribute="centerX" secondItem="ren-q5-Upf" secondAttribute="centerX" id="4yk-zj-zB4"/>
+                        <constraint firstItem="vRa-Hd-Xye" firstAttribute="centerX" secondItem="ren-q5-Upf" secondAttribute="centerX" id="CSf-Lm-UPR"/>
+                        <constraint firstItem="sAn-qi-D4e" firstAttribute="leading" secondItem="ren-q5-Upf" secondAttribute="leading" constant="24" id="Ie1-e6-ERV"/>
+                        <constraint firstItem="yiz-ne-hyj" firstAttribute="centerX" secondItem="ren-q5-Upf" secondAttribute="centerX" id="JqQ-fN-lJb"/>
+                        <constraint firstItem="vRa-Hd-Xye" firstAttribute="top" secondItem="ren-q5-Upf" secondAttribute="top" id="KiK-jc-Yd8"/>
+                        <constraint firstAttribute="bottom" secondItem="yiz-ne-hyj" secondAttribute="bottom" constant="24" id="WJ0-gN-fc9"/>
+                        <constraint firstItem="KJA-Ur-Me1" firstAttribute="leading" secondItem="ren-q5-Upf" secondAttribute="leading" constant="24" id="dNJ-Uk-gxe"/>
+                        <constraint firstItem="sAn-qi-D4e" firstAttribute="centerX" secondItem="ren-q5-Upf" secondAttribute="centerX" id="eMn-0b-oSb"/>
+                        <constraint firstItem="KJA-Ur-Me1" firstAttribute="top" secondItem="vRa-Hd-Xye" secondAttribute="bottom" constant="24" id="g3a-za-yBy"/>
+                        <constraint firstItem="sAn-qi-D4e" firstAttribute="top" secondItem="KJA-Ur-Me1" secondAttribute="bottom" constant="24" id="sIo-Sb-EXh"/>
+                        <constraint firstItem="vRa-Hd-Xye" firstAttribute="leading" secondItem="ren-q5-Upf" secondAttribute="leading" constant="24" id="wQK-Rq-BUx"/>
+                        <constraint firstItem="yiz-ne-hyj" firstAttribute="top" secondItem="sAn-qi-D4e" secondAttribute="bottom" constant="24" id="wah-s3-qs9"/>
+                        <constraint firstAttribute="trailing" secondItem="vRa-Hd-Xye" secondAttribute="trailing" constant="24" id="yGw-Gz-uAn"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,11 +151,16 @@
                 <constraint firstItem="Sb1-0p-08x" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="70" id="JhH-Da-c4c"/>
                 <constraint firstItem="Sb1-0p-08x" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="N5J-OK-kEk"/>
                 <constraint firstItem="Sb1-0p-08x" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="PLf-cF-Qbh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ren-q5-Upf" secondAttribute="trailing" id="U7p-Oe-C5a"/>
+                <constraint firstItem="ren-q5-Upf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Wl4-Hf-MVN"/>
+                <constraint firstItem="ren-q5-Upf" firstAttribute="top" secondItem="Sb1-0p-08x" secondAttribute="bottom" id="wCf-uc-6j4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ren-q5-Upf" secondAttribute="bottom" id="yB2-Ku-q1u"/>
             </constraints>
-            <point key="canvasLocation" x="79" y="20"/>
+            <point key="canvasLocation" x="78.625954198473281" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
+        <image name="lufelLogo" width="657" height="379"/>
         <image name="swipeDown" width="32" height="32"/>
     </resources>
 </document>

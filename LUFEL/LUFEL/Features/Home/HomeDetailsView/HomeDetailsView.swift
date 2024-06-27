@@ -6,25 +6,30 @@
 //
 
 import UIKit
+import MapKit
 
 class HomeDetailsView: UIView, NibLoadable {
 
     // MARK: - Views
 
     @IBOutlet weak var swipeDownView: UIView!
-
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var mapView: MKMapView!
+    
     // MARK: - Init
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNibContent()
         setupGesture()
+        setupMapView()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadNibContent()
         setupGesture()
+        setupMapView()
     }
 
     // MARK: - Private methods
@@ -59,4 +64,12 @@ class HomeDetailsView: UIView, NibLoadable {
         }
     }
 
+    private func setupMapView() {
+        let annotation = MKPointAnnotation()
+        annotation.title = "LUFEL"
+        annotation.subtitle = "Ceramica lucrată manual"
+        annotation.coordinate = CLLocationCoordinate2D(latitude: 46.1504517, longitude: 24.3487743)
+        mapView.addAnnotation(annotation)
+        mapView.showAnnotations([annotation], animated: true)
+    }
 }
