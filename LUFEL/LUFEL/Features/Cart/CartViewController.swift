@@ -13,6 +13,7 @@ class CartViewController: UIViewController {
     @IBOutlet weak var productsPriceLabel: UILabel!
     @IBOutlet weak var transportPriceLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var placeTheOrderButton: UIButton!
     
     // MARK: - Properties
 
@@ -32,12 +33,21 @@ class CartViewController: UIViewController {
         setupTableView()
         observeCartProducts()
         loadCartProducts()
+        updatePlaceOrderButtonState()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         loadCartProducts()
         (parent as? MainTabViewController)?.update(color: .black)
+    }
+
+    // MARK: - Actions
+
+    @IBAction func placeTheOrder(_ sender: Any) {
+        let viewController = CheckoutViewController()
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true)
     }
 
     // MARK: - Private methods
@@ -57,6 +67,7 @@ class CartViewController: UIViewController {
 
     @objc private func cartUpdated() {
         loadCartProducts()
+        updatePlaceOrderButtonState()
     }
 
     private func loadCartProducts() {
@@ -64,6 +75,10 @@ class CartViewController: UIViewController {
         cartProducts = cart.products
         totalPriceLabel.text = "Total Price: \(cart.totalPrice) lei"
         tableView.reloadData()
+    }
+
+    private func updatePlaceOrderButtonState() {
+        placeTheOrderButton.isEnabled = !cartProducts.isEmpty
     }
 }
 
