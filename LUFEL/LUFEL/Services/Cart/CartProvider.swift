@@ -40,7 +40,7 @@ final class CartProvider: CartProviding {
     func updateProductQuantity(_ cartProduct: Product) {
         if let index = cartProducts.products.firstIndex(where: { $0.id == cartProduct.id }) {
             cartProducts.products[index].quantity = cartProduct.quantity
-            if cartProducts.products[index].quantity ?? 1 <= 0 {
+            if cartProducts.products[index].quantity ?? 0 <= 0 {
                 removeProductFromCart(cartProduct)
             } else {
                 updateTotalPrice()
@@ -55,25 +55,24 @@ final class CartProvider: CartProviding {
     }
 
     private func updateTotalPrice() {
-        cartProducts.totalPrice = cartProducts.products.reduce(0) { $0 + ((Double($1.price) ?? 0.0) * Double($1.quantity ?? 1)) }
+        cartProducts.totalPrice = cartProducts.products.reduce(0) { $0 + ((Double($1.price) ?? 0.0) * Double($1.quantity ?? 0)) }
     }
 
     private func saveCart() {
         do {
             let encoded = try JSONEncoder().encode(cartProducts)
             UserDefaults.standard.set(encoded, forKey: "cart")
+            UserDefaults.standard.synchronize()
         } catch {
             print("Failed to save cart: \(error)")
         }
     }
 
     private func loadCart() {
-        guard let data = UserDefaults.standard.data(forKey: "cart") else { return }
-        do {
-            let decoded = try JSONDecoder().decode(CartProducts.self, from: data)
+        if let data = UserDefaults.standard.data(forKey: "cart"), let decoded = try? JSONDecoder().decode(CartProducts.self, from: data) {
             cartProducts = decoded
-        } catch {
-            print("Failed to load cart: \(error)")
+        } else {
+            cartProducts = CartProducts()
         }
     }
 }

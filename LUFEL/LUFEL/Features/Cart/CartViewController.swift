@@ -31,6 +31,7 @@ class CartViewController: UIViewController {
 
         setupTableView()
         observeCartProducts()
+        loadCartProducts()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -88,7 +89,8 @@ extension CartViewController: UITableViewDataSource {
                                        title: product.title,
                                        price: product.price,
                                        description: "product.description",
-                                       quantity: quantity), product: product)
+                                       quantity: quantity), 
+                           product: product)
         }
         return cell
     }

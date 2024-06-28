@@ -28,6 +28,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     private var currentProduct: Product?
 
     @Injected(\.favoriteProvider) var favoriteProvider: FavoriteProviding
+    @Injected(\.cartProvider) var cartProvider: CartProviding
 
     // MARK: - Lifecycle
 
@@ -62,7 +63,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
     }
 
     @objc private func addToCartTapped() {
-        print("added to cart")
+        if let product = currentProduct {
+            cartProvider.addProductToCart(product)
+        }
     }
 
     @objc private func favoriteTapped() {
