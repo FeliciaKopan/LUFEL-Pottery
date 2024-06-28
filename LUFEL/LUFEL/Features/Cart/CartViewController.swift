@@ -36,6 +36,7 @@ class CartViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        loadCartProducts()
         (parent as? MainTabViewController)?.update(color: .black)
     }
 
@@ -61,7 +62,7 @@ class CartViewController: UIViewController {
     private func loadCartProducts() {
         let cart = cartProvider.getCartProducts()
         cartProducts = cart.products
-        totalPriceLabel.text = "Total Price: \(cart.totalPrice)"
+        totalPriceLabel.text = "Total Price: \(cart.totalPrice) lei"
         tableView.reloadData()
     }
 }

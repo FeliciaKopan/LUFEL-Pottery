@@ -55,7 +55,9 @@ final class CartProvider: CartProviding {
     }
 
     private func updateTotalPrice() {
-        cartProducts.totalPrice = cartProducts.products.reduce(0) { $0 + ((Double($1.price) ?? 0.0) * Double($1.quantity ?? 0)) }
+        cartProducts.totalPrice = cartProducts.products.reduce(0) { total, product in
+            total + ((Double(product.price.replacingOccurrences(of: " lei", with: "")) ?? 0.0) * Double(product.quantity ?? 1))
+        }
     }
 
     private func saveCart() {
