@@ -12,7 +12,7 @@ class CartTableViewCell: UITableViewCell {
     struct Identifier {
         let imageUrl: URL?
         let title: String
-        let price: String
+        let price: Double
         let description: String?
         let quantity: Int
     }
@@ -56,7 +56,7 @@ class CartTableViewCell: UITableViewCell {
     @IBAction func decrementQuantity(_ sender: Any) {
         if var product = currentProduct, let quantity = product.quantity {
             product.quantity = quantity - 1
-            if product.quantity! <= 0 {
+            if quantity <= 0 {
                 cartProvider.removeProductFromCart(product)
             } else {
                 cartProvider.updateProductQuantity(product)
@@ -78,7 +78,7 @@ class CartTableViewCell: UITableViewCell {
             productImageView.load(url: url)
         }
         nameLabel.text = identifier.title
-        priceLabel.text = identifier.price
+        priceLabel.text = "\(identifier.price) lei"
         quantityLabel.text = "\(identifier.quantity)"
         currentProduct = product
     }

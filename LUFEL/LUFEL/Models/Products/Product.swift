@@ -10,7 +10,7 @@ import Foundation
 struct Product: Codable, Hashable {
     let id: Int
     let title: String
-    let price: String
+    let price: Double
     let imageUrl: String?
 //    let description: String?
     var quantity: Int?
@@ -23,7 +23,7 @@ struct Product: Codable, Hashable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decode(Int.self, forKey: .id)
         title = try values.decode(String.self, forKey: .title)
-        price = try values.decode(String.self, forKey: .price)
+        price = try values.decode(Double.self, forKey: .price)
         imageUrl = try? values.decode(String.self, forKey: .imageUrl)
 //        description = try values.decode(String?.self, forKey: .description)
         quantity = try? values.decode(Int.self, forKey: .quantity)

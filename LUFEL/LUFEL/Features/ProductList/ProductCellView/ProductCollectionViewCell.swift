@@ -12,7 +12,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     struct Identifier {
         let imageUrl: URL?
         let title: String
-        let price: String
+        let price: Double
     }
 
     // MARK: - Views
@@ -46,7 +46,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
             imageView.load(url: url)
         }
         titleLabel.text = identifier.title
-        priceLabel.text = identifier.price
+        priceLabel.text = "\(identifier.price) lei"
         currentProduct = product
     }
 
@@ -71,7 +71,6 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @objc private func favoriteTapped() {
         if let product = currentProduct {
             favoriteProvider.addFavorite(product)
-            print("added to favorite")
         }
     }
 }

@@ -12,7 +12,7 @@ class WishListTableViewCell: UITableViewCell {
     struct Identifier {
         let imageUrl: URL?
         let title: String
-        let price: String
+        let price: Double
         let description: String?
     }
 
@@ -67,7 +67,7 @@ class WishListTableViewCell: UITableViewCell {
             descriptionLabel.text = description
         }
         nameLabel.text = identifier.title
-        priceLabel.text = identifier.price
+        priceLabel.text = "\(identifier.price) lei"
         currentProduct = product
     }
 

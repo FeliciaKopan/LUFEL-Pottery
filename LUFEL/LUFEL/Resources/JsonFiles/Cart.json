@@ -3,21 +3,21 @@
         {
             "id": 1,
             "title": "Cana Personalizata",
-            "price": "50 lei",
+            "price": 50.00,
             "image_url": "https://chicville.ro/media/catalog/product/cache/1/image/370x370/9df78eab33525d08d6e5fb8d27136e95/c/a/cana-ceramica-crem-din-ceramica-10-cm.jpg",
             "quantity": 2
         },
         {
             "id": 2,
             "title": "Cana Rustic",
-            "price": "60 lei",
+            "price": 60.00,
             "image_url": "https://cdn.www.kitchenshop.ro/images/thumbs/0071273_cana-ceramica-280-ml-essential-gri-nuova-r2s_550.jpeg",
             "quantity": 1
         },
         {
             "id": 3,
             "title": "Cana Rustic",
-            "price": "60 lei",
+            "price": 60.00,
             "image_url": "https://cdn.www.kitchenshop.ro/images/thumbs/0071273_cana-ceramica-280-ml-essential-gri-nuova-r2s_550.jpeg",
             "quantity": 3
         }
