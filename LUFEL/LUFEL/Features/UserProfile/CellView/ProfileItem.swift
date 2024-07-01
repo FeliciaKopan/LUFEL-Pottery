@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class StackViewCellView: UIView, NibLoadable {
+class ProfileItem: UIView, NibLoadable {
 
     // MARK: - Views
 

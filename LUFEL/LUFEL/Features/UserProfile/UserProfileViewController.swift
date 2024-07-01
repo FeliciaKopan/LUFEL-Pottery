@@ -17,10 +17,10 @@ class UserProfileViewController: UIViewController {
 
     // MARK: - Properties
 
-    private let termsOfUseView = StackViewCellView()
-    private let notificationsSwitch = StackViewCellView()
-    private let supportSectionView = StackViewCellView()
-    private let logoutView = StackViewCellView()
+    private let termsOfUseView = ProfileItem()
+    private let notificationsSwitch = ProfileItem()
+    private let supportSectionView = ProfileItem()
+    private let logoutView = ProfileItem()
 
     private var cancellables = Set<AnyCancellable>()
 
