@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StackViewCellView" customModule="LUFEL" customModuleProvider="target">
+            <connections>
+                <outlet property="actionButton" destination="mu2-27-YAf" id="HEe-JV-ZWc"/>
+                <outlet property="iconImageView" destination="Cql-jX-nbY" id="rhd-QB-BlE"/>
+                <outlet property="switchControl" destination="a8h-6d-EFP" id="t1C-mu-8rG"/>
+                <outlet property="titleLabel" destination="W5s-Jq-59G" id="ccC-dB-Ugb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="43"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cql-jX-nbY">
+                    <rect key="frame" x="24" y="9.6666666666666643" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="Jsa-Ck-wkZ"/>
+                        <constraint firstAttribute="width" constant="24" id="OUC-hH-iW5"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mu2-27-YAf">
+                    <rect key="frame" x="349" y="11.666666666666664" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="Ca9-2P-k53"/>
+                        <constraint firstAttribute="height" constant="20" id="YsP-LR-dlT"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="externalIcon"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5s-Jq-59G">
+                    <rect key="frame" x="60" y="11" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a8h-6d-EFP">
+                    <rect key="frame" x="320" y="6" width="51" height="31"/>
+                </switch>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="W5s-Jq-59G" firstAttribute="leading" secondItem="Cql-jX-nbY" secondAttribute="trailing" constant="12" id="1vF-rq-K33"/>
+                <constraint firstItem="a8h-6d-EFP" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="4tj-bq-0NB"/>
+                <constraint firstItem="mu2-27-YAf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="93X-oH-Uz3"/>
+                <constraint firstItem="Cql-jX-nbY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="Vwz-ZQ-Elf"/>
+                <constraint firstItem="Cql-jX-nbY" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hPv-bK-Ujy"/>
+                <constraint firstItem="W5s-Jq-59G" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="jhD-jA-GpP"/>
+                <constraint firstAttribute="trailing" secondItem="mu2-27-YAf" secondAttribute="trailing" constant="24" id="v1R-lt-k9q"/>
+                <constraint firstAttribute="trailing" secondItem="a8h-6d-EFP" secondAttribute="trailing" constant="24" id="zfk-wa-Bze"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="136.64122137404578" y="286.97183098591552"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="externalIcon" width="20" height="20"/>
+    </resources>
+</document>
