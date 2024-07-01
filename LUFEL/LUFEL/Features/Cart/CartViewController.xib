@@ -4,11 +4,17 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CartViewController" customModule="LUFEL" customModuleProvider="target">
             <connections>
+                <outlet property="placeTheOrderButton" destination="0AQ-Mf-igr" id="4Og-v2-AFv"/>
+                <outlet property="productsPriceLabel" destination="ViF-CG-dG2" id="7dS-os-wta"/>
+                <outlet property="tableView" destination="9ZE-gw-rgI" id="Rss-Qr-3tF"/>
+                <outlet property="totalPriceLabel" destination="1OM-ZW-qxb" id="I3b-4e-3R4"/>
+                <outlet property="transportPriceLabel" destination="id4-Rm-iU3" id="jnB-7L-Ckt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,17 +23,86 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdZ-Rm-eec">
-                    <rect key="frame" x="175" y="315" width="33" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9ZE-gw-rgI">
+                    <rect key="frame" x="24" y="59" width="345" height="532"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ws7-bv-ca2">
+                    <rect key="frame" x="24" y="615" width="345" height="95"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pret produse:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViF-CG-dG2">
+                            <rect key="frame" x="0.0" y="0.0" width="103" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pret transport:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="id4-Rm-iU3">
+                            <rect key="frame" x="0.0" y="37" width="110.66666666666667" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pret total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OM-ZW-qxb">
+                            <rect key="frame" x="0.0" y="74" width="74" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="1OM-ZW-qxb" secondAttribute="bottom" id="4fH-Cg-U72"/>
+                        <constraint firstItem="id4-Rm-iU3" firstAttribute="top" secondItem="ViF-CG-dG2" secondAttribute="bottom" constant="16" id="AT9-Wk-Uoc"/>
+                        <constraint firstItem="ViF-CG-dG2" firstAttribute="leading" secondItem="Ws7-bv-ca2" secondAttribute="leading" id="AxS-0R-Cd0"/>
+                        <constraint firstItem="ViF-CG-dG2" firstAttribute="top" secondItem="Ws7-bv-ca2" secondAttribute="top" id="MQY-MA-CnN"/>
+                        <constraint firstItem="id4-Rm-iU3" firstAttribute="leading" secondItem="Ws7-bv-ca2" secondAttribute="leading" id="THZ-hg-JeM"/>
+                        <constraint firstItem="1OM-ZW-qxb" firstAttribute="top" secondItem="id4-Rm-iU3" secondAttribute="bottom" constant="16" id="b5Y-XH-ejG"/>
+                        <constraint firstItem="1OM-ZW-qxb" firstAttribute="leading" secondItem="Ws7-bv-ca2" secondAttribute="leading" id="tKs-1E-aQF"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0AQ-Mf-igr" userLabel="logInButton">
+                    <rect key="frame" x="24" y="734" width="345" height="60"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="v7Q-aE-6Nv"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Finalizeaza comanda"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="placeTheOrder:" destination="-1" eventType="touchUpInside" id="1yE-Kl-KEE"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <point key="canvasLocation" x="140" y="20"/>
+            <constraints>
+                <constraint firstItem="9ZE-gw-rgI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3Ld-oG-PAy"/>
+                <constraint firstItem="Ws7-bv-ca2" firstAttribute="top" secondItem="9ZE-gw-rgI" secondAttribute="bottom" constant="24" id="76p-Rt-27d"/>
+                <constraint firstItem="Ws7-bv-ca2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="MnV-ng-5xW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0AQ-Mf-igr" secondAttribute="bottom" constant="24" id="O0k-Mk-Z1q"/>
+                <constraint firstItem="0AQ-Mf-igr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Ojb-JD-nza"/>
+                <constraint firstItem="9ZE-gw-rgI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="SN9-YI-U8f"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9ZE-gw-rgI" secondAttribute="trailing" constant="24" id="VLe-8O-z3A"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ws7-bv-ca2" secondAttribute="trailing" constant="24" id="ZRk-h7-Jv3"/>
+                <constraint firstItem="0AQ-Mf-igr" firstAttribute="top" secondItem="Ws7-bv-ca2" secondAttribute="bottom" constant="24" id="aPa-Be-nNs"/>
+                <constraint firstItem="0AQ-Mf-igr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="f9f-eg-8x1"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
