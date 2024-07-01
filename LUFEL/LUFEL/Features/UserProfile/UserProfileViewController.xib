@@ -15,7 +15,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserProfileViewController" customModule="LUFEL" customModuleProvider="target">
             <connections>
-                <outlet property="closeButton" destination="v6T-7g-aM7" id="n2i-R5-yqf"/>
                 <outlet property="contentStackView" destination="quk-ql-oQD" id="A0i-RX-IHd"/>
                 <outlet property="deleteAccountButton" destination="iaq-PR-SqM" id="oGs-ig-hwi"/>
                 <outlet property="editNameView" destination="Qr1-qA-jox" id="gw5-34-OOr"/>
@@ -35,34 +34,18 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="72"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSE-5k-a25">
-                                    <rect key="frame" x="24" y="16" width="281" height="40"/>
+                                    <rect key="frame" x="24" y="16" width="121" height="40"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6T-7g-aM7">
-                                    <rect key="frame" x="321" y="16" width="48" height="40"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="48" id="Pub-dS-PV4"/>
-                                        <constraint firstAttribute="height" constant="40" id="QUL-yo-iKL"/>
-                                    </constraints>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="close"/>
-                                    <connections>
-                                        <action selector="closeProfile:" destination="-1" eventType="touchUpInside" id="3mG-iY-yKl"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="v6T-7g-aM7" secondAttribute="trailing" constant="24" id="4gE-XG-Dvg"/>
                                 <constraint firstItem="zSE-5k-a25" firstAttribute="top" secondItem="Pqk-j4-yTS" secondAttribute="top" constant="16" id="4lF-gf-I09"/>
                                 <constraint firstItem="zSE-5k-a25" firstAttribute="centerY" secondItem="Pqk-j4-yTS" secondAttribute="centerY" id="Ezi-fd-Imo"/>
-                                <constraint firstItem="v6T-7g-aM7" firstAttribute="leading" secondItem="zSE-5k-a25" secondAttribute="trailing" constant="16" id="KcO-TA-oww"/>
                                 <constraint firstItem="zSE-5k-a25" firstAttribute="leading" secondItem="Pqk-j4-yTS" secondAttribute="leading" constant="24" id="NdR-cJ-FB8"/>
                                 <constraint firstAttribute="height" constant="72" id="Tf8-5e-SJA"/>
-                                <constraint firstItem="v6T-7g-aM7" firstAttribute="top" secondItem="Pqk-j4-yTS" secondAttribute="top" constant="16" id="e7b-tB-pYR"/>
-                                <constraint firstItem="v6T-7g-aM7" firstAttribute="centerY" secondItem="Pqk-j4-yTS" secondAttribute="centerY" id="mMr-Ab-fr1"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxg-Yl-wXE" userLabel="userDetailsView">
@@ -228,7 +211,6 @@
         </view>
     </objects>
     <resources>
-        <image name="close" width="48" height="40"/>
         <image name="deleteIcon" width="24" height="24"/>
         <image name="pencilEditIcon" width="16" height="16"/>
         <namedColor name="grey">

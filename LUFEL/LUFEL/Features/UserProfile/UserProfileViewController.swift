@@ -10,7 +10,6 @@ import Combine
 
 class UserProfileViewController: UIViewController {
 
-    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var editNameView: UIView!
     @IBOutlet weak var contentStackView: UIStackView!
@@ -34,7 +33,7 @@ class UserProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        setupEditName()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -43,9 +42,6 @@ class UserProfileViewController: UIViewController {
     }
 
     // MARK: - Actions
-
-    @IBAction func closeProfile(_ sender: Any) {
-    }
     
     @objc private func editName() {
         let editNameViewController = EditNameViewController()
@@ -55,6 +51,13 @@ class UserProfileViewController: UIViewController {
 
     @objc private func deleteAccount() {
 
+    }
+
+    // MARK: - Private Methods
+
+    private func setupEditName() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(editName))
+        editNameView.addGestureRecognizer(tapGesture)
     }
 
 }
