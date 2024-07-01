@@ -9,9 +9,9 @@ import Foundation
 
 struct UserProfile: Decodable {
     let id: Int
-    let username: String?
+    var username: String?
     let email: String?
-    let displayName: String?
+    var displayName: String?
 
     enum CodingKeys: String, CodingKey {
         case id, username, email, displayName

@@ -70,6 +70,12 @@
 		D062BA252C3298AB006BC37E /* UserProfile.json in Resources */ = {isa = PBXBuildFile; fileRef = D062BA242C3298AB006BC37E /* UserProfile.json */; };
 		D062BA292C329AAD006BC37E /* EditNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D062BA282C329AAD006BC37E /* EditNameViewController.xib */; };
 		D062BA2A2C329AAD006BC37E /* EditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BA272C329AAD006BC37E /* EditNameViewController.swift */; };
+		D062BA2E2C329E15006BC37E /* NetworkProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BA2D2C329E15006BC37E /* NetworkProviding.swift */; };
+		D062BA302C329E26006BC37E /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BA2F2C329E26006BC37E /* NetworkProvider.swift */; };
+		D062BA322C329E77006BC37E /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BA312C329E77006BC37E /* RequestMethod.swift */; };
+		D062BA342C32A217006BC37E /* EndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BA332C32A217006BC37E /* EndpointProvider.swift */; };
+		D062BA372C32A26C006BC37E /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BA362C32A26C006BC37E /* AppConfig.swift */; };
+		D062BA392C32A294006BC37E /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D062BA382C32A294006BC37E /* ApiError.swift */; };
 		D06F9E382C2045390051087D /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F9E372C2045390051087D /* NibLoadable.swift */; };
 		D06F9E3A2C204D440051087D /* NavigationTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F9E392C204D440051087D /* NavigationTabBar.swift */; };
 		D06F9E3D2C204E340051087D /* CustomTabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F9E3C2C204E340051087D /* CustomTabBarItemView.swift */; };
@@ -145,6 +151,12 @@
 		D062BA242C3298AB006BC37E /* UserProfile.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserProfile.json; sourceTree = "<group>"; };
 		D062BA272C329AAD006BC37E /* EditNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameViewController.swift; sourceTree = "<group>"; };
 		D062BA282C329AAD006BC37E /* EditNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditNameViewController.xib; sourceTree = "<group>"; };
+		D062BA2D2C329E15006BC37E /* NetworkProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviding.swift; sourceTree = "<group>"; };
+		D062BA2F2C329E26006BC37E /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		D062BA312C329E77006BC37E /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		D062BA332C32A217006BC37E /* EndpointProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProvider.swift; sourceTree = "<group>"; };
+		D062BA362C32A26C006BC37E /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		D062BA382C32A294006BC37E /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		D06F9E372C2045390051087D /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		D06F9E392C204D440051087D /* NavigationTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTabBar.swift; sourceTree = "<group>"; };
 		D06F9E3C2C204E340051087D /* CustomTabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarItemView.swift; sourceTree = "<group>"; };
@@ -271,6 +283,7 @@
 				D05D7D792C130F8D00E2A126 /* Services */,
 				D05D7D552C107F8E00E2A126 /* App */,
 				D0245A732C259746005456AA /* Models */,
+				D062BA2B2C329DE8006BC37E /* Networking */,
 				D05D7D562C107FDD00E2A126 /* Features */,
 				D05D7D5E2C109F9300E2A126 /* Utils */,
 				D05D7D6E2C10B31E00E2A126 /* Extensions */,
@@ -352,6 +365,7 @@
 		D05D7D5E2C109F9300E2A126 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D062BA352C32A25E006BC37E /* BaseComponents */,
 				D06F9E362C2045220051087D /* Protocols */,
 				D05D7D7F2C13103200E2A126 /* DependencyInjection */,
 				D05D7D732C11AC3F00E2A126 /* Localization */,
@@ -578,6 +592,34 @@
 			path = EditName;
 			sourceTree = "<group>";
 		};
+		D062BA2B2C329DE8006BC37E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D062BA2C2C329E00006BC37E /* Base */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D062BA2C2C329E00006BC37E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D062BA382C32A294006BC37E /* ApiError.swift */,
+				D062BA332C32A217006BC37E /* EndpointProvider.swift */,
+				D062BA312C329E77006BC37E /* RequestMethod.swift */,
+				D062BA2F2C329E26006BC37E /* NetworkProvider.swift */,
+				D062BA2D2C329E15006BC37E /* NetworkProviding.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D062BA352C32A25E006BC37E /* BaseComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D062BA362C32A26C006BC37E /* AppConfig.swift */,
+			);
+			path = BaseComponents;
+			sourceTree = "<group>";
+		};
 		D06F9E362C2045220051087D /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -684,6 +726,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D062BA322C329E77006BC37E /* RequestMethod.swift in Sources */,
 				D05D7D722C10B38000E2A126 /* UIViewExtensions.swift in Sources */,
 				D05D7D902C131D7F00E2A126 /* OnboardingProvider.swift in Sources */,
 				D0245A6B2C257FFC005456AA /* ProductCollectionViewCell.swift in Sources */,
@@ -710,13 +753,18 @@
 				D06F9E452C2057DB0051087D /* MainTabViewController.swift in Sources */,
 				D05D7D422C107D4900E2A126 /* AppDelegate.swift in Sources */,
 				D05D7D442C107D4900E2A126 /* SceneDelegate.swift in Sources */,
+				D062BA372C32A26C006BC37E /* AppConfig.swift in Sources */,
+				D062BA342C32A217006BC37E /* EndpointProvider.swift in Sources */,
+				D062BA302C329E26006BC37E /* NetworkProvider.swift in Sources */,
 				D05D7D8B2C1316EA00E2A126 /* CustomPlaceholderTextView.swift in Sources */,
 				D05D7DAA2C1C43B400E2A126 /* UserProfileViewController.swift in Sources */,
 				D05D7D682C10A8AB00E2A126 /* UnauthorizedCoordinator.swift in Sources */,
+				D062BA392C32A294006BC37E /* ApiError.swift in Sources */,
 				D05D7D8D2C13178F00E2A126 /* UILabelExtensions.swift in Sources */,
 				D0245A7A2C259D38005456AA /* UIImageExtensions.swift in Sources */,
 				D05D7D752C11AC4E00E2A126 /* L10n.swift in Sources */,
 				D05D7D5D2C109D3700E2A126 /* ApplicationCoordinator.swift in Sources */,
+				D062BA2E2C329E15006BC37E /* NetworkProviding.swift in Sources */,
 				D05D7D882C1312AE00E2A126 /* SignInViewController.swift in Sources */,
 				D05D7D7E2C130FE200E2A126 /* UnauthorizedProvider.swift in Sources */,
 				D05972A12C2C29680023ADB5 /* WishListProducts.swift in Sources */,

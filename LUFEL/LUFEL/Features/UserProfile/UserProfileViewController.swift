@@ -24,6 +24,10 @@ class UserProfileViewController: UIViewController {
 
     private var cancellables = Set<AnyCancellable>()
 
+    // MARK: - Services
+
+    @Injected(\.userProvider) var userProvider: UserProviding
+
     // MARK: - Lifecycle
 
     override func loadView() {
@@ -34,6 +38,10 @@ class UserProfileViewController: UIViewController {
         super.viewDidLoad()
 
         setupEditName()
+        setupObservers()
+        if let user = userProvider.user {
+            updateUserName(user)
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -45,6 +53,7 @@ class UserProfileViewController: UIViewController {
     
     @objc private func editName() {
         let editNameViewController = EditNameViewController()
+        editNameViewController.delegate = self
         editNameViewController.modalPresentationStyle = .overFullScreen
         present(editNameViewController, animated: true)
     }
@@ -55,9 +64,32 @@ class UserProfileViewController: UIViewController {
 
     // MARK: - Private Methods
 
+    private func setupObservers() {
+        userProvider.userPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] user in
+                self?.updateUserName(user)
+            }
+            .store(in: &cancellables)
+    }
+
     private func setupEditName() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(editName))
         editNameView.addGestureRecognizer(tapGesture)
+    }
+
+    private func updateUserName(_ user: UserProfile) {
+        userNameLabel.text = user.displayName
+    }
+}
+
+extension UserProfileViewController: EditNameViewControllerDelegate {
+    func didUpdateName(_ newName: String) {
+        Task { @MainActor in
+            if let updatedUser = await userProvider.setName(username: newName) {
+                updateUserName(updatedUser)
+            }
+        }
     }
 
 }
