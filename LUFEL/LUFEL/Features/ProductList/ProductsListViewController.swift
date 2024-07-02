@@ -94,6 +94,13 @@ extension ProductsListViewController: UICollectionViewDataSource {
         headerView.addSubview(label)
         return headerView
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let product = sections[indexPath.section].products[indexPath.row]
+        let viewController = ProductDetailViewController(product: product)
+        viewController.modalPresentationStyle = .overFullScreen
+        present(viewController, animated: true)
+    }
 }
 
 extension ProductsListViewController: UICollectionViewDelegate {
