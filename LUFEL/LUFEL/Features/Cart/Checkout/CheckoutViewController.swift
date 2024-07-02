@@ -35,7 +35,7 @@ class CheckoutViewController: UIViewController {
     }
 
     @IBAction func goBackButton(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        dismiss(animated: true)
     }
 
     @IBAction func placeTheOrder(_ sender: Any) {
