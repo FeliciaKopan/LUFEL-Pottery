@@ -21,11 +21,7 @@ class ProductDetailViewController: UIViewController {
     
     // MARK: - Properties
 
-    private let productImageUrl: String?
-    private let productTitle: String
-    private let productPrice: Double
-    private let productDetails: String
-    private var currentProduct: Product?
+    private var currentProduct: Product
 
     @Injected(\.favoriteProvider) var favoriteProvider: FavoriteProviding
     @Injected(\.cartProvider) var cartProvider: CartProviding
@@ -33,10 +29,6 @@ class ProductDetailViewController: UIViewController {
     // MARK: - Init
 
     init(product: Product) {
-        self.productImageUrl = product.imageUrl
-        self.productTitle = product.title
-        self.productPrice = product.price
-        self.productDetails = product.description ?? ""
         self.currentProduct = product
         super.init(nibName: nil, bundle: nil)
     }
@@ -51,8 +43,8 @@ class ProductDetailViewController: UIViewController {
         super.viewDidLoad()
 
         setupView()
-        addToCart()
-        addToWishList()
+        setupCartView()
+        setupWishListView()
     }
 
     // MARK: - Actions
@@ -62,35 +54,31 @@ class ProductDetailViewController: UIViewController {
     }
 
     @objc private func addToCartTapped() {
-        if let product = currentProduct {
-            cartProvider.addProductToCart(product)
-        }
+        cartProvider.addProductToCart(currentProduct)
     }
 
     @objc private func favoriteTapped() {
-        if let product = currentProduct {
-            favoriteProvider.addFavorite(product)
-        }
+        favoriteProvider.addFavorite(currentProduct)
     }
 
     // MARK: - Private methods
 
-    private func addToCart() {
+    private func setupCartView() {
         let addToCartTapGesture = UITapGestureRecognizer(target: self, action: #selector(addToCartTapped))
         cartView.addGestureRecognizer(addToCartTapGesture)
     }
 
-    private func addToWishList() {
+    private func setupWishListView() {
         let favoriteTapGesture = UITapGestureRecognizer(target: self, action: #selector(favoriteTapped))
         wishListView.addGestureRecognizer(favoriteTapGesture)
     }
 
     private func setupView() {
-        if let imageUrl = productImageUrl, let url = URL(string: imageUrl) {
+        if let imageUrl = currentProduct.imageUrl, let url = URL(string: imageUrl) {
             imageView.load(url: url)
         }
-        nameLabel.text = productTitle
-        priceLabel.text = "\(productPrice) lei"
-        detailsLabel.text = productDetails
+        nameLabel.text = currentProduct.title
+        priceLabel.text = "\(currentProduct.price) lei"
+        detailsLabel.text = currentProduct.description
     }
 }
