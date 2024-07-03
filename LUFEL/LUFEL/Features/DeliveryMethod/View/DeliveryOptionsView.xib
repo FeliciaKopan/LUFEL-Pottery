@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeliveryOptionsView" customModule="LUFEL" customModuleProvider="target">
             <connections>
-                <outlet property="courieriOptionView" destination="CBW-r0-jlz" id="6yT-bM-g8x"/>
+                <outlet property="courierOptionView" destination="CBW-r0-jlz" id="1uA-vK-6Cl"/>
                 <outlet property="easyboxOptionView" destination="Idz-3g-gbc" id="guE-Rl-34O"/>
                 <outlet property="pickupOptionView" destination="asd-4h-jya" id="R38-jD-sZe"/>
                 <outlet property="stackView" destination="kyg-Qa-PVg" id="E1Q-So-Srt"/>
