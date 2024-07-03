@@ -26,7 +26,7 @@ class NewAddressViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        setupCountyView()
     }
 
     // MARK: - Private methods
@@ -37,6 +37,8 @@ class NewAddressViewController: UIViewController {
     }
 
     @objc private func countyViewTapped() {
-
+        let viewController = CountySelectionViewController()
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true)
     }
 }

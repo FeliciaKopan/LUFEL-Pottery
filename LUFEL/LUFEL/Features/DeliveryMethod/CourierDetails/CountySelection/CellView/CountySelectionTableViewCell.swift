@@ -9,8 +9,12 @@ import UIKit
 
 class CountySelectionTableViewCell: UITableViewCell {
 
+    // MARK: - Views
+
     @IBOutlet weak var countyLabel: UILabel!
     
+    // MARK: - Lifecycle
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -21,5 +25,10 @@ class CountySelectionTableViewCell: UITableViewCell {
 
 
     }
-    
+
+    // MARK: - Public methods
+
+    func configure(with county: String) {
+        countyLabel.text = county
+    }
 }

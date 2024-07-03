@@ -116,6 +116,10 @@
 		D0CCF7CD2C35736300A7FF39 /* EasyboxDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7CC2C35736300A7FF39 /* EasyboxDetailView.xib */; };
 		D0CCF7D02C35745000A7FF39 /* PickupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7CF2C35745000A7FF39 /* PickupDetailView.swift */; };
 		D0CCF7D22C35745900A7FF39 /* PickupDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7D12C35745900A7FF39 /* PickupDetailView.xib */; };
+		D0CCF7D42C3594E200A7FF39 /* Counties.json in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7D32C3594E200A7FF39 /* Counties.json */; };
+		D0CCF7D72C35954600A7FF39 /* CountyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7D62C35954600A7FF39 /* CountyData.swift */; };
+		D0CCF7DA2C359AEC00A7FF39 /* CountyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7D92C359AEC00A7FF39 /* CountyProvider.swift */; };
+		D0CCF7DC2C359AF900A7FF39 /* CountyProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7DB2C359AF900A7FF39 /* CountyProviding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -230,6 +234,10 @@
 		D0CCF7CC2C35736300A7FF39 /* EasyboxDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EasyboxDetailView.xib; sourceTree = "<group>"; };
 		D0CCF7CF2C35745000A7FF39 /* PickupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupDetailView.swift; sourceTree = "<group>"; };
 		D0CCF7D12C35745900A7FF39 /* PickupDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickupDetailView.xib; sourceTree = "<group>"; };
+		D0CCF7D32C3594E200A7FF39 /* Counties.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Counties.json; sourceTree = "<group>"; };
+		D0CCF7D62C35954600A7FF39 /* CountyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyData.swift; sourceTree = "<group>"; };
+		D0CCF7D92C359AEC00A7FF39 /* CountyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyProvider.swift; sourceTree = "<group>"; };
+		D0CCF7DB2C359AF900A7FF39 /* CountyProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyProviding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +295,7 @@
 				D059729D2C2C28BC0023ADB5 /* WishList.json */,
 				D05972B32C2EE25C0023ADB5 /* Cart.json */,
 				D062BA242C3298AB006BC37E /* UserProfile.json */,
+				D0CCF7D32C3594E200A7FF39 /* Counties.json */,
 			);
 			path = JsonFiles;
 			sourceTree = "<group>";
@@ -294,6 +303,7 @@
 		D0245A732C259746005456AA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D0CCF7D52C35952C00A7FF39 /* County */,
 				D05972B52C2EE4690023ADB5 /* Cart */,
 				D062BA212C3297F4006BC37E /* UserProfile */,
 				D059729F2C2C29450023ADB5 /* WishList */,
@@ -541,6 +551,7 @@
 		D05D7D792C130F8D00E2A126 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D0CCF7D82C359A9700A7FF39 /* Counties */,
 				D05972AC2C2EE18C0023ADB5 /* Cart */,
 				D062BA1C2C329758006BC37E /* User */,
 				D05972A22C2C5A3C0023ADB5 /* Favorite */,
@@ -864,6 +875,23 @@
 			path = PickupDetails;
 			sourceTree = "<group>";
 		};
+		D0CCF7D52C35952C00A7FF39 /* County */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCF7D62C35954600A7FF39 /* CountyData.swift */,
+			);
+			path = County;
+			sourceTree = "<group>";
+		};
+		D0CCF7D82C359A9700A7FF39 /* Counties */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCF7D92C359AEC00A7FF39 /* CountyProvider.swift */,
+				D0CCF7DB2C359AF900A7FF39 /* CountyProviding.swift */,
+			);
+			path = Counties;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -956,6 +984,7 @@
 				D0CCF7D22C35745900A7FF39 /* PickupDetailView.xib in Resources */,
 				D05972B42C2EE25D0023ADB5 /* Cart.json in Resources */,
 				D06F9E472C216ECB0051087D /* NavigationTabBar.xib in Resources */,
+				D0CCF7D42C3594E200A7FF39 /* Counties.json in Resources */,
 				D05D7D9B2C1C433F00E2A126 /* HomeViewController.xib in Resources */,
 				D0CCF7AE2C35580300A7FF39 /* CourierDetailsTableViewCell.xib in Resources */,
 			);
@@ -968,6 +997,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0CCF7DC2C359AF900A7FF39 /* CountyProviding.swift in Sources */,
 				D062BA322C329E77006BC37E /* RequestMethod.swift in Sources */,
 				D05D7D722C10B38000E2A126 /* UIViewExtensions.swift in Sources */,
 				D05D7D902C131D7F00E2A126 /* OnboardingProvider.swift in Sources */,
@@ -985,6 +1015,7 @@
 				D05D7D922C131D8D00E2A126 /* OnboardingProviding.swift in Sources */,
 				D062BA202C32978E006BC37E /* UserProviding.swift in Sources */,
 				D05D7D9A2C1C433F00E2A126 /* HomeViewController.swift in Sources */,
+				D0CCF7D72C35954600A7FF39 /* CountyData.swift in Sources */,
 				D05D7D462C107D4900E2A126 /* SplashScreenViewController.swift in Sources */,
 				D05D7D702C10B33A00E2A126 /* UIViewControllerExtensions.swift in Sources */,
 				D05D7D832C13107700E2A126 /* InjectedValues.swift in Sources */,
@@ -1024,6 +1055,7 @@
 				D0245A6D2C258433005456AA /* UICollectionView.swift in Sources */,
 				D0245A782C25995C005456AA /* ProductCategory.swift in Sources */,
 				D05D7D6D2C10AA7900E2A126 /* MainAppCoordinator.swift in Sources */,
+				D0CCF7DA2C359AEC00A7FF39 /* CountyProvider.swift in Sources */,
 				D06F9E3A2C204D440051087D /* NavigationTabBar.swift in Sources */,
 				D0CCF7B42C3562D100A7FF39 /* NewAddressViewController.swift in Sources */,
 				D062BA422C32CF0E006BC37E /* CartTableViewCell.swift in Sources */,

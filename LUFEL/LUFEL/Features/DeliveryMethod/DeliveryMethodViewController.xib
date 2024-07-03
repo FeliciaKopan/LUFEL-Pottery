@@ -45,6 +45,18 @@
                     <rect key="frame" x="24" y="307" width="345" height="511"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEu-7h-ujN">
+                    <rect key="frame" x="24" y="83" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="SyV-Af-b5t"/>
+                        <constraint firstAttribute="height" constant="24" id="b41-2h-W1s"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="backArrow"/>
+                    <connections>
+                        <action selector="goBack:" destination="-1" eventType="touchUpInside" id="ChX-UY-swE"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,6 +66,8 @@
                 <constraint firstAttribute="trailing" secondItem="uDJ-Xw-P7l" secondAttribute="trailing" constant="24" id="6nc-nj-zei"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="uDJ-Xw-P7l" secondAttribute="bottom" id="Gj5-GL-C36"/>
                 <constraint firstItem="qHE-ws-gXO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="LXB-sb-gPw"/>
+                <constraint firstItem="fEu-7h-ujN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="MJU-r3-08b"/>
+                <constraint firstItem="fEu-7h-ujN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="NAB-OL-M0R"/>
                 <constraint firstItem="qHE-ws-gXO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Z2P-bT-tsy"/>
                 <constraint firstItem="4gu-AO-GfC" firstAttribute="top" secondItem="qHE-ws-gXO" secondAttribute="bottom" constant="48" id="amg-YX-6Kd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4gu-AO-GfC" secondAttribute="bottom" id="cFa-kU-XLu"/>
@@ -68,4 +82,7 @@
             <point key="canvasLocation" x="-10" y="20"/>
         </view>
     </objects>
+    <resources>
+        <image name="backArrow" width="24" height="24"/>
+    </resources>
 </document>

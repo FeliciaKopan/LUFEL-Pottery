@@ -31,6 +31,10 @@ class DeliveryMethodViewController: UIViewController {
         didSelectOption(.courier)
     }
 
+    @IBAction func goBack(_ sender: Any) {
+        dismiss(animated: true)
+    }
+
     // MARK: - Private methods
 
     private func setupListeners() {
@@ -49,6 +53,14 @@ class DeliveryMethodViewController: UIViewController {
         deliveryOptionsView.pickupOptionPublisher
             .sink { [weak self] in
                 self?.didSelectOption(.pickup)
+            }
+            .store(in: &cancellables)
+
+        courierDetailsView.addNewAddressPublisher
+            .sink { [weak self] in
+                let viewController = NewAddressViewController()
+                viewController.modalPresentationStyle = .fullScreen
+                self?.present(viewController, animated: true)
             }
             .store(in: &cancellables)
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class CourierDetailsView: UIView, NibLoadable {
 
@@ -17,6 +18,9 @@ class CourierDetailsView: UIView, NibLoadable {
     // MARK: - Private properties
 
     private var addresses: [String] = []
+
+    lazy var addNewAddressPublisher = addNewAddressSubject.eraseToAnyPublisher()
+    private let addNewAddressSubject = PassthroughSubject<Void, Never>()
 
     // MARK: - Init
 
@@ -42,7 +46,7 @@ class CourierDetailsView: UIView, NibLoadable {
         tableView.register(CourierDetailsTableViewCell.self)
         tableView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
 
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(addAddressViewTapped))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(addNewAddressTapped))
         addAddressView.addGestureRecognizer(tapGesture)
     }
 
@@ -51,8 +55,8 @@ class CourierDetailsView: UIView, NibLoadable {
         tableView.reloadData()
     }
 
-    @objc private func addAddressViewTapped() {
-        print("adauga adresa noua")
+    @objc private func addNewAddressTapped() {
+        addNewAddressSubject.send()
     }
 }
 

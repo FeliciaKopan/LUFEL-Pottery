@@ -9,8 +9,12 @@ import UIKit
 
 class LocalitySelectionTableViewCell: UITableViewCell {
 
+    // MARK: - Views
+
     @IBOutlet weak var localityLabel: UILabel!
-    
+
+    // MARK: - Lifecycle
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -21,5 +25,10 @@ class LocalitySelectionTableViewCell: UITableViewCell {
 
 
     }
-    
+
+    // MARK: - Public methods
+
+    func configure(with county: String) {
+        localityLabel.text = county
+    }
 }
