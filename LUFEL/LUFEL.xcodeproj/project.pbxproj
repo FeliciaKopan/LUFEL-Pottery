@@ -112,6 +112,10 @@
 		D0CCF7C32C356ECA00A7FF39 /* LocalitySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7C02C356ECA00A7FF39 /* LocalitySelectionViewController.swift */; };
 		D0CCF7C72C356F2300A7FF39 /* LocalitySelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7C62C356F2300A7FF39 /* LocalitySelectionTableViewCell.xib */; };
 		D0CCF7C82C356F2300A7FF39 /* LocalitySelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7C52C356F2300A7FF39 /* LocalitySelectionTableViewCell.swift */; };
+		D0CCF7CB2C35735700A7FF39 /* EasyboxDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7CA2C35735700A7FF39 /* EasyboxDetailView.swift */; };
+		D0CCF7CD2C35736300A7FF39 /* EasyboxDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7CC2C35736300A7FF39 /* EasyboxDetailView.xib */; };
+		D0CCF7D02C35745000A7FF39 /* PickupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7CF2C35745000A7FF39 /* PickupDetailView.swift */; };
+		D0CCF7D22C35745900A7FF39 /* PickupDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7D12C35745900A7FF39 /* PickupDetailView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -222,6 +226,10 @@
 		D0CCF7C12C356ECA00A7FF39 /* LocalitySelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocalitySelectionViewController.xib; sourceTree = "<group>"; };
 		D0CCF7C52C356F2300A7FF39 /* LocalitySelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalitySelectionTableViewCell.swift; sourceTree = "<group>"; };
 		D0CCF7C62C356F2300A7FF39 /* LocalitySelectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocalitySelectionTableViewCell.xib; sourceTree = "<group>"; };
+		D0CCF7CA2C35735700A7FF39 /* EasyboxDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyboxDetailView.swift; sourceTree = "<group>"; };
+		D0CCF7CC2C35736300A7FF39 /* EasyboxDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EasyboxDetailView.xib; sourceTree = "<group>"; };
+		D0CCF7CF2C35745000A7FF39 /* PickupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupDetailView.swift; sourceTree = "<group>"; };
+		D0CCF7D12C35745900A7FF39 /* PickupDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickupDetailView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -750,21 +758,23 @@
 		D0755C472C3440A10039AD71 /* DeliveryMethod */ = {
 			isa = PBXGroup;
 			children = (
+				D0CCF7CE2C35742B00A7FF39 /* PickupDetails */,
+				D0CCF7C92C35733500A7FF39 /* EasyboxDetails */,
 				D0CCF7A62C3554FA00A7FF39 /* CourierDetails */,
-				D0755C4C2C3441980039AD71 /* View */,
+				D0755C4C2C3441980039AD71 /* DeliveryOptions */,
 				D0755C512C34423F0039AD71 /* DeliveryMethodViewController.swift */,
 				D0755C522C34423F0039AD71 /* DeliveryMethodViewController.xib */,
 			);
 			path = DeliveryMethod;
 			sourceTree = "<group>";
 		};
-		D0755C4C2C3441980039AD71 /* View */ = {
+		D0755C4C2C3441980039AD71 /* DeliveryOptions */ = {
 			isa = PBXGroup;
 			children = (
 				D0755C4D2C3441E00039AD71 /* DeliveryOptionsView.swift */,
 				D0755C4F2C3441E90039AD71 /* DeliveryOptionsView.xib */,
 			);
-			path = View;
+			path = DeliveryOptions;
 			sourceTree = "<group>";
 		};
 		D0CCF7A62C3554FA00A7FF39 /* CourierDetails */ = {
@@ -834,6 +844,24 @@
 				D0CCF7C62C356F2300A7FF39 /* LocalitySelectionTableViewCell.xib */,
 			);
 			path = CellView;
+			sourceTree = "<group>";
+		};
+		D0CCF7C92C35733500A7FF39 /* EasyboxDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCF7CA2C35735700A7FF39 /* EasyboxDetailView.swift */,
+				D0CCF7CC2C35736300A7FF39 /* EasyboxDetailView.xib */,
+			);
+			path = EasyboxDetails;
+			sourceTree = "<group>";
+		};
+		D0CCF7CE2C35742B00A7FF39 /* PickupDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCF7CF2C35745000A7FF39 /* PickupDetailView.swift */,
+				D0CCF7D12C35745900A7FF39 /* PickupDetailView.xib */,
+			);
+			path = PickupDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -919,11 +947,13 @@
 				D062BA292C329AAD006BC37E /* EditNameViewController.xib in Resources */,
 				D05D7DB32C1C723400E2A126 /* SetNameViewController.xib in Resources */,
 				D0755C532C34423F0039AD71 /* DeliveryMethodViewController.xib in Resources */,
+				D0CCF7CD2C35736300A7FF39 /* EasyboxDetailView.xib in Resources */,
 				D05D7D662C10A4FE00E2A126 /* LogInViewController.xib in Resources */,
 				D0CCF7BD2C356DA700A7FF39 /* CountySelectionTableViewCell.xib in Resources */,
 				D05D7D4E2C107D4A00E2A126 /* Base in Resources */,
 				D00A258C2C2F2DF0007158F3 /* CheckoutTableViewCell.xib in Resources */,
 				D05D7D9F2C1C435C00E2A126 /* CartViewController.xib in Resources */,
+				D0CCF7D22C35745900A7FF39 /* PickupDetailView.xib in Resources */,
 				D05972B42C2EE25D0023ADB5 /* Cart.json in Resources */,
 				D06F9E472C216ECB0051087D /* NavigationTabBar.xib in Resources */,
 				D05D7D9B2C1C433F00E2A126 /* HomeViewController.xib in Resources */,
@@ -941,6 +971,7 @@
 				D062BA322C329E77006BC37E /* RequestMethod.swift in Sources */,
 				D05D7D722C10B38000E2A126 /* UIViewExtensions.swift in Sources */,
 				D05D7D902C131D7F00E2A126 /* OnboardingProvider.swift in Sources */,
+				D0CCF7CB2C35735700A7FF39 /* EasyboxDetailView.swift in Sources */,
 				D0245A6B2C257FFC005456AA /* ProductCollectionViewCell.swift in Sources */,
 				D05972A92C2D771E0023ADB5 /* HomeDetailsView.swift in Sources */,
 				D0245A6F2C25845F005456AA /* UITableView.swift in Sources */,
@@ -984,6 +1015,7 @@
 				D0245A7A2C259D38005456AA /* UIImageExtensions.swift in Sources */,
 				D05D7D752C11AC4E00E2A126 /* L10n.swift in Sources */,
 				D05D7D5D2C109D3700E2A126 /* ApplicationCoordinator.swift in Sources */,
+				D0CCF7D02C35745000A7FF39 /* PickupDetailView.swift in Sources */,
 				D062BA2E2C329E15006BC37E /* NetworkProviding.swift in Sources */,
 				D05D7D882C1312AE00E2A126 /* SignInViewController.swift in Sources */,
 				D05D7D7E2C130FE200E2A126 /* UnauthorizedProvider.swift in Sources */,

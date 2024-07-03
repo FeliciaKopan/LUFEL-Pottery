@@ -9,8 +9,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeliveryMethodViewController" customModule="LUFEL" customModuleProvider="target">
             <connections>
-                <outlet property="deliveryDetailsView" destination="Kqh-SH-EYe" id="Jza-FH-MgH"/>
+                <outlet property="courierDetailsView" destination="Kqh-SH-EYe" id="Y1N-gE-oHI"/>
                 <outlet property="deliveryOptionsView" destination="qHE-ws-gXO" id="Ur6-cb-GLq"/>
+                <outlet property="easyboxDetailsView" destination="4gu-AO-GfC" id="28h-mp-YWi"/>
+                <outlet property="pickupDetailsView" destination="uDJ-Xw-P7l" id="MsE-VK-nT3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,7 +28,7 @@
                         <constraint firstAttribute="height" constant="135" id="5xk-SJ-Q3v"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqh-SH-EYe">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqh-SH-EYe" customClass="CourierDetailsView" customModule="LUFEL" customModuleProvider="target">
                     <rect key="frame" x="24" y="307" width="345" height="511"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
@@ -35,14 +37,30 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gu-AO-GfC" customClass="EasyboxDetailView" customModule="LUFEL" customModuleProvider="target">
+                    <rect key="frame" x="24" y="307" width="345" height="511"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDJ-Xw-P7l" customClass="PickupDetailView" customModule="LUFEL" customModuleProvider="target">
+                    <rect key="frame" x="24" y="307" width="345" height="511"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="uDJ-Xw-P7l" firstAttribute="top" secondItem="qHE-ws-gXO" secondAttribute="bottom" constant="48" id="04F-vg-6Wd"/>
+                <constraint firstItem="4gu-AO-GfC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="0AF-43-ogT"/>
+                <constraint firstAttribute="trailing" secondItem="uDJ-Xw-P7l" secondAttribute="trailing" constant="24" id="6nc-nj-zei"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="uDJ-Xw-P7l" secondAttribute="bottom" id="Gj5-GL-C36"/>
                 <constraint firstItem="qHE-ws-gXO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="LXB-sb-gPw"/>
                 <constraint firstItem="qHE-ws-gXO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Z2P-bT-tsy"/>
+                <constraint firstItem="4gu-AO-GfC" firstAttribute="top" secondItem="qHE-ws-gXO" secondAttribute="bottom" constant="48" id="amg-YX-6Kd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4gu-AO-GfC" secondAttribute="bottom" id="cFa-kU-XLu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Kqh-SH-EYe" secondAttribute="trailing" constant="24" id="e0n-Z1-tqk"/>
+                <constraint firstItem="uDJ-Xw-P7l" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="eby-6f-bKT"/>
                 <constraint firstItem="Kqh-SH-EYe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="fjM-CF-zK3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4gu-AO-GfC" secondAttribute="trailing" constant="24" id="iJI-Rf-1iT"/>
                 <constraint firstItem="qHE-ws-gXO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="65" id="ikD-4r-lrb"/>
                 <constraint firstItem="Kqh-SH-EYe" firstAttribute="top" secondItem="qHE-ws-gXO" secondAttribute="bottom" constant="48" id="lzM-Ra-ygB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Kqh-SH-EYe" secondAttribute="bottom" id="tlf-OK-LH1"/>

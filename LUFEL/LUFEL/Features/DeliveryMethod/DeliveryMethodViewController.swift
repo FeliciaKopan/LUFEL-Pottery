@@ -13,8 +13,10 @@ class DeliveryMethodViewController: UIViewController {
     // MARK: - Views
 
     @IBOutlet weak var deliveryOptionsView: DeliveryOptionsView!
-    @IBOutlet weak var deliveryDetailsView: UIView!
-    
+    @IBOutlet weak var courierDetailsView: CourierDetailsView!
+    @IBOutlet weak var easyboxDetailsView: EasyboxDetailView!
+    @IBOutlet weak var pickupDetailsView: PickupDetailView!
+
     // MARK: - Properties
 
     private var selectedOption: DeliveryOption?
@@ -25,6 +27,8 @@ class DeliveryMethodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupListeners()
+        didSelectOption(.courier)
     }
 
     // MARK: - Private methods
@@ -55,13 +59,17 @@ class DeliveryMethodViewController: UIViewController {
     }
 
     private func showDeliveryDetails(for option: DeliveryOption) {
-        deliveryDetailsView.subviews.forEach { $0.removeFromSuperview() }
+        courierDetailsView.isHidden = true
+        easyboxDetailsView.isHidden = true
+        pickupDetailsView.isHidden = true
 
         switch option {
         case .courier:
-            break
-        case .easybox, .pickup:
-            break
+            courierDetailsView.isHidden = false
+        case .easybox:
+            easyboxDetailsView.isHidden = false
+        case .pickup:
+            pickupDetailsView.isHidden = false
         }
     }
 }
