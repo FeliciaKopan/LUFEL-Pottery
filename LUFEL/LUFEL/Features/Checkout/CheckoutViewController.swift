@@ -14,9 +14,7 @@ class CheckoutViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
-    @IBOutlet weak var addressTextField: CustomPlaceholderTextView!
     @IBOutlet weak var paymentMethodSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var placeOrderButton: UIButton!
     
     // MARK: - Properties
 
@@ -38,8 +36,10 @@ class CheckoutViewController: UIViewController {
         dismiss(animated: true)
     }
 
-    @IBAction func placeTheOrder(_ sender: Any) {
-        
+    @IBAction func chooseDeliveryMethod(_ sender: Any) {
+        let viewController = DeliveryMethodViewController()
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true)
     }
     
     // MARK: - Private methods
