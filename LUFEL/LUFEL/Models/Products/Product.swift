@@ -12,11 +12,11 @@ struct Product: Codable, Hashable {
     let title: String
     let price: Double
     let imageUrl: String?
-//    let description: String?
+    let description: String?
     var quantity: Int?
 
     enum CodingKeys: String, CodingKey {
-        case id, title, price, imageUrl = "image_url", quantity
+        case id, title, price, imageUrl = "image_url", description, quantity
     }
 
     init(from decoder: Decoder) throws {
@@ -25,7 +25,7 @@ struct Product: Codable, Hashable {
         title = try values.decode(String.self, forKey: .title)
         price = try values.decode(Double.self, forKey: .price)
         imageUrl = try? values.decode(String.self, forKey: .imageUrl)
-//        description = try values.decode(String?.self, forKey: .description)
+        description = try? values.decode(String.self, forKey: .description)
         quantity = try? values.decode(Int.self, forKey: .quantity)
     }
 }
