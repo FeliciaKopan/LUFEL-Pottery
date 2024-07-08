@@ -65,6 +65,9 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="backArrow"/>
+                    <connections>
+                        <action selector="goBack:" destination="-1" eventType="touchUpInside" id="Tvm-nu-0bz"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KS-3b-ORI" userLabel="saveButton">
                     <rect key="frame" x="24" y="722" width="345" height="60"/>
@@ -111,6 +114,14 @@
                         <constraint firstAttribute="trailing" secondItem="NHj-9a-fcU" secondAttribute="trailing" constant="24" id="Uk5-3A-tyE"/>
                         <constraint firstAttribute="height" constant="60" id="aec-Fi-Tcd"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

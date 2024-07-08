@@ -29,6 +29,10 @@ class NewAddressViewController: UIViewController {
         setupCountyView()
     }
 
+    @IBAction func goBack(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
     // MARK: - Private methods
 
     private func setupCountyView() {
