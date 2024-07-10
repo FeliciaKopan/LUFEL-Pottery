@@ -53,7 +53,7 @@ class CartViewController: UIViewController {
     // MARK: - Private methods
 
     private func setupTableView() {
-        tableView.backgroundColor = UIColor.black
+        tableView.backgroundColor = .appBackground
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = UITableView.automaticDimension
@@ -83,7 +83,12 @@ class CartViewController: UIViewController {
 }
 
 extension CartViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let cell = cell as? CartTableViewCell {
+            let isLastCell = indexPath.row == cartProducts.count - 1
+            cell.setSeparatorVisibility(isHidden: isLastCell)
+        }
+    }
 }
 
 extension CartViewController: UITableViewDataSource {
@@ -97,6 +102,8 @@ extension CartViewController: UITableViewDataSource {
         }
 
         let product = cartProducts[indexPath.row]
+
+        print("Configuring cell for row \(indexPath.row) with product: \(product.title)")
 
         if let imageUrl = product.imageUrl,
            let url = URL(string: imageUrl),

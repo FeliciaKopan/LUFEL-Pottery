@@ -24,9 +24,10 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
-    @IBOutlet weak var decrementButton: UIButton!
-    @IBOutlet weak var incrementButton: UIButton!
-
+    @IBOutlet weak var decrementView: UIView!
+    @IBOutlet weak var incrementView: UIView!
+    @IBOutlet weak var separatorView: UIView!
+    
     // MARK: - Properties
 
     private var currentProduct: Product?
@@ -37,6 +38,16 @@ class CartTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        setupDecrementQuantity()
+        setupIncrementQuantity()
+    }
+
+    override func prepareForReuse() {
+        productImageView.image = nil
+        nameLabel.text = ""
+        priceLabel.text = ""
+        quantityLabel.text = ""
+        currentProduct = nil
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -52,8 +63,8 @@ class CartTableViewCell: UITableViewCell {
             cartProvider.removeProductFromCart(product)
         }
     }
-    
-    @IBAction func decrementQuantity(_ sender: Any) {
+
+    @objc private func decrementQuantity() {
         if var product = currentProduct, let quantity = product.quantity {
             product.quantity = quantity - 1
             if quantity <= 0 {
@@ -63,8 +74,8 @@ class CartTableViewCell: UITableViewCell {
             }
         }
     }
-    
-    @IBAction func incrementQuantity(_ sender: Any) {
+
+    @objc private func incrementQuantity() {
         if var product = currentProduct, let quantity = product.quantity {
             product.quantity = quantity + 1
             cartProvider.updateProductQuantity(product)
@@ -83,4 +94,19 @@ class CartTableViewCell: UITableViewCell {
         currentProduct = product
     }
 
+    func setSeparatorVisibility(isHidden: Bool) {
+        separatorView.isHidden = isHidden
+    }
+
+    // MARK: - Private methods
+
+    private func setupDecrementQuantity() {
+        let decrementQuantityTapGesture = UITapGestureRecognizer(target: self, action: #selector(decrementQuantity))
+        decrementView.addGestureRecognizer(decrementQuantityTapGesture)
+    }
+
+    private func setupIncrementQuantity() {
+        let incrementQuantityTapGesture = UITapGestureRecognizer(target: self, action: #selector(incrementQuantity))
+        incrementView.addGestureRecognizer(incrementQuantityTapGesture)
+    }
 }
