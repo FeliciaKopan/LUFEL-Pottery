@@ -16,8 +16,8 @@ final class CartProvider: CartProviding {
     }
 
     func addProductToCart(_ product: Product) {
-        if let index = cartProducts.products.firstIndex(where: { $0.id == product.id }), let quantity = product.quantity {
-            cartProducts.products[index].quantity! += quantity
+        if let index = cartProducts.products.firstIndex(where: { $0.id == product.id }) {
+            cartProducts.products[index].quantity! += product.quantity ?? 1
         } else {
             var productToAdd = product
             if productToAdd.quantity == nil {

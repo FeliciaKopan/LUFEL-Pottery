@@ -18,6 +18,7 @@ class CartViewController: UIViewController {
     // MARK: - Properties
 
     private var cartProducts: [Product] = []
+    private lazy var dataSource = makeDataSource()
 
     @Injected(\.cartProvider) var cartProvider: CartProviding
 
@@ -55,7 +56,6 @@ class CartViewController: UIViewController {
     private func setupTableView() {
         tableView.backgroundColor = .appBackground
         tableView.delegate = self
-        tableView.dataSource = self
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(CartTableViewCell.self)
         tableView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
@@ -74,11 +74,40 @@ class CartViewController: UIViewController {
         let cart = cartProvider.getCartProducts()
         cartProducts = cart.products
         totalPriceLabel.text = "Total Price: \(cart.totalPrice) lei"
-        tableView.reloadData()
+        applySnapshot(animatingDifferences: true)
     }
 
     private func updatePlaceOrderButtonState() {
         placeTheOrderButton.isEnabled = !cartProducts.isEmpty
+    }
+
+    private func makeDataSource() -> UITableViewDiffableDataSource<SingleSection, Product> {
+        return UITableViewDiffableDataSource(tableView: tableView) { tableView, indexPath, product in
+            guard let cell = tableView.dequeueReusableCell(of: CartTableViewCell.self, for: indexPath) as? CartTableViewCell else {
+                return UITableViewCell()
+            }
+
+            print("Configuring cell for row \(indexPath.row) with product: \(product.title)")
+
+            if let imageUrl = product.imageUrl,
+               let url = URL(string: imageUrl),
+               let quantity = product.quantity {
+                cell.configure(with: .init(imageUrl: url,
+                                           title: product.title,
+                                           price: product.price,
+                                           description: product.description,
+                                           quantity: quantity),
+                               product: product)
+            }
+            return cell
+        }
+    }
+
+    private func applySnapshot(animatingDifferences: Bool = true) {
+        var snapshot = NSDiffableDataSourceSnapshot<SingleSection, Product>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(cartProducts)
+        dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
 }
 
@@ -88,33 +117,5 @@ extension CartViewController: UITableViewDelegate {
             let isLastCell = indexPath.row == cartProducts.count - 1
             cell.setSeparatorVisibility(isHidden: isLastCell)
         }
-    }
-}
-
-extension CartViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cartProducts.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(of: CartTableViewCell.self, for: indexPath) as? CartTableViewCell else {
-            return UITableViewCell()
-        }
-
-        let product = cartProducts[indexPath.row]
-
-        print("Configuring cell for row \(indexPath.row) with product: \(product.title)")
-
-        if let imageUrl = product.imageUrl,
-           let url = URL(string: imageUrl),
-           let quantity = product.quantity {
-            cell.configure(with: .init(imageUrl: url,
-                                       title: product.title,
-                                       price: product.price,
-                                       description: "product.description",
-                                       quantity: quantity), 
-                           product: product)
-        }
-        return cell
     }
 }
