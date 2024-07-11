@@ -23,7 +23,6 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
-    @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var decrementView: UIView!
     @IBOutlet weak var incrementView: UIView!
     @IBOutlet weak var separatorView: UIView!
@@ -48,6 +47,7 @@ class CartTableViewCell: UITableViewCell {
         priceLabel.text = ""
         quantityLabel.text = ""
         currentProduct = nil
+        separatorView.isHidden = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -58,11 +58,11 @@ class CartTableViewCell: UITableViewCell {
 
     // MARK: - Actions
 
-    @IBAction func deleteProduct(_ sender: Any) {
-        if let product = currentProduct {
-            cartProvider.removeProductFromCart(product)
-        }
-    }
+//    @IBAction func deleteProduct(_ sender: Any) {
+//        if let product = currentProduct {
+//            cartProvider.removeProductFromCart(product)
+//        }
+//    }
 
     @objc private func decrementQuantity() {
         if var product = currentProduct, let quantity = product.quantity {

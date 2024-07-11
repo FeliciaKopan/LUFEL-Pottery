@@ -10,8 +10,6 @@ import UIKit
 class CartViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var productsPriceLabel: UILabel!
-    @IBOutlet weak var transportPriceLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var placeTheOrderButton: UIButton!
     
@@ -59,6 +57,7 @@ class CartViewController: UIViewController {
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(CartTableViewCell.self)
         tableView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
+        tableView.separatorStyle = .none
     }
 
     private func observeCartProducts() {
@@ -86,8 +85,6 @@ class CartViewController: UIViewController {
             guard let cell = tableView.dequeueReusableCell(of: CartTableViewCell.self, for: indexPath) as? CartTableViewCell else {
                 return UITableViewCell()
             }
-
-            print("Configuring cell for row \(indexPath.row) with product: \(product.title)")
 
             if let imageUrl = product.imageUrl,
                let url = URL(string: imageUrl),
@@ -117,5 +114,17 @@ extension CartViewController: UITableViewDelegate {
             let isLastCell = indexPath.row == cartProducts.count - 1
             cell.setSeparatorVisibility(isHidden: isLastCell)
         }
+    }
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self]  _, _, _ in
+            guard let self = self else { return }
+            let product = self.cartProducts[indexPath.row]
+            self.cartProvider.removeProductFromCart(product)
+            self.loadCartProducts()
+        }
+        deleteAction.backgroundColor = .red
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return configuration
     }
 }
