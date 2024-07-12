@@ -14,4 +14,8 @@ enum L10n {
         static let email = String(localized: "signUp.email")
         static let password = String(localized: "signUp.password")
     }
+
+    enum Cart {
+        static let emptyTitle = String(localized: "cart.emptyTitle")
+    }
 }

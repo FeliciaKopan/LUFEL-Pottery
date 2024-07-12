@@ -12,6 +12,7 @@ class CartViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var placeTheOrderButton: UIButton!
+    @IBOutlet weak var emptyView: EmptyStateView!
     
     // MARK: - Properties
 
@@ -29,6 +30,7 @@ class CartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupEmptyView()
         setupTableView()
         observeCartProducts()
         loadCartProducts()
@@ -78,6 +80,10 @@ class CartViewController: UIViewController {
 
     private func updatePlaceOrderButtonState() {
         placeTheOrderButton.isEnabled = !cartProducts.isEmpty
+        placeTheOrderButton.isHidden = cartProducts.isEmpty ? true : false
+        totalPriceLabel.isHidden = cartProducts.isEmpty ? true : false
+        tableView.isHidden = cartProducts.isEmpty ? true : false
+        emptyView.isHidden = cartProducts.isEmpty ? false : true
     }
 
     private func makeDataSource() -> UITableViewDiffableDataSource<SingleSection, Product> {
@@ -89,12 +95,14 @@ class CartViewController: UIViewController {
             if let imageUrl = product.imageUrl,
                let url = URL(string: imageUrl),
                let quantity = product.quantity {
-                cell.configure(with: .init(imageUrl: url,
-                                           title: product.title,
-                                           price: product.price,
-                                           description: product.description,
-                                           quantity: quantity),
-                               product: product)
+                let identifier = CartTableViewCell.Identifier(
+                    imageUrl: url,
+                    title: product.title,
+                    price: product.price,
+                    description: product.description,
+                    quantity: quantity
+                )
+                cell.configure(with: identifier, product: product)
             }
             return cell
         }
@@ -105,6 +113,10 @@ class CartViewController: UIViewController {
         snapshot.appendSections([.main])
         snapshot.appendItems(cartProducts)
         dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
+    }
+
+    private func setupEmptyView() {
+        emptyView.configure(title: L10n.Cart.emptyTitle)
     }
 }
 

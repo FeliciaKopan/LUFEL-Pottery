@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CartViewController" customModule="LUFEL" customModuleProvider="target">
             <connections>
+                <outlet property="emptyView" destination="SIo-aq-Gis" id="0oa-HH-pU3"/>
                 <outlet property="placeTheOrderButton" destination="0AQ-Mf-igr" id="4Og-v2-AFv"/>
                 <outlet property="tableView" destination="9ZE-gw-rgI" id="Rss-Qr-3tF"/>
                 <outlet property="totalPriceLabel" destination="1OM-ZW-qxb" id="I3b-4e-3R4"/>
@@ -54,12 +55,18 @@
                         <action selector="placeTheOrder:" destination="-1" eventType="touchUpInside" id="1yE-Kl-KEE"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SIo-aq-Gis" userLabel="emptyView" customClass="EmptyStateView" customModule="LUFEL" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="appBackground"/>
             <constraints>
                 <constraint firstItem="1OM-ZW-qxb" firstAttribute="top" secondItem="9ZE-gw-rgI" secondAttribute="bottom" constant="24" id="38s-7V-doF"/>
                 <constraint firstItem="9ZE-gw-rgI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="3Ld-oG-PAy"/>
+                <constraint firstAttribute="bottom" secondItem="SIo-aq-Gis" secondAttribute="bottom" id="56g-pS-UtG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SIo-aq-Gis" secondAttribute="trailing" id="Iae-jJ-sRW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0AQ-Mf-igr" secondAttribute="bottom" constant="24" id="O0k-Mk-Z1q"/>
                 <constraint firstItem="0AQ-Mf-igr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Ojb-JD-nza"/>
                 <constraint firstItem="0AQ-Mf-igr" firstAttribute="top" secondItem="1OM-ZW-qxb" secondAttribute="bottom" constant="24" id="PUW-li-ued"/>
@@ -68,6 +75,8 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9ZE-gw-rgI" secondAttribute="trailing" id="VLe-8O-z3A"/>
                 <constraint firstItem="0AQ-Mf-igr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="f9f-eg-8x1"/>
                 <constraint firstItem="1OM-ZW-qxb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="wvR-5h-D1j"/>
+                <constraint firstItem="SIo-aq-Gis" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xJd-Kn-DjL"/>
+                <constraint firstItem="SIo-aq-Gis" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zrr-Tf-IjD"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
         </view>

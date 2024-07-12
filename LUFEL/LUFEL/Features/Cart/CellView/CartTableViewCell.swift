@@ -58,12 +58,6 @@ class CartTableViewCell: UITableViewCell {
 
     // MARK: - Actions
 
-//    @IBAction func deleteProduct(_ sender: Any) {
-//        if let product = currentProduct {
-//            cartProvider.removeProductFromCart(product)
-//        }
-//    }
-
     @objc private func decrementQuantity() {
         if var product = currentProduct, let quantity = product.quantity {
             product.quantity = quantity - 1
