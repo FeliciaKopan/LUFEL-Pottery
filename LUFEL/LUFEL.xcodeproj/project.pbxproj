@@ -96,6 +96,32 @@
 		D06F9E472C216ECB0051087D /* NavigationTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D06F9E462C216ECB0051087D /* NavigationTabBar.xib */; };
 		D07DC28F2C33E6A3003FEEA1 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07DC28D2C33E6A3003FEEA1 /* ProductDetailViewController.swift */; };
 		D07DC2902C33E6A3003FEEA1 /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D07DC28E2C33E6A3003FEEA1 /* ProductDetailViewController.xib */; };
+		D0755C4E2C3441E00039AD71 /* DeliveryOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0755C4D2C3441E00039AD71 /* DeliveryOptionsView.swift */; };
+		D0755C502C3441E90039AD71 /* DeliveryOptionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0755C4F2C3441E90039AD71 /* DeliveryOptionsView.xib */; };
+		D0755C532C34423F0039AD71 /* DeliveryMethodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0755C522C34423F0039AD71 /* DeliveryMethodViewController.xib */; };
+		D0755C542C34423F0039AD71 /* DeliveryMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0755C512C34423F0039AD71 /* DeliveryMethodViewController.swift */; };
+		D0CCF7A82C35555600A7FF39 /* CourierDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7A72C35555600A7FF39 /* CourierDetailsView.swift */; };
+		D0CCF7AA2C35556400A7FF39 /* CourierDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7A92C35556400A7FF39 /* CourierDetailsView.xib */; };
+		D0CCF7AE2C35580300A7FF39 /* CourierDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7AD2C35580300A7FF39 /* CourierDetailsTableViewCell.xib */; };
+		D0CCF7AF2C35580300A7FF39 /* CourierDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7AC2C35580300A7FF39 /* CourierDetailsTableViewCell.swift */; };
+		D0CCF7B32C3562D100A7FF39 /* NewAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7B22C3562D100A7FF39 /* NewAddressViewController.xib */; };
+		D0CCF7B42C3562D100A7FF39 /* NewAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7B12C3562D100A7FF39 /* NewAddressViewController.swift */; };
+		D0CCF7B82C356D5000A7FF39 /* CountySelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7B72C356D5000A7FF39 /* CountySelectionViewController.xib */; };
+		D0CCF7B92C356D5000A7FF39 /* CountySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7B62C356D5000A7FF39 /* CountySelectionViewController.swift */; };
+		D0CCF7BD2C356DA700A7FF39 /* CountySelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7BC2C356DA700A7FF39 /* CountySelectionTableViewCell.xib */; };
+		D0CCF7BE2C356DA700A7FF39 /* CountySelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7BB2C356DA700A7FF39 /* CountySelectionTableViewCell.swift */; };
+		D0CCF7C22C356ECA00A7FF39 /* LocalitySelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7C12C356ECA00A7FF39 /* LocalitySelectionViewController.xib */; };
+		D0CCF7C32C356ECA00A7FF39 /* LocalitySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7C02C356ECA00A7FF39 /* LocalitySelectionViewController.swift */; };
+		D0CCF7C72C356F2300A7FF39 /* LocalitySelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7C62C356F2300A7FF39 /* LocalitySelectionTableViewCell.xib */; };
+		D0CCF7C82C356F2300A7FF39 /* LocalitySelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7C52C356F2300A7FF39 /* LocalitySelectionTableViewCell.swift */; };
+		D0CCF7CB2C35735700A7FF39 /* EasyboxDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7CA2C35735700A7FF39 /* EasyboxDetailView.swift */; };
+		D0CCF7CD2C35736300A7FF39 /* EasyboxDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7CC2C35736300A7FF39 /* EasyboxDetailView.xib */; };
+		D0CCF7D02C35745000A7FF39 /* PickupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7CF2C35745000A7FF39 /* PickupDetailView.swift */; };
+		D0CCF7D22C35745900A7FF39 /* PickupDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7D12C35745900A7FF39 /* PickupDetailView.xib */; };
+		D0CCF7D42C3594E200A7FF39 /* Counties.json in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7D32C3594E200A7FF39 /* Counties.json */; };
+		D0CCF7D72C35954600A7FF39 /* CountyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7D62C35954600A7FF39 /* CountyData.swift */; };
+		D0CCF7DA2C359AEC00A7FF39 /* CountyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7D92C359AEC00A7FF39 /* CountyProvider.swift */; };
+		D0CCF7DC2C359AF900A7FF39 /* CountyProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7DB2C359AF900A7FF39 /* CountyProviding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -190,6 +216,32 @@
 		D06F9E462C216ECB0051087D /* NavigationTabBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationTabBar.xib; sourceTree = "<group>"; };
 		D07DC28D2C33E6A3003FEEA1 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		D07DC28E2C33E6A3003FEEA1 /* ProductDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailViewController.xib; sourceTree = "<group>"; };
+		D0755C4D2C3441E00039AD71 /* DeliveryOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryOptionsView.swift; sourceTree = "<group>"; };
+		D0755C4F2C3441E90039AD71 /* DeliveryOptionsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeliveryOptionsView.xib; sourceTree = "<group>"; };
+		D0755C512C34423F0039AD71 /* DeliveryMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryMethodViewController.swift; sourceTree = "<group>"; };
+		D0755C522C34423F0039AD71 /* DeliveryMethodViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeliveryMethodViewController.xib; sourceTree = "<group>"; };
+		D0CCF7A72C35555600A7FF39 /* CourierDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourierDetailsView.swift; sourceTree = "<group>"; };
+		D0CCF7A92C35556400A7FF39 /* CourierDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourierDetailsView.xib; sourceTree = "<group>"; };
+		D0CCF7AC2C35580300A7FF39 /* CourierDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourierDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		D0CCF7AD2C35580300A7FF39 /* CourierDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourierDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		D0CCF7B12C3562D100A7FF39 /* NewAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAddressViewController.swift; sourceTree = "<group>"; };
+		D0CCF7B22C3562D100A7FF39 /* NewAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAddressViewController.xib; sourceTree = "<group>"; };
+		D0CCF7B62C356D5000A7FF39 /* CountySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountySelectionViewController.swift; sourceTree = "<group>"; };
+		D0CCF7B72C356D5000A7FF39 /* CountySelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountySelectionViewController.xib; sourceTree = "<group>"; };
+		D0CCF7BB2C356DA700A7FF39 /* CountySelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountySelectionTableViewCell.swift; sourceTree = "<group>"; };
+		D0CCF7BC2C356DA700A7FF39 /* CountySelectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountySelectionTableViewCell.xib; sourceTree = "<group>"; };
+		D0CCF7C02C356ECA00A7FF39 /* LocalitySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalitySelectionViewController.swift; sourceTree = "<group>"; };
+		D0CCF7C12C356ECA00A7FF39 /* LocalitySelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocalitySelectionViewController.xib; sourceTree = "<group>"; };
+		D0CCF7C52C356F2300A7FF39 /* LocalitySelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalitySelectionTableViewCell.swift; sourceTree = "<group>"; };
+		D0CCF7C62C356F2300A7FF39 /* LocalitySelectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocalitySelectionTableViewCell.xib; sourceTree = "<group>"; };
+		D0CCF7CA2C35735700A7FF39 /* EasyboxDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyboxDetailView.swift; sourceTree = "<group>"; };
+		D0CCF7CC2C35736300A7FF39 /* EasyboxDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EasyboxDetailView.xib; sourceTree = "<group>"; };
+		D0CCF7CF2C35745000A7FF39 /* PickupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupDetailView.swift; sourceTree = "<group>"; };
+		D0CCF7D12C35745900A7FF39 /* PickupDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickupDetailView.xib; sourceTree = "<group>"; };
+		D0CCF7D32C3594E200A7FF39 /* Counties.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Counties.json; sourceTree = "<group>"; };
+		D0CCF7D62C35954600A7FF39 /* CountyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyData.swift; sourceTree = "<group>"; };
+		D0CCF7D92C359AEC00A7FF39 /* CountyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyProvider.swift; sourceTree = "<group>"; };
+		D0CCF7DB2C359AF900A7FF39 /* CountyProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyProviding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +299,7 @@
 				D059729D2C2C28BC0023ADB5 /* WishList.json */,
 				D05972B32C2EE25C0023ADB5 /* Cart.json */,
 				D062BA242C3298AB006BC37E /* UserProfile.json */,
+				D0CCF7D32C3594E200A7FF39 /* Counties.json */,
 			);
 			path = JsonFiles;
 			sourceTree = "<group>";
@@ -254,6 +307,7 @@
 		D0245A732C259746005456AA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D0CCF7D52C35952C00A7FF39 /* County */,
 				D05972B52C2EE4690023ADB5 /* Cart */,
 				D062BA212C3297F4006BC37E /* UserProfile */,
 				D059729F2C2C29450023ADB5 /* WishList */,
@@ -373,6 +427,8 @@
 				D0245A5C2C21B5C7005456AA /* ProductList */,
 				D05D7D972C1C42E200E2A126 /* UserProfile */,
 				D05D7D962C1C42CB00E2A126 /* WishList */,
+				D05D7D952C1C42A600E2A126 /* Checkout */,
+				D0755C472C3440A10039AD71 /* DeliveryMethod */,
 				D05D7D942C1C428100E2A126 /* Cart */,
 				D05D7D932C1C427500E2A126 /* Home */,
 				D05D7D592C1095F700E2A126 /* Onboarding */,
@@ -500,6 +556,7 @@
 		D05D7D792C130F8D00E2A126 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D0CCF7D82C359A9700A7FF39 /* Counties */,
 				D05972AC2C2EE18C0023ADB5 /* Cart */,
 				D062BA1C2C329758006BC37E /* User */,
 				D05972A22C2C5A3C0023ADB5 /* Favorite */,
@@ -551,7 +608,6 @@
 			isa = PBXGroup;
 			children = (
 				D062BA3E2C32CEF2006BC37E /* CellView */,
-				D05D7D952C1C42A600E2A126 /* Checkout */,
 				D05D7D9C2C1C435C00E2A126 /* CartViewController.swift */,
 				D05D7D9D2C1C435C00E2A126 /* CartViewController.xib */,
 			);
@@ -722,6 +778,132 @@
 				D07DC28E2C33E6A3003FEEA1 /* ProductDetailViewController.xib */,
 			);
 			path = ProductDetail;
+            sourceTree = "<group>";
+        };
+		D0755C472C3440A10039AD71 /* DeliveryMethod */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCF7CE2C35742B00A7FF39 /* PickupDetails */,
+				D0CCF7C92C35733500A7FF39 /* EasyboxDetails */,
+				D0CCF7A62C3554FA00A7FF39 /* CourierDetails */,
+				D0755C4C2C3441980039AD71 /* DeliveryOptions */,
+				D0755C512C34423F0039AD71 /* DeliveryMethodViewController.swift */,
+				D0755C522C34423F0039AD71 /* DeliveryMethodViewController.xib */,
+			);
+			path = DeliveryMethod;
+			sourceTree = "<group>";
+		};
+		D0755C4C2C3441980039AD71 /* DeliveryOptions */ = {
+			isa = PBXGroup;
+			children = (
+				D0755C4D2C3441E00039AD71 /* DeliveryOptionsView.swift */,
+				D0755C4F2C3441E90039AD71 /* DeliveryOptionsView.xib */,
+			);
+			path = DeliveryOptions;
+			sourceTree = "<group>";
+		};
+		D0CCF7A62C3554FA00A7FF39 /* CourierDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCF7BF2C356EA300A7FF39 /* LocalitySelection */,
+				D0CCF7B52C356D3C00A7FF39 /* CountySelection */,
+				D0CCF7B02C3562B200A7FF39 /* NewAddress */,
+				D0CCF7AB2C35573300A7FF39 /* CellView */,
+				D0CCF7A72C35555600A7FF39 /* CourierDetailsView.swift */,
+				D0CCF7A92C35556400A7FF39 /* CourierDetailsView.xib */,
+			);
+			path = CourierDetails;
+			sourceTree = "<group>";
+		};
+		D0CCF7AB2C35573300A7FF39 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCF7AC2C35580300A7FF39 /* CourierDetailsTableViewCell.swift */,
+				D0CCF7AD2C35580300A7FF39 /* CourierDetailsTableViewCell.xib */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		D0CCF7B02C3562B200A7FF39 /* NewAddress */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCF7B12C3562D100A7FF39 /* NewAddressViewController.swift */,
+				D0CCF7B22C3562D100A7FF39 /* NewAddressViewController.xib */,
+			);
+			path = NewAddress;
+			sourceTree = "<group>";
+		};
+		D0CCF7B52C356D3C00A7FF39 /* CountySelection */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCF7BA2C356D9200A7FF39 /* CellView */,
+				D0CCF7B62C356D5000A7FF39 /* CountySelectionViewController.swift */,
+				D0CCF7B72C356D5000A7FF39 /* CountySelectionViewController.xib */,
+			);
+			path = CountySelection;
+			sourceTree = "<group>";
+		};
+		D0CCF7BA2C356D9200A7FF39 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCF7BB2C356DA700A7FF39 /* CountySelectionTableViewCell.swift */,
+				D0CCF7BC2C356DA700A7FF39 /* CountySelectionTableViewCell.xib */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		D0CCF7BF2C356EA300A7FF39 /* LocalitySelection */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCF7C42C356F0200A7FF39 /* CellView */,
+				D0CCF7C02C356ECA00A7FF39 /* LocalitySelectionViewController.swift */,
+				D0CCF7C12C356ECA00A7FF39 /* LocalitySelectionViewController.xib */,
+			);
+			path = LocalitySelection;
+			sourceTree = "<group>";
+		};
+		D0CCF7C42C356F0200A7FF39 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCF7C52C356F2300A7FF39 /* LocalitySelectionTableViewCell.swift */,
+				D0CCF7C62C356F2300A7FF39 /* LocalitySelectionTableViewCell.xib */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		D0CCF7C92C35733500A7FF39 /* EasyboxDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCF7CA2C35735700A7FF39 /* EasyboxDetailView.swift */,
+				D0CCF7CC2C35736300A7FF39 /* EasyboxDetailView.xib */,
+			);
+			path = EasyboxDetails;
+			sourceTree = "<group>";
+		};
+		D0CCF7CE2C35742B00A7FF39 /* PickupDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCF7CF2C35745000A7FF39 /* PickupDetailView.swift */,
+				D0CCF7D12C35745900A7FF39 /* PickupDetailView.xib */,
+			);
+			path = PickupDetails;
+			sourceTree = "<group>";
+		};
+		D0CCF7D52C35952C00A7FF39 /* County */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCF7D62C35954600A7FF39 /* CountyData.swift */,
+			);
+			path = County;
+			sourceTree = "<group>";
+		};
+		D0CCF7D82C359A9700A7FF39 /* Counties */ = {
+			isa = PBXGroup;
+			children = (
+				D0CCF7D92C359AEC00A7FF39 /* CountyProvider.swift */,
+				D0CCF7DB2C359AF900A7FF39 /* CountyProviding.swift */,
+			);
+			path = Counties;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -783,31 +965,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				D05D7DA32C1C438400E2A126 /* CheckoutViewController.xib in Resources */,
+				D0CCF7C72C356F2300A7FF39 /* LocalitySelectionTableViewCell.xib in Resources */,
 				D05D7D892C1312AE00E2A126 /* SignInViewController.xib in Resources */,
 				D0245A6A2C257FFC005456AA /* ProductCollectionViewCell.xib in Resources */,
 				D05D7DA72C1C439D00E2A126 /* WishListViewController.xib in Resources */,
 				D05972AB2C2D773B0023ADB5 /* HomeDetailsView.xib in Resources */,
 				D00A25912C329354007158F3 /* ProfileItem.xib in Resources */,
+				D0CCF7B32C3562D100A7FF39 /* NewAddressViewController.xib in Resources */,
 				D059729E2C2C28BC0023ADB5 /* WishList.json in Resources */,
 				D06F9E3F2C204E460051087D /* CustomTabBarItemView.xib in Resources */,
 				D062BA412C32CF0E006BC37E /* CartTableViewCell.xib in Resources */,
 				D05D7D4B2C107D4A00E2A126 /* Assets.xcassets in Resources */,
 				D05D7D782C11B19600E2A126 /* Localizable.strings in Resources */,
+				D0755C502C3441E90039AD71 /* DeliveryOptionsView.xib in Resources */,
 				D0245A5F2C21B5EC005456AA /* ProductsListViewController.xib in Resources */,
+				D0CCF7AA2C35556400A7FF39 /* CourierDetailsView.xib in Resources */,
+				D0CCF7B82C356D5000A7FF39 /* CountySelectionViewController.xib in Resources */,
 				D0245A7E2C2C2095005456AA /* WishListTableViewCell.xib in Resources */,
 				D07DC2902C33E6A3003FEEA1 /* ProductDetailViewController.xib in Resources */,
+				D0CCF7C22C356ECA00A7FF39 /* LocalitySelectionViewController.xib in Resources */,
 				D05D7DAB2C1C43B400E2A126 /* UserProfileViewController.xib in Resources */,
 				D062BA252C3298AB006BC37E /* UserProfile.json in Resources */,
 				D0245A722C259263005456AA /* Products.json in Resources */,
 				D062BA292C329AAD006BC37E /* EditNameViewController.xib in Resources */,
 				D05D7DB32C1C723400E2A126 /* SetNameViewController.xib in Resources */,
+				D0755C532C34423F0039AD71 /* DeliveryMethodViewController.xib in Resources */,
+				D0CCF7CD2C35736300A7FF39 /* EasyboxDetailView.xib in Resources */,
 				D05D7D662C10A4FE00E2A126 /* LogInViewController.xib in Resources */,
+				D0CCF7BD2C356DA700A7FF39 /* CountySelectionTableViewCell.xib in Resources */,
 				D05D7D4E2C107D4A00E2A126 /* Base in Resources */,
 				D00A258C2C2F2DF0007158F3 /* CheckoutTableViewCell.xib in Resources */,
 				D05D7D9F2C1C435C00E2A126 /* CartViewController.xib in Resources */,
+				D0CCF7D22C35745900A7FF39 /* PickupDetailView.xib in Resources */,
 				D05972B42C2EE25D0023ADB5 /* Cart.json in Resources */,
 				D06F9E472C216ECB0051087D /* NavigationTabBar.xib in Resources */,
+				D0CCF7D42C3594E200A7FF39 /* Counties.json in Resources */,
 				D05D7D9B2C1C433F00E2A126 /* HomeViewController.xib in Resources */,
+				D0CCF7AE2C35580300A7FF39 /* CourierDetailsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,10 +1012,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0CCF7DC2C359AF900A7FF39 /* CountyProviding.swift in Sources */,
 				D062BA322C329E77006BC37E /* RequestMethod.swift in Sources */,
 				D05D7D722C10B38000E2A126 /* UIViewExtensions.swift in Sources */,
 				D07DC28F2C33E6A3003FEEA1 /* ProductDetailViewController.swift in Sources */,
 				D05D7D902C131D7F00E2A126 /* OnboardingProvider.swift in Sources */,
+				D0CCF7CB2C35735700A7FF39 /* EasyboxDetailView.swift in Sources */,
 				D0245A6B2C257FFC005456AA /* ProductCollectionViewCell.swift in Sources */,
 				D05972A92C2D771E0023ADB5 /* HomeDetailsView.swift in Sources */,
 				D0245A6F2C25845F005456AA /* UITableView.swift in Sources */,
@@ -835,6 +1031,7 @@
 				D05D7D922C131D8D00E2A126 /* OnboardingProviding.swift in Sources */,
 				D062BA202C32978E006BC37E /* UserProviding.swift in Sources */,
 				D05D7D9A2C1C433F00E2A126 /* HomeViewController.swift in Sources */,
+				D0CCF7D72C35954600A7FF39 /* CountyData.swift in Sources */,
 				D05D7D462C107D4900E2A126 /* SplashScreenViewController.swift in Sources */,
 				D05D7D702C10B33A00E2A126 /* UIViewControllerExtensions.swift in Sources */,
 				D05D7D832C13107700E2A126 /* InjectedValues.swift in Sources */,
@@ -854,13 +1051,18 @@
 				D062BA342C32A217006BC37E /* EndpointProvider.swift in Sources */,
 				D062BA302C329E26006BC37E /* NetworkProvider.swift in Sources */,
 				D05D7D8B2C1316EA00E2A126 /* CustomPlaceholderTextView.swift in Sources */,
+				D0CCF7BE2C356DA700A7FF39 /* CountySelectionTableViewCell.swift in Sources */,
 				D05D7DAA2C1C43B400E2A126 /* UserProfileViewController.swift in Sources */,
+				D0CCF7A82C35555600A7FF39 /* CourierDetailsView.swift in Sources */,
 				D05D7D682C10A8AB00E2A126 /* UnauthorizedCoordinator.swift in Sources */,
+				D0CCF7AF2C35580300A7FF39 /* CourierDetailsTableViewCell.swift in Sources */,
+				D0755C542C34423F0039AD71 /* DeliveryMethodViewController.swift in Sources */,
 				D062BA392C32A294006BC37E /* ApiError.swift in Sources */,
 				D05D7D8D2C13178F00E2A126 /* UILabelExtensions.swift in Sources */,
 				D0245A7A2C259D38005456AA /* UIImageExtensions.swift in Sources */,
 				D05D7D752C11AC4E00E2A126 /* L10n.swift in Sources */,
 				D05D7D5D2C109D3700E2A126 /* ApplicationCoordinator.swift in Sources */,
+				D0CCF7D02C35745000A7FF39 /* PickupDetailView.swift in Sources */,
 				D062BA2E2C329E15006BC37E /* NetworkProviding.swift in Sources */,
 				D05D7D882C1312AE00E2A126 /* SignInViewController.swift in Sources */,
 				D05D7D7E2C130FE200E2A126 /* UnauthorizedProvider.swift in Sources */,
@@ -869,18 +1071,24 @@
 				D0245A6D2C258433005456AA /* UICollectionView.swift in Sources */,
 				D0245A782C25995C005456AA /* ProductCategory.swift in Sources */,
 				D05D7D6D2C10AA7900E2A126 /* MainAppCoordinator.swift in Sources */,
+				D0CCF7DA2C359AEC00A7FF39 /* CountyProvider.swift in Sources */,
 				D06F9E3A2C204D440051087D /* NavigationTabBar.swift in Sources */,
+				D0CCF7B42C3562D100A7FF39 /* NewAddressViewController.swift in Sources */,
 				D062BA422C32CF0E006BC37E /* CartTableViewCell.swift in Sources */,
 				D05D7DA22C1C438400E2A126 /* CheckoutViewController.swift in Sources */,
 				D0245A602C21B5EC005456AA /* ProductsListViewController.swift in Sources */,
 				D05972A62C2C5A710023ADB5 /* FavoriteProviding.swift in Sources */,
 				D05972B72C2EE4800023ADB5 /* CartProducts.swift in Sources */,
+				D0CCF7C82C356F2300A7FF39 /* LocalitySelectionTableViewCell.swift in Sources */,
 				D062BA232C32980F006BC37E /* UserProfile.swift in Sources */,
+				D0CCF7B92C356D5000A7FF39 /* CountySelectionViewController.swift in Sources */,
 				D062BA2A2C329AAD006BC37E /* EditNameViewController.swift in Sources */,
+				D0CCF7C32C356ECA00A7FF39 /* LocalitySelectionViewController.swift in Sources */,
 				D05D7D6B2C10AA4600E2A126 /* NotificationNameExtension.swift in Sources */,
 				D05972AE2C2EE1A10023ADB5 /* CartProviding.swift in Sources */,
 				D0245A7F2C2C2095005456AA /* WishListTableViewCell.swift in Sources */,
 				D05972A42C2C5A600023ADB5 /* FavoriteProvider.swift in Sources */,
+				D0755C4E2C3441E00039AD71 /* DeliveryOptionsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

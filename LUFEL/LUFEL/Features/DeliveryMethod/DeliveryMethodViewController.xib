@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeliveryMethodViewController" customModule="LUFEL" customModuleProvider="target">
+            <connections>
+                <outlet property="courierDetailsView" destination="Kqh-SH-EYe" id="Y1N-gE-oHI"/>
+                <outlet property="deliveryOptionsView" destination="qHE-ws-gXO" id="Ur6-cb-GLq"/>
+                <outlet property="easyboxDetailsView" destination="4gu-AO-GfC" id="28h-mp-YWi"/>
+                <outlet property="pickupDetailsView" destination="uDJ-Xw-P7l" id="MsE-VK-nT3"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHE-ws-gXO" customClass="DeliveryOptionsView" customModule="LUFEL" customModuleProvider="target">
+                    <rect key="frame" x="24" y="124" width="345" height="135"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="135" id="5xk-SJ-Q3v"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqh-SH-EYe" customClass="CourierDetailsView" customModule="LUFEL" customModuleProvider="target">
+                    <rect key="frame" x="24" y="307" width="345" height="511"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gu-AO-GfC" customClass="EasyboxDetailView" customModule="LUFEL" customModuleProvider="target">
+                    <rect key="frame" x="24" y="307" width="345" height="511"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDJ-Xw-P7l" customClass="PickupDetailView" customModule="LUFEL" customModuleProvider="target">
+                    <rect key="frame" x="24" y="307" width="345" height="511"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEu-7h-ujN">
+                    <rect key="frame" x="24" y="83" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="SyV-Af-b5t"/>
+                        <constraint firstAttribute="height" constant="24" id="b41-2h-W1s"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="backArrow"/>
+                    <connections>
+                        <action selector="goBack:" destination="-1" eventType="touchUpInside" id="ChX-UY-swE"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="uDJ-Xw-P7l" firstAttribute="top" secondItem="qHE-ws-gXO" secondAttribute="bottom" constant="48" id="04F-vg-6Wd"/>
+                <constraint firstItem="4gu-AO-GfC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="0AF-43-ogT"/>
+                <constraint firstAttribute="trailing" secondItem="uDJ-Xw-P7l" secondAttribute="trailing" constant="24" id="6nc-nj-zei"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="uDJ-Xw-P7l" secondAttribute="bottom" id="Gj5-GL-C36"/>
+                <constraint firstItem="qHE-ws-gXO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="LXB-sb-gPw"/>
+                <constraint firstItem="fEu-7h-ujN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="MJU-r3-08b"/>
+                <constraint firstItem="fEu-7h-ujN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="NAB-OL-M0R"/>
+                <constraint firstItem="qHE-ws-gXO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Z2P-bT-tsy"/>
+                <constraint firstItem="4gu-AO-GfC" firstAttribute="top" secondItem="qHE-ws-gXO" secondAttribute="bottom" constant="48" id="amg-YX-6Kd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4gu-AO-GfC" secondAttribute="bottom" id="cFa-kU-XLu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Kqh-SH-EYe" secondAttribute="trailing" constant="24" id="e0n-Z1-tqk"/>
+                <constraint firstItem="uDJ-Xw-P7l" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="eby-6f-bKT"/>
+                <constraint firstItem="Kqh-SH-EYe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="fjM-CF-zK3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4gu-AO-GfC" secondAttribute="trailing" constant="24" id="iJI-Rf-1iT"/>
+                <constraint firstItem="qHE-ws-gXO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="65" id="ikD-4r-lrb"/>
+                <constraint firstItem="Kqh-SH-EYe" firstAttribute="top" secondItem="qHE-ws-gXO" secondAttribute="bottom" constant="48" id="lzM-Ra-ygB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Kqh-SH-EYe" secondAttribute="bottom" id="tlf-OK-LH1"/>
+            </constraints>
+            <point key="canvasLocation" x="-10" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backArrow" width="24" height="24"/>
+    </resources>
+</document>

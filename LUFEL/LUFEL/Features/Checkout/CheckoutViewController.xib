@@ -10,9 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckoutViewController" customModule="LUFEL" customModuleProvider="target">
             <connections>
-                <outlet property="addressTextField" destination="Qdj-Ev-y0a" id="hln-FA-4fn"/>
                 <outlet property="paymentMethodSegmentedControl" destination="FVI-KM-4ao" id="ejh-d7-LaG"/>
-                <outlet property="placeOrderButton" destination="Jgo-6P-pBB" id="NVW-Zb-hXe"/>
                 <outlet property="tableView" destination="U9E-sq-ZeX" id="5pu-lc-52F"/>
                 <outlet property="totalPriceLabel" destination="prP-J7-Mxe" id="sBC-XC-bdc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -24,14 +22,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="U9E-sq-ZeX">
-                    <rect key="frame" x="24" y="143" width="345" height="250"/>
+                    <rect key="frame" x="24" y="143" width="345" height="300"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="250" id="PCR-eL-IJa"/>
+                        <constraint firstAttribute="height" constant="300" id="PCR-eL-IJa"/>
                     </constraints>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pretul total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prP-J7-Mxe">
-                    <rect key="frame" x="24" y="417" width="345" height="21"/>
+                    <rect key="frame" x="24" y="467" width="345" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -44,7 +42,7 @@
                     </constraints>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Plaseaza comanda"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Continua"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="30"/>
@@ -55,18 +53,11 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="placeTheOrder:" destination="-1" eventType="touchUpInside" id="R9P-uB-4tA"/>
+                        <action selector="chooseDeliveryMethod:" destination="-1" eventType="touchUpInside" id="Duu-Pg-kao"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qdj-Ev-y0a" customClass="CustomPlaceholderTextView" customModule="LUFEL" customModuleProvider="target">
-                    <rect key="frame" x="24" y="462" width="345" height="64"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="64" id="ZfY-h5-ru1"/>
-                    </constraints>
-                </view>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FVI-KM-4ao">
-                    <rect key="frame" x="24" y="550" width="101" height="41"/>
+                    <rect key="frame" x="24" y="512" width="101" height="41"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="zSg-Tm-OyB"/>
@@ -93,21 +84,18 @@
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="t0h-XP-PvK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="6EP-Fw-QTf"/>
-                <constraint firstItem="Qdj-Ev-y0a" firstAttribute="top" secondItem="prP-J7-Mxe" secondAttribute="bottom" constant="24" id="7rQ-0X-GMM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Jgo-6P-pBB" secondAttribute="bottom" constant="24" id="8td-yI-sVJ"/>
                 <constraint firstItem="U9E-sq-ZeX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="8vi-gX-xww"/>
                 <constraint firstItem="Jgo-6P-pBB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Gwi-V0-wZj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="U9E-sq-ZeX" secondAttribute="trailing" constant="24" id="JJy-tQ-TVB"/>
                 <constraint firstItem="prP-J7-Mxe" firstAttribute="top" secondItem="U9E-sq-ZeX" secondAttribute="bottom" constant="24" id="M7c-Fg-JyO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="prP-J7-Mxe" secondAttribute="trailing" constant="24" id="Nw0-cW-uno"/>
-                <constraint firstItem="Qdj-Ev-y0a" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="cmM-gt-vCJ"/>
                 <constraint firstItem="FVI-KM-4ao" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="euU-rd-oKh"/>
-                <constraint firstItem="FVI-KM-4ao" firstAttribute="top" secondItem="Qdj-Ev-y0a" secondAttribute="bottom" constant="24" id="f2H-Jh-gah"/>
                 <constraint firstItem="t0h-XP-PvK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="iLL-eU-0qE"/>
+                <constraint firstItem="FVI-KM-4ao" firstAttribute="top" secondItem="prP-J7-Mxe" secondAttribute="bottom" constant="24" id="rB4-jQ-MAS"/>
                 <constraint firstItem="U9E-sq-ZeX" firstAttribute="top" secondItem="t0h-XP-PvK" secondAttribute="bottom" constant="36" id="tuN-3C-GVO"/>
                 <constraint firstItem="Jgo-6P-pBB" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="v81-lb-SjS"/>
                 <constraint firstItem="prP-J7-Mxe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="wy8-5t-2oG"/>
-                <constraint firstItem="Qdj-Ev-y0a" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="zJ3-Aj-q2d"/>
             </constraints>
             <point key="canvasLocation" x="28" y="20"/>
         </view>
