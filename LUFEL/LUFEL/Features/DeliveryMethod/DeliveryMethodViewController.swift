@@ -31,6 +31,12 @@ class DeliveryMethodViewController: UIViewController {
         didSelectOption(.courier)
     }
 
+    @IBAction func continueButtonTapped(_ sender: Any) {
+        let viewController = CheckoutViewController()
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true)
+    }
+    
     @IBAction func goBack(_ sender: Any) {
         dismiss(animated: true)
     }

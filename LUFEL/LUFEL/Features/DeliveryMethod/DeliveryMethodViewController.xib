@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,7 +30,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqh-SH-EYe" customClass="CourierDetailsView" customModule="LUFEL" customModuleProvider="target">
-                    <rect key="frame" x="24" y="307" width="345" height="511"/>
+                    <rect key="frame" x="24" y="307" width="345" height="403"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -38,11 +39,11 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gu-AO-GfC" customClass="EasyboxDetailView" customModule="LUFEL" customModuleProvider="target">
-                    <rect key="frame" x="24" y="307" width="345" height="511"/>
+                    <rect key="frame" x="24" y="307" width="345" height="403"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDJ-Xw-P7l" customClass="PickupDetailView" customModule="LUFEL" customModuleProvider="target">
-                    <rect key="frame" x="24" y="307" width="345" height="511"/>
+                    <rect key="frame" x="24" y="307" width="345" height="403"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEu-7h-ujN">
@@ -57,32 +58,60 @@
                         <action selector="goBack:" destination="-1" eventType="touchUpInside" id="ChX-UY-swE"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gm2-mv-BGY" userLabel="logInButton">
+                    <rect key="frame" x="24" y="734" width="345" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="7y3-8P-Pz1"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Continua"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="continueButtonTapped:" destination="-1" eventType="touchUpInside" id="8dx-dB-Wpu"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="appBackground"/>
             <constraints>
                 <constraint firstItem="uDJ-Xw-P7l" firstAttribute="top" secondItem="qHE-ws-gXO" secondAttribute="bottom" constant="48" id="04F-vg-6Wd"/>
                 <constraint firstItem="4gu-AO-GfC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="0AF-43-ogT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gm2-mv-BGY" secondAttribute="bottom" constant="24" id="2hN-Fh-LHZ"/>
                 <constraint firstAttribute="trailing" secondItem="uDJ-Xw-P7l" secondAttribute="trailing" constant="24" id="6nc-nj-zei"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="uDJ-Xw-P7l" secondAttribute="bottom" id="Gj5-GL-C36"/>
+                <constraint firstItem="gm2-mv-BGY" firstAttribute="top" secondItem="4gu-AO-GfC" secondAttribute="bottom" constant="24" id="Isb-18-tSd"/>
                 <constraint firstItem="qHE-ws-gXO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="LXB-sb-gPw"/>
                 <constraint firstItem="fEu-7h-ujN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="MJU-r3-08b"/>
                 <constraint firstItem="fEu-7h-ujN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="NAB-OL-M0R"/>
+                <constraint firstItem="gm2-mv-BGY" firstAttribute="top" secondItem="uDJ-Xw-P7l" secondAttribute="bottom" constant="24" id="YnM-GE-QJW"/>
                 <constraint firstItem="qHE-ws-gXO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Z2P-bT-tsy"/>
                 <constraint firstItem="4gu-AO-GfC" firstAttribute="top" secondItem="qHE-ws-gXO" secondAttribute="bottom" constant="48" id="amg-YX-6Kd"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4gu-AO-GfC" secondAttribute="bottom" id="cFa-kU-XLu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Kqh-SH-EYe" secondAttribute="trailing" constant="24" id="e0n-Z1-tqk"/>
                 <constraint firstItem="uDJ-Xw-P7l" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="eby-6f-bKT"/>
                 <constraint firstItem="Kqh-SH-EYe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="fjM-CF-zK3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4gu-AO-GfC" secondAttribute="trailing" constant="24" id="iJI-Rf-1iT"/>
                 <constraint firstItem="qHE-ws-gXO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="65" id="ikD-4r-lrb"/>
+                <constraint firstItem="gm2-mv-BGY" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="lN5-bh-9al"/>
                 <constraint firstItem="Kqh-SH-EYe" firstAttribute="top" secondItem="qHE-ws-gXO" secondAttribute="bottom" constant="48" id="lzM-Ra-ygB"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Kqh-SH-EYe" secondAttribute="bottom" id="tlf-OK-LH1"/>
+                <constraint firstItem="gm2-mv-BGY" firstAttribute="top" secondItem="Kqh-SH-EYe" secondAttribute="bottom" constant="24" id="oEs-9v-eAK"/>
+                <constraint firstItem="gm2-mv-BGY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="y3G-HU-U8o"/>
             </constraints>
-            <point key="canvasLocation" x="-10" y="20"/>
+            <point key="canvasLocation" x="-11.450381679389313" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
         <image name="backArrow" width="24" height="24"/>
+        <namedColor name="appBackground">
+            <color red="1" green="0.97600001096725464" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

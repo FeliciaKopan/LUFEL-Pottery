@@ -37,9 +37,9 @@ class CheckoutViewController: UIViewController {
     }
 
     @IBAction func chooseDeliveryMethod(_ sender: Any) {
-        let viewController = DeliveryMethodViewController()
-        viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true)
+//        let viewController = DeliveryMethodViewController()
+//        viewController.modalPresentationStyle = .fullScreen
+//        present(viewController, animated: true)
     }
     
     // MARK: - Private methods

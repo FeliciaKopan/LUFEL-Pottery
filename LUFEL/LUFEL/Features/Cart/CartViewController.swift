@@ -46,7 +46,7 @@ class CartViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func placeTheOrder(_ sender: Any) {
-        let viewController = CheckoutViewController()
+        let viewController = DeliveryMethodViewController()
         viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true)
     }
