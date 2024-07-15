@@ -30,7 +30,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqh-SH-EYe" customClass="CourierDetailsView" customModule="LUFEL" customModuleProvider="target">
-                    <rect key="frame" x="24" y="307" width="345" height="403"/>
+                    <rect key="frame" x="24" y="283" width="345" height="427"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -39,11 +39,11 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gu-AO-GfC" customClass="EasyboxDetailView" customModule="LUFEL" customModuleProvider="target">
-                    <rect key="frame" x="24" y="307" width="345" height="403"/>
+                    <rect key="frame" x="24" y="283" width="345" height="427"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDJ-Xw-P7l" customClass="PickupDetailView" customModule="LUFEL" customModuleProvider="target">
-                    <rect key="frame" x="24" y="307" width="345" height="403"/>
+                    <rect key="frame" x="24" y="283" width="345" height="427"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEu-7h-ujN">
@@ -84,7 +84,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="appBackground"/>
             <constraints>
-                <constraint firstItem="uDJ-Xw-P7l" firstAttribute="top" secondItem="qHE-ws-gXO" secondAttribute="bottom" constant="48" id="04F-vg-6Wd"/>
+                <constraint firstItem="uDJ-Xw-P7l" firstAttribute="top" secondItem="qHE-ws-gXO" secondAttribute="bottom" constant="24" id="04F-vg-6Wd"/>
                 <constraint firstItem="4gu-AO-GfC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="0AF-43-ogT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gm2-mv-BGY" secondAttribute="bottom" constant="24" id="2hN-Fh-LHZ"/>
                 <constraint firstAttribute="trailing" secondItem="uDJ-Xw-P7l" secondAttribute="trailing" constant="24" id="6nc-nj-zei"/>
@@ -94,14 +94,14 @@
                 <constraint firstItem="fEu-7h-ujN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="NAB-OL-M0R"/>
                 <constraint firstItem="gm2-mv-BGY" firstAttribute="top" secondItem="uDJ-Xw-P7l" secondAttribute="bottom" constant="24" id="YnM-GE-QJW"/>
                 <constraint firstItem="qHE-ws-gXO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Z2P-bT-tsy"/>
-                <constraint firstItem="4gu-AO-GfC" firstAttribute="top" secondItem="qHE-ws-gXO" secondAttribute="bottom" constant="48" id="amg-YX-6Kd"/>
+                <constraint firstItem="4gu-AO-GfC" firstAttribute="top" secondItem="qHE-ws-gXO" secondAttribute="bottom" constant="24" id="amg-YX-6Kd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Kqh-SH-EYe" secondAttribute="trailing" constant="24" id="e0n-Z1-tqk"/>
                 <constraint firstItem="uDJ-Xw-P7l" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="eby-6f-bKT"/>
                 <constraint firstItem="Kqh-SH-EYe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="fjM-CF-zK3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4gu-AO-GfC" secondAttribute="trailing" constant="24" id="iJI-Rf-1iT"/>
                 <constraint firstItem="qHE-ws-gXO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="65" id="ikD-4r-lrb"/>
                 <constraint firstItem="gm2-mv-BGY" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="lN5-bh-9al"/>
-                <constraint firstItem="Kqh-SH-EYe" firstAttribute="top" secondItem="qHE-ws-gXO" secondAttribute="bottom" constant="48" id="lzM-Ra-ygB"/>
+                <constraint firstItem="Kqh-SH-EYe" firstAttribute="top" secondItem="qHE-ws-gXO" secondAttribute="bottom" constant="24" id="lzM-Ra-ygB"/>
                 <constraint firstItem="gm2-mv-BGY" firstAttribute="top" secondItem="Kqh-SH-EYe" secondAttribute="bottom" constant="24" id="oEs-9v-eAK"/>
                 <constraint firstItem="gm2-mv-BGY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="y3G-HU-U8o"/>
             </constraints>
