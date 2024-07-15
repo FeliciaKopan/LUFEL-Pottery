@@ -39,7 +39,7 @@ class CourierDetailsView: UIView, NibLoadable {
     // MARK: - Private methods
 
     private func setupView() {
-        tableView.backgroundColor = UIColor.black
+        tableView.backgroundColor = UIColor.clear
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = UITableView.automaticDimension

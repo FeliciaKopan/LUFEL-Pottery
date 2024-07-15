@@ -97,12 +97,12 @@
 		D06F9E432C2055170051087D /* CombineUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F9E422C2055170051087D /* CombineUIKit.swift */; };
 		D06F9E452C2057DB0051087D /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F9E442C2057DB0051087D /* MainTabViewController.swift */; };
 		D06F9E472C216ECB0051087D /* NavigationTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D06F9E462C216ECB0051087D /* NavigationTabBar.xib */; };
-		D07DC28F2C33E6A3003FEEA1 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07DC28D2C33E6A3003FEEA1 /* ProductDetailViewController.swift */; };
-		D07DC2902C33E6A3003FEEA1 /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D07DC28E2C33E6A3003FEEA1 /* ProductDetailViewController.xib */; };
 		D0755C4E2C3441E00039AD71 /* DeliveryOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0755C4D2C3441E00039AD71 /* DeliveryOptionsView.swift */; };
 		D0755C502C3441E90039AD71 /* DeliveryOptionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0755C4F2C3441E90039AD71 /* DeliveryOptionsView.xib */; };
 		D0755C532C34423F0039AD71 /* DeliveryMethodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0755C522C34423F0039AD71 /* DeliveryMethodViewController.xib */; };
 		D0755C542C34423F0039AD71 /* DeliveryMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0755C512C34423F0039AD71 /* DeliveryMethodViewController.swift */; };
+		D07DC28F2C33E6A3003FEEA1 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07DC28D2C33E6A3003FEEA1 /* ProductDetailViewController.swift */; };
+		D07DC2902C33E6A3003FEEA1 /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D07DC28E2C33E6A3003FEEA1 /* ProductDetailViewController.xib */; };
 		D0CCF7A82C35555600A7FF39 /* CourierDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7A72C35555600A7FF39 /* CourierDetailsView.swift */; };
 		D0CCF7AA2C35556400A7FF39 /* CourierDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7A92C35556400A7FF39 /* CourierDetailsView.xib */; };
 		D0CCF7AE2C35580300A7FF39 /* CourierDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7AD2C35580300A7FF39 /* CourierDetailsTableViewCell.xib */; };
@@ -220,12 +220,12 @@
 		D06F9E422C2055170051087D /* CombineUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineUIKit.swift; sourceTree = "<group>"; };
 		D06F9E442C2057DB0051087D /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		D06F9E462C216ECB0051087D /* NavigationTabBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationTabBar.xib; sourceTree = "<group>"; };
-		D07DC28D2C33E6A3003FEEA1 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
-		D07DC28E2C33E6A3003FEEA1 /* ProductDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailViewController.xib; sourceTree = "<group>"; };
 		D0755C4D2C3441E00039AD71 /* DeliveryOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryOptionsView.swift; sourceTree = "<group>"; };
 		D0755C4F2C3441E90039AD71 /* DeliveryOptionsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeliveryOptionsView.xib; sourceTree = "<group>"; };
 		D0755C512C34423F0039AD71 /* DeliveryMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryMethodViewController.swift; sourceTree = "<group>"; };
 		D0755C522C34423F0039AD71 /* DeliveryMethodViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeliveryMethodViewController.xib; sourceTree = "<group>"; };
+		D07DC28D2C33E6A3003FEEA1 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		D07DC28E2C33E6A3003FEEA1 /* ProductDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailViewController.xib; sourceTree = "<group>"; };
 		D0CCF7A72C35555600A7FF39 /* CourierDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourierDetailsView.swift; sourceTree = "<group>"; };
 		D0CCF7A92C35556400A7FF39 /* CourierDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourierDetailsView.xib; sourceTree = "<group>"; };
 		D0CCF7AC2C35580300A7FF39 /* CourierDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourierDetailsTableViewCell.swift; sourceTree = "<group>"; };
@@ -788,15 +788,6 @@
 			path = CustomTabBarItem;
 			sourceTree = "<group>";
 		};
-		D07DC28C2C33E672003FEEA1 /* ProductDetail */ = {
-			isa = PBXGroup;
-			children = (
-				D07DC28D2C33E6A3003FEEA1 /* ProductDetailViewController.swift */,
-				D07DC28E2C33E6A3003FEEA1 /* ProductDetailViewController.xib */,
-			);
-			path = ProductDetail;
-            sourceTree = "<group>";
-        };
 		D0755C472C3440A10039AD71 /* DeliveryMethod */ = {
 			isa = PBXGroup;
 			children = (
@@ -817,6 +808,15 @@
 				D0755C4F2C3441E90039AD71 /* DeliveryOptionsView.xib */,
 			);
 			path = DeliveryOptions;
+			sourceTree = "<group>";
+		};
+		D07DC28C2C33E672003FEEA1 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D07DC28D2C33E6A3003FEEA1 /* ProductDetailViewController.swift */,
+				D07DC28E2C33E6A3003FEEA1 /* ProductDetailViewController.xib */,
+			);
+			path = ProductDetail;
 			sourceTree = "<group>";
 		};
 		D0CCF7A62C3554FA00A7FF39 /* CourierDetails */ = {
@@ -1258,6 +1258,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1284,6 +1285,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
