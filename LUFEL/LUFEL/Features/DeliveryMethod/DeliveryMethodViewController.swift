@@ -74,6 +74,7 @@ class DeliveryMethodViewController: UIViewController {
     private func didSelectOption(_ option: DeliveryOption) {
         selectedOption = option
         showDeliveryDetails(for: option)
+        deliveryOptionsView.updateBackgroundColor(for: option)
     }
 
     private func showDeliveryDetails(for option: DeliveryOption) {

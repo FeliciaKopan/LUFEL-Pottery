@@ -50,6 +50,23 @@ class DeliveryOptionsView: UIView, NibLoadable {
         setupView()
     }
 
+    // MARK: - Public methods
+
+    func updateBackgroundColor(for option: DeliveryOption) {
+        courierOptionView.backgroundColor = .clear
+        easyboxOptionView.backgroundColor = .clear
+        pickupOptionView.backgroundColor = .clear
+
+        switch option {
+        case .courier:
+            courierOptionView.backgroundColor = .lightGrey
+        case .easybox:
+            easyboxOptionView.backgroundColor = .lightGrey
+        case .pickup:
+            pickupOptionView.backgroundColor = .lightGrey
+        }
+    }
+
     // MARK: - Private methods
 
     private func setupView() {
