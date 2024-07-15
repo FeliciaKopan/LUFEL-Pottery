@@ -24,6 +24,9 @@
 		D0245A7A2C259D38005456AA /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A792C259D38005456AA /* UIImageExtensions.swift */; };
 		D0245A7E2C2C2095005456AA /* WishListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0245A7D2C2C2095005456AA /* WishListTableViewCell.xib */; };
 		D0245A7F2C2C2095005456AA /* WishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0245A7C2C2C2095005456AA /* WishListTableViewCell.swift */; };
+		D02E22E92C3FD57C0050E830 /* SingleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E22E82C3FD57C0050E830 /* SingleSection.swift */; };
+		D02E22EC2C4124400050E830 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E22EB2C4124400050E830 /* EmptyStateView.swift */; };
+		D02E22EE2C41244A0050E830 /* EmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02E22ED2C41244A0050E830 /* EmptyStateView.xib */; };
 		D059729E2C2C28BC0023ADB5 /* WishList.json in Resources */ = {isa = PBXBuildFile; fileRef = D059729D2C2C28BC0023ADB5 /* WishList.json */; };
 		D05972A12C2C29680023ADB5 /* WishListProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05972A02C2C29680023ADB5 /* WishListProducts.swift */; };
 		D05972A42C2C5A600023ADB5 /* FavoriteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05972A32C2C5A600023ADB5 /* FavoriteProvider.swift */; };
@@ -142,6 +145,9 @@
 		D0245A792C259D38005456AA /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		D0245A7C2C2C2095005456AA /* WishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTableViewCell.swift; sourceTree = "<group>"; };
 		D0245A7D2C2C2095005456AA /* WishListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListTableViewCell.xib; sourceTree = "<group>"; };
+		D02E22E82C3FD57C0050E830 /* SingleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSection.swift; sourceTree = "<group>"; };
+		D02E22EB2C4124400050E830 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		D02E22ED2C41244A0050E830 /* EmptyStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStateView.xib; sourceTree = "<group>"; };
 		D059729D2C2C28BC0023ADB5 /* WishList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WishList.json; sourceTree = "<group>"; };
 		D05972A02C2C29680023ADB5 /* WishListProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListProducts.swift; sourceTree = "<group>"; };
 		D05972A32C2C5A600023ADB5 /* FavoriteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProvider.swift; sourceTree = "<group>"; };
@@ -334,6 +340,15 @@
 			path = CellView;
 			sourceTree = "<group>";
 		};
+		D02E22EA2C4124230050E830 /* EmptyState */ = {
+			isa = PBXGroup;
+			children = (
+				D02E22EB2C4124400050E830 /* EmptyStateView.swift */,
+				D02E22ED2C41244A0050E830 /* EmptyStateView.xib */,
+			);
+			path = EmptyState;
+			sourceTree = "<group>";
+		};
 		D059729F2C2C29450023ADB5 /* WishList */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +437,7 @@
 		D05D7D562C107FDD00E2A126 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				D02E22EA2C4124230050E830 /* EmptyState */,
 				D05D7DB62C20392100E2A126 /* NavigationTabBar */,
 				D07DC28C2C33E672003FEEA1 /* ProductDetail */,
 				D0245A5C2C21B5C7005456AA /* ProductList */,
@@ -533,6 +549,7 @@
 				D0245A6E2C25845F005456AA /* UITableView.swift */,
 				D0245A792C259D38005456AA /* UIImageExtensions.swift */,
 				D00A25842C2EF524007158F3 /* Notifications.swift */,
+				D02E22E82C3FD57C0050E830 /* SingleSection.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -975,6 +992,7 @@
 				D059729E2C2C28BC0023ADB5 /* WishList.json in Resources */,
 				D06F9E3F2C204E460051087D /* CustomTabBarItemView.xib in Resources */,
 				D062BA412C32CF0E006BC37E /* CartTableViewCell.xib in Resources */,
+				D02E22EE2C41244A0050E830 /* EmptyStateView.xib in Resources */,
 				D05D7D4B2C107D4A00E2A126 /* Assets.xcassets in Resources */,
 				D05D7D782C11B19600E2A126 /* Localizable.strings in Resources */,
 				D0755C502C3441E90039AD71 /* DeliveryOptionsView.xib in Resources */,
@@ -1054,6 +1072,7 @@
 				D0CCF7BE2C356DA700A7FF39 /* CountySelectionTableViewCell.swift in Sources */,
 				D05D7DAA2C1C43B400E2A126 /* UserProfileViewController.swift in Sources */,
 				D0CCF7A82C35555600A7FF39 /* CourierDetailsView.swift in Sources */,
+				D02E22E92C3FD57C0050E830 /* SingleSection.swift in Sources */,
 				D05D7D682C10A8AB00E2A126 /* UnauthorizedCoordinator.swift in Sources */,
 				D0CCF7AF2C35580300A7FF39 /* CourierDetailsTableViewCell.swift in Sources */,
 				D0755C542C34423F0039AD71 /* DeliveryMethodViewController.swift in Sources */,
@@ -1078,6 +1097,7 @@
 				D05D7DA22C1C438400E2A126 /* CheckoutViewController.swift in Sources */,
 				D0245A602C21B5EC005456AA /* ProductsListViewController.swift in Sources */,
 				D05972A62C2C5A710023ADB5 /* FavoriteProviding.swift in Sources */,
+				D02E22EC2C4124400050E830 /* EmptyStateView.swift in Sources */,
 				D05972B72C2EE4800023ADB5 /* CartProducts.swift in Sources */,
 				D0CCF7C82C356F2300A7FF39 /* LocalitySelectionTableViewCell.swift in Sources */,
 				D062BA232C32980F006BC37E /* UserProfile.swift in Sources */,

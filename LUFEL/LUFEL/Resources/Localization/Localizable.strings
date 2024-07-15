@@ -11,3 +11,7 @@
 "signUp.logInButton" = "Log in";
 "signUp.email" = "Email";
 "signUp.password" = "Password";
+
+// MARK: - CART - DONE TW_V01
+
+"cart.emptyTitle" = "Cosul tau de cumparaturi este gol!";
