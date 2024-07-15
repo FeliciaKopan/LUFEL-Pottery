@@ -17,7 +17,11 @@ class CountySelectionViewController: UIViewController {
     // MARK: - Private properties
 
     private var counties: [County] = []
+    private lazy var dataSource = makeDataSource()
     private var cancellables = Set<AnyCancellable>()
+
+    lazy var selectedCountyPublisher = selectedCountySubject.eraseToAnyPublisher()
+    private let selectedCountySubject = PassthroughSubject<Void, Never>()
 
     @Injected(\.countyProvider) var countyProvider: CountyProviding
 
@@ -39,7 +43,6 @@ class CountySelectionViewController: UIViewController {
     private func setupView() {
         tableView.backgroundColor = UIColor.black
         tableView.delegate = self
-        tableView.dataSource = self
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(CountySelectionTableViewCell.self)
         tableView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
@@ -54,29 +57,30 @@ class CountySelectionViewController: UIViewController {
                 }
             }, receiveValue: { [weak self] counties in
                 self?.counties = counties
-                self?.tableView.reloadData()
+                self?.applySnapshot()
             })
             .store(in: &cancellables)
+    }
+
+    private func makeDataSource() -> UITableViewDiffableDataSource<SingleSection, County> {
+        return UITableViewDiffableDataSource(tableView: tableView) { tableView, indexPath, county in
+            guard let cell = tableView.dequeueReusableCell(of: CountySelectionTableViewCell.self, for: indexPath) as? CountySelectionTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.configure(with: county.name)
+            return cell
+        }
+    }
+
+    private func applySnapshot(animatingDifferences: Bool = true) {
+        var snapshot = NSDiffableDataSourceSnapshot<SingleSection, County>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(counties)
+        dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
 }
 
 extension CountySelectionViewController: UITableViewDelegate {
-
-}
-
-extension CountySelectionViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return counties.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(of: CountySelectionTableViewCell.self, for: indexPath) as? CountySelectionTableViewCell else {
-            return UITableViewCell()
-        }
-        cell.configure(with: counties[indexPath.row].name)
-        return cell
-    }
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCounty = counties[indexPath.row]
         let viewController = LocalitySelectionViewController(localities: selectedCounty.localities)

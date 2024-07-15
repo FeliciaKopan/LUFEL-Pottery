@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct County: Codable {
+struct County: Codable, Hashable {
     let name: String
     var localities: [String]
 }
