@@ -3,8 +3,8 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,8 +20,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ObD-ax-ufv">
-                    <rect key="frame" x="24" y="131" width="345" height="687"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <rect key="frame" x="0.0" y="131" width="393" height="687"/>
+                    <color key="backgroundColor" name="appBackground"/>
+                    <color key="sectionIndexBackgroundColor" name="appBackground"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ago-T7-ReG">
                     <rect key="frame" x="24" y="83" width="24" height="24"/>
@@ -37,13 +38,13 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="appBackground"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ObD-ax-ufv" secondAttribute="bottom" id="P6z-33-Vvi"/>
                 <constraint firstItem="ObD-ax-ufv" firstAttribute="top" secondItem="Ago-T7-ReG" secondAttribute="bottom" constant="24" id="PBH-Hd-PkP"/>
                 <constraint firstItem="Ago-T7-ReG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="WOI-Ke-V2A"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ObD-ax-ufv" secondAttribute="trailing" constant="24" id="c4k-VK-4MA"/>
-                <constraint firstItem="ObD-ax-ufv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="h1W-cM-sRc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ObD-ax-ufv" secondAttribute="trailing" id="c4k-VK-4MA"/>
+                <constraint firstItem="ObD-ax-ufv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="h1W-cM-sRc"/>
                 <constraint firstItem="Ago-T7-ReG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="vUs-FN-4NT"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
@@ -51,8 +52,8 @@
     </objects>
     <resources>
         <image name="backArrow" width="24" height="24"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="appBackground">
+            <color red="1" green="0.97600001096725464" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

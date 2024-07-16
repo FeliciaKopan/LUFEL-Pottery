@@ -41,7 +41,7 @@ class CountySelectionViewController: UIViewController {
     // MARK: - Private methods
 
     private func setupView() {
-        tableView.backgroundColor = UIColor.black
+        tableView.backgroundColor = .appBackground
         tableView.delegate = self
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(CountySelectionTableViewCell.self)

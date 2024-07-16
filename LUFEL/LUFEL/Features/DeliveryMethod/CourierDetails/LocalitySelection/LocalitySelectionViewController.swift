@@ -16,6 +16,7 @@ class LocalitySelectionViewController: UIViewController {
     // MARK: - Properties
 
     private let localities: [String]
+    private lazy var dataSource = makeDataSource()
 
     // MARK: - Init
 
@@ -32,6 +33,7 @@ class LocalitySelectionViewController: UIViewController {
         super.viewDidLoad()
 
         setupTableView()
+        applySnapshot()
     }
 
     @IBAction func goBack(_ sender: Any) {
@@ -41,29 +43,31 @@ class LocalitySelectionViewController: UIViewController {
     // MARK: - Private methods
 
     private func setupTableView() {
-        tableView.backgroundColor = UIColor.black
+        tableView.backgroundColor = .appBackground
         tableView.delegate = self
-        tableView.dataSource = self
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(LocalitySelectionTableViewCell.self)
         tableView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
+    }
+
+    private func makeDataSource() -> UITableViewDiffableDataSource<SingleSection, String> {
+        return UITableViewDiffableDataSource(tableView: tableView) { tableView, indexPath, locality in
+            guard let cell = tableView.dequeueReusableCell(of: LocalitySelectionTableViewCell.self, for: indexPath) as? LocalitySelectionTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.configure(with: locality)
+            return cell
+        }
+    }
+
+    private func applySnapshot(animatingDifferences: Bool = true) {
+        var snapshot = NSDiffableDataSourceSnapshot<SingleSection, String>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(localities)
+        dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
 }
 
 extension LocalitySelectionViewController: UITableViewDelegate {
 
-}
-
-extension LocalitySelectionViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return localities.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(of: LocalitySelectionTableViewCell.self, for: indexPath) as? LocalitySelectionTableViewCell else {
-            return UITableViewCell()
-        }
-        cell.configure(with: localities[indexPath.row])
-        return cell
-    }
 }
