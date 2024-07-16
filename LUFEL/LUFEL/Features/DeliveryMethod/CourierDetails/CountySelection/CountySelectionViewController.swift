@@ -31,7 +31,7 @@ class CountySelectionViewController: UIViewController {
     }
 
     @IBAction func goBack(_ sender: Any) {
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 
     // MARK: - Private methods
@@ -80,6 +80,6 @@ extension CountySelectionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCounty = counties[indexPath.row]
         let viewController = LocalitySelectionViewController(localities: selectedCounty.localities)
-        present(viewController, animated: true, completion: nil)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

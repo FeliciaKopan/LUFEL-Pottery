@@ -30,7 +30,7 @@ class NewAddressViewController: UIViewController {
     }
 
     @IBAction func goBack(_ sender: Any) {
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Private methods
@@ -42,7 +42,6 @@ class NewAddressViewController: UIViewController {
 
     @objc private func countyViewTapped() {
         let viewController = CountySelectionViewController()
-        viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

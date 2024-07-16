@@ -33,12 +33,11 @@ class DeliveryMethodViewController: UIViewController {
 
     @IBAction func continueButtonTapped(_ sender: Any) {
         let viewController = CheckoutViewController()
-        viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction func goBack(_ sender: Any) {
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 
     // MARK: - Private methods
@@ -65,8 +64,7 @@ class DeliveryMethodViewController: UIViewController {
         courierDetailsView.addNewAddressPublisher
             .sink { [weak self] in
                 let viewController = NewAddressViewController()
-                viewController.modalPresentationStyle = .fullScreen
-                self?.present(viewController, animated: true)
+                self?.navigationController?.pushViewController(viewController, animated: true)
             }
             .store(in: &cancellables)
     }

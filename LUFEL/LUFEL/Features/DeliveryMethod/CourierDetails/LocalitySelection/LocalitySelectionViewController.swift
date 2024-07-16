@@ -35,7 +35,7 @@ class LocalitySelectionViewController: UIViewController {
     }
 
     @IBAction func goBack(_ sender: Any) {
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Private methods

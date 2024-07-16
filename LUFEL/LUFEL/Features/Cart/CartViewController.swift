@@ -47,8 +47,9 @@ class CartViewController: UIViewController {
 
     @IBAction func placeTheOrder(_ sender: Any) {
         let viewController = DeliveryMethodViewController()
-        viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true, completion: nil)
     }
 
     // MARK: - Private methods
