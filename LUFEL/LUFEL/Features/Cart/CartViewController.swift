@@ -75,7 +75,7 @@ class CartViewController: UIViewController {
         let cart = cartProvider.getCartProducts()
         cartProducts = cart.products
         totalPriceLabel.text = "Total Price: \(cart.totalPrice) lei"
-        applySnapshot(animatingDifferences: true)
+        applySnapshot()
     }
 
     private func updatePlaceOrderButtonState() {
@@ -108,11 +108,11 @@ class CartViewController: UIViewController {
         }
     }
 
-    private func applySnapshot(animatingDifferences: Bool = true) {
+    private func applySnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<SingleSection, Product>()
         snapshot.appendSections([.main])
         snapshot.appendItems(cartProducts)
-        dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
+        dataSource.apply(snapshot, animatingDifferences: false)
     }
 
     private func setupEmptyView() {
@@ -137,6 +137,11 @@ extension CartViewController: UITableViewDelegate {
         }
         deleteAction.backgroundColor = .red
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        configuration.performsFirstActionWithFullSwipe = false
         return configuration
+    }
+
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
     }
 }
