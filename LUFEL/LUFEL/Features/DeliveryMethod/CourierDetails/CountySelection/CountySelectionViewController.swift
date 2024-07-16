@@ -26,6 +26,7 @@ class CountySelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupNavigationBar()
         setupView()
         fetchCounties()
     }
@@ -53,6 +54,15 @@ class CountySelectionViewController: UIViewController {
                 self?.tableView.reloadData()
             })
             .store(in: &cancellables)
+    }
+
+    private func setupNavigationBar() {
+        navigationItem.title = "Alege judetul"
+        navigationController?.navigationBar.tintColor = .gray
+
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        navigationItem.backBarButtonItem = backButton
     }
 }
 

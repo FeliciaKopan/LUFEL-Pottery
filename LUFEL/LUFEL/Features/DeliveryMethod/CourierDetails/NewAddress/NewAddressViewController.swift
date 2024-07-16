@@ -11,7 +11,6 @@ class NewAddressViewController: UIViewController {
 
     // MARK: - Views
 
-    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var fullNameView: CustomPlaceholderTextView!
     @IBOutlet weak var phoneNumberView: CustomPlaceholderTextView!
     @IBOutlet weak var addressView: CustomPlaceholderTextView!
@@ -26,6 +25,7 @@ class NewAddressViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupNavigationBar()
         setupCountyView()
     }
     
@@ -39,5 +39,14 @@ class NewAddressViewController: UIViewController {
     @objc private func countyViewTapped() {
         let viewController = CountySelectionViewController()
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    private func setupNavigationBar() {
+        navigationItem.title = "Adauga adresa noua"
+        navigationController?.navigationBar.tintColor = .gray
+
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        navigationItem.backBarButtonItem = backButton
     }
 }

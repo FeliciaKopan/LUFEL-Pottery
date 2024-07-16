@@ -30,7 +30,7 @@ class DeliveryMethodViewController: UIViewController {
 
         setupListeners()
         didSelectOption(.courier)
-        setupGoBackView()
+        setupNavigationBar()
     }
 
     @IBAction func continueButtonTapped(_ sender: Any) {
@@ -38,7 +38,7 @@ class DeliveryMethodViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
 
-    @objc private func goBackTapped() {
+    @objc private func goBack() {
         dismiss(animated: true)
     }
 
@@ -92,8 +92,16 @@ class DeliveryMethodViewController: UIViewController {
         }
     }
 
-    private func setupGoBackView() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goBackTapped))
-        goBackView.addGestureRecognizer(tapGesture)
+    private func setupNavigationBar() {
+        navigationItem.title = "Metoda de livrare"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .close,
+            target: self,
+            action: #selector(goBack)
+        )
+
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        navigationItem.backBarButtonItem = backButton
     }
 }
