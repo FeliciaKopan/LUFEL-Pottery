@@ -28,10 +28,6 @@ class NewAddressViewController: UIViewController {
 
         setupCountyView()
     }
-
-    @IBAction func goBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
     
     // MARK: - Private methods
 

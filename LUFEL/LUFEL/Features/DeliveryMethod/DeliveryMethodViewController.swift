@@ -16,7 +16,8 @@ class DeliveryMethodViewController: UIViewController {
     @IBOutlet weak var courierDetailsView: CourierDetailsView!
     @IBOutlet weak var easyboxDetailsView: EasyboxDetailView!
     @IBOutlet weak var pickupDetailsView: PickupDetailView!
-
+    @IBOutlet weak var goBackView: UIView!
+    
     // MARK: - Properties
 
     private var selectedOption: DeliveryOption?
@@ -29,15 +30,16 @@ class DeliveryMethodViewController: UIViewController {
 
         setupListeners()
         didSelectOption(.courier)
+        setupGoBackView()
     }
 
     @IBAction func continueButtonTapped(_ sender: Any) {
         let viewController = CheckoutViewController()
         navigationController?.pushViewController(viewController, animated: true)
     }
-    
-    @IBAction func goBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+
+    @objc private func goBackTapped() {
+        dismiss(animated: true)
     }
 
     // MARK: - Private methods
@@ -88,5 +90,10 @@ class DeliveryMethodViewController: UIViewController {
         case .pickup:
             pickupDetailsView.isHidden = false
         }
+    }
+
+    private func setupGoBackView() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goBackTapped))
+        goBackView.addGestureRecognizer(tapGesture)
     }
 }
