@@ -16,7 +16,8 @@ class DeliveryMethodViewController: UIViewController {
     @IBOutlet weak var courierDetailsView: CourierDetailsView!
     @IBOutlet weak var easyboxDetailsView: EasyboxDetailView!
     @IBOutlet weak var pickupDetailsView: PickupDetailView!
-
+    @IBOutlet weak var goBackView: UIView!
+    
     // MARK: - Properties
 
     private var selectedOption: DeliveryOption?
@@ -29,15 +30,15 @@ class DeliveryMethodViewController: UIViewController {
 
         setupListeners()
         didSelectOption(.courier)
+        setupNavigationBar()
     }
 
     @IBAction func continueButtonTapped(_ sender: Any) {
         let viewController = CheckoutViewController()
-        viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
-    
-    @IBAction func goBack(_ sender: Any) {
+
+    @objc private func goBack() {
         dismiss(animated: true)
     }
 
@@ -65,8 +66,7 @@ class DeliveryMethodViewController: UIViewController {
         courierDetailsView.addNewAddressPublisher
             .sink { [weak self] in
                 let viewController = NewAddressViewController()
-                viewController.modalPresentationStyle = .fullScreen
-                self?.present(viewController, animated: true)
+                self?.navigationController?.pushViewController(viewController, animated: true)
             }
             .store(in: &cancellables)
     }
@@ -90,5 +90,18 @@ class DeliveryMethodViewController: UIViewController {
         case .pickup:
             pickupDetailsView.isHidden = false
         }
+    }
+
+    private func setupNavigationBar() {
+        navigationItem.title = "Metoda de livrare"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .close,
+            target: self,
+            action: #selector(goBack)
+        )
+
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        navigationItem.backBarButtonItem = backButton
     }
 }

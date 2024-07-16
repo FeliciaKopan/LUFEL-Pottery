@@ -50,12 +50,6 @@ class CartTableViewCell: UITableViewCell {
         separatorView.isHidden = false
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-
-    }
-
     // MARK: - Actions
 
     @objc private func decrementQuantity() {

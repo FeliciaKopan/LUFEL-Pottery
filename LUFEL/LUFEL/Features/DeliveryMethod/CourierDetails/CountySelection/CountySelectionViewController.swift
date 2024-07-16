@@ -26,18 +26,15 @@ class CountySelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupNavigationBar()
         setupView()
         fetchCounties()
-    }
-
-    @IBAction func goBack(_ sender: Any) {
-        dismiss(animated: true)
     }
 
     // MARK: - Private methods
 
     private func setupView() {
-        tableView.backgroundColor = UIColor.black
+        tableView.backgroundColor = .clear
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = UITableView.automaticDimension
@@ -57,6 +54,15 @@ class CountySelectionViewController: UIViewController {
                 self?.tableView.reloadData()
             })
             .store(in: &cancellables)
+    }
+
+    private func setupNavigationBar() {
+        navigationItem.title = "Alege judetul"
+        navigationController?.navigationBar.tintColor = .gray
+
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        navigationItem.backBarButtonItem = backButton
     }
 }
 
@@ -80,6 +86,6 @@ extension CountySelectionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCounty = counties[indexPath.row]
         let viewController = LocalitySelectionViewController(localities: selectedCounty.localities)
-        present(viewController, animated: true, completion: nil)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

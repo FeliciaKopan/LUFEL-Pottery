@@ -33,15 +33,11 @@ class LocalitySelectionViewController: UIViewController {
 
         setupTableView()
     }
-
-    @IBAction func goBack(_ sender: Any) {
-        dismiss(animated: true)
-    }
     
     // MARK: - Private methods
 
     private func setupTableView() {
-        tableView.backgroundColor = UIColor.black
+        tableView.backgroundColor = .clear
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = UITableView.automaticDimension

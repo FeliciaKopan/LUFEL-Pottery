@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +11,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewAddressViewController" customModule="LUFEL" customModuleProvider="target">
             <connections>
                 <outlet property="addressView" destination="XBi-YE-psz" id="xbG-WI-eqN"/>
-                <outlet property="backButton" destination="vTf-8R-xqJ" id="rBm-J0-dh1"/>
                 <outlet property="countyAndLocalityLabel" destination="HZM-hc-iD7" id="yfi-sz-8Ao"/>
                 <outlet property="countyView" destination="lVp-ue-hc0" id="N4w-2g-j1D"/>
                 <outlet property="fullNameView" destination="G5l-Kw-PbE" id="hFm-ij-OuS"/>
@@ -25,57 +25,45 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Persoana de contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaa-f8-UDO">
-                    <rect key="frame" x="24" y="157" width="345" height="30"/>
+                    <rect key="frame" x="24" y="83" width="345" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5l-Kw-PbE" customClass="CustomPlaceholderTextView" customModule="LUFEL" customModuleProvider="target">
-                    <rect key="frame" x="24" y="211" width="345" height="60"/>
+                    <rect key="frame" x="24" y="137" width="345" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="Dvn-wd-faV"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybD-AV-eNA" customClass="CustomPlaceholderTextView" customModule="LUFEL" customModuleProvider="target">
-                    <rect key="frame" x="24" y="295" width="345" height="60"/>
+                    <rect key="frame" x="24" y="221" width="345" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="K6X-WP-glB"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adresa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jub-cO-3du">
-                    <rect key="frame" x="24" y="391" width="345" height="30"/>
+                    <rect key="frame" x="24" y="317" width="345" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBi-YE-psz" customClass="CustomPlaceholderTextView" customModule="LUFEL" customModuleProvider="target">
-                    <rect key="frame" x="24" y="445" width="345" height="60"/>
+                    <rect key="frame" x="24" y="371" width="345" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="mcN-WF-RYb"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTf-8R-xqJ">
-                    <rect key="frame" x="24" y="83" width="24" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="24" id="A6c-rt-CFk"/>
-                        <constraint firstAttribute="width" constant="24" id="Hjb-PY-fS2"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="backArrow"/>
-                    <connections>
-                        <action selector="goBack:" destination="-1" eventType="touchUpInside" id="Tvm-nu-0bz"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KS-3b-ORI" userLabel="saveButton">
                     <rect key="frame" x="24" y="722" width="345" height="60"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="KhS-sX-N0h"/>
                     </constraints>
-                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Salveaza"/>
                     <userDefinedRuntimeAttributes>
@@ -89,20 +77,20 @@
                     </userDefinedRuntimeAttributes>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVp-ue-hc0">
-                    <rect key="frame" x="24" y="529" width="345" height="60"/>
+                    <rect key="frame" x="24" y="455" width="345" height="60"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextArrow" translatesAutoresizingMaskIntoConstraints="NO" id="NHj-9a-fcU">
                             <rect key="frame" x="297" y="18" width="24" height="24"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="lly-xG-Rny"/>
                                 <constraint firstAttribute="width" constant="24" id="tcL-Bj-255"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Judet si Localitate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZM-hc-iD7">
-                            <rect key="frame" x="24" y="19.666666666666629" width="138" height="21"/>
+                            <rect key="frame" x="24" y="19.666666666666686" width="138" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -116,7 +104,7 @@
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="value" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                             <real key="value" value="1"/>
@@ -125,7 +113,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="appBackground"/>
             <constraints>
                 <constraint firstItem="XBi-YE-psz" firstAttribute="top" secondItem="jub-cO-3du" secondAttribute="bottom" constant="24" id="0pt-ki-75O"/>
                 <constraint firstItem="jub-cO-3du" firstAttribute="top" secondItem="ybD-AV-eNA" secondAttribute="bottom" constant="36" id="34a-xA-02I"/>
@@ -135,11 +123,11 @@
                 <constraint firstItem="XBi-YE-psz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="BDd-8s-jkx"/>
                 <constraint firstItem="XBi-YE-psz" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="CmD-Km-AuI"/>
                 <constraint firstItem="lVp-ue-hc0" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ECf-5U-Vuc"/>
+                <constraint firstItem="yaa-f8-UDO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="GgZ-I6-UbQ"/>
                 <constraint firstItem="lVp-ue-hc0" firstAttribute="top" secondItem="XBi-YE-psz" secondAttribute="bottom" constant="24" id="Gr4-OQ-552"/>
                 <constraint firstItem="1KS-3b-ORI" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Imd-9l-x2o"/>
                 <constraint firstItem="ybD-AV-eNA" firstAttribute="top" secondItem="G5l-Kw-PbE" secondAttribute="bottom" constant="24" id="J1k-wv-f5a"/>
                 <constraint firstItem="G5l-Kw-PbE" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Jh9-cD-dNT"/>
-                <constraint firstItem="yaa-f8-UDO" firstAttribute="top" secondItem="vTf-8R-xqJ" secondAttribute="bottom" constant="50" id="Lij-mN-cbU"/>
                 <constraint firstItem="lVp-ue-hc0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="QCg-B2-mwF"/>
                 <constraint firstItem="yaa-f8-UDO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="RLE-Lh-lR8"/>
                 <constraint firstItem="yaa-f8-UDO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="SgH-pe-jSj"/>
@@ -147,15 +135,15 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1KS-3b-ORI" secondAttribute="bottom" constant="36" id="bG4-YG-arC"/>
                 <constraint firstItem="ybD-AV-eNA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="egt-kw-JYS"/>
                 <constraint firstItem="1KS-3b-ORI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="hwb-zs-ffH"/>
-                <constraint firstItem="vTf-8R-xqJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="luW-qa-S7B"/>
-                <constraint firstItem="vTf-8R-xqJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="mcX-DB-BIJ"/>
                 <constraint firstItem="ybD-AV-eNA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="yt2-Qe-CNX"/>
             </constraints>
             <point key="canvasLocation" x="140" y="20"/>
         </view>
     </objects>
     <resources>
-        <image name="backArrow" width="24" height="24"/>
         <image name="nextArrow" width="24" height="24"/>
+        <namedColor name="appBackground">
+            <color red="1" green="0.97600001096725464" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
