@@ -12,4 +12,5 @@ protocol CartProviding {
     func removeProductFromCart(_ product: Product)
     func updateProductQuantity(_ product: Product)
     func getCartProducts() -> CartProducts
+    func clearCart()
 }

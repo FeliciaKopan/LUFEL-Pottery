@@ -51,6 +51,12 @@ final class CartProvider: CartProviding {
         return cartProducts
     }
 
+    func clearCart() {
+        cartProducts.products.removeAll()
+        saveCart()
+        NotificationCenter.default.post(name: .cartUpdated, object: nil)
+    }
+
     private func saveCart() {
         do {
             let encoded = try JSONEncoder().encode(cartProducts)

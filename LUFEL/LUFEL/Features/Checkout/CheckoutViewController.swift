@@ -53,7 +53,9 @@ class CheckoutViewController: UIViewController {
                 print(jsonString)
             }
 
-            let alert = UIAlertController(title: "Order Saved", message: "Your order is in progress.", preferredStyle: .alert)
+            resetOrder()
+
+            let alert = UIAlertController(title: "Order Saved", message: "Your order is in process.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         } catch {
@@ -96,6 +98,11 @@ class CheckoutViewController: UIViewController {
         cartProvider.removeProductFromCart(product)
         tableView.reloadData()
 //        totalPriceLabel.text = "Total Price: \(calculateTotalPrice()) lei"
+    }
+
+    private func resetOrder() {
+        newOrder = NewOrder(products: [])
+        cartProvider.clearCart()
     }
 }
 
