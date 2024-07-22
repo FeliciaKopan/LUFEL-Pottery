@@ -20,11 +20,22 @@ class DeliveryMethodViewController: UIViewController {
     
     // MARK: - Properties
 
-    private var newOrder: NewOrder?
+    private var newOrder: NewOrder
     private var selectedOption: DeliveryOption?
     private var cancellables = Set<AnyCancellable>()
 
     @Injected(\.cartProvider) var cartProvider: CartProviding
+
+    // MARK: - Initializer
+
+    init(newOrder: NewOrder) {
+        self.newOrder = newOrder
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - Lifecycle
 
@@ -40,26 +51,19 @@ class DeliveryMethodViewController: UIViewController {
         if let selectedOption = selectedOption {
             switch selectedOption {
             case .courier:
-                newOrder?.shippingMethod = .courier
+                newOrder.shippingMethod = .courier
             case .easybox:
-                newOrder?.shippingMethod = .easybox
+                newOrder.shippingMethod = .easybox
             case .pickup:
-                newOrder?.shippingMethod = .pickup
+                newOrder.shippingMethod = .pickup
             }
         }
-        let viewController = CheckoutViewController()
-        viewController.setOrder(newOrder)
+        let viewController = CheckoutViewController(newOrder: newOrder)
         navigationController?.pushViewController(viewController, animated: true)
     }
 
     @objc private func goBack() {
         dismiss(animated: true)
-    }
-
-    // MARK: - Public methods
-
-    func setOrder(_ order: NewOrder?) {
-        self.newOrder = order
     }
 
     // MARK: - Private methods
@@ -85,8 +89,8 @@ class DeliveryMethodViewController: UIViewController {
 
         courierDetailsView.addNewAddressPublisher
             .sink { [weak self] in
-                let viewController = NewAddressViewController()
-                viewController.setOrder(self?.newOrder)
+                guard let newOrder = self?.newOrder else { return }
+                let viewController = NewAddressViewController(newOrder: newOrder)
                 self?.navigationController?.pushViewController(viewController, animated: true)
             }
             .store(in: &cancellables)

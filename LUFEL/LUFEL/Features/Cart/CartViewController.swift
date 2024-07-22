@@ -47,8 +47,7 @@ class CartViewController: UIViewController {
 
     @IBAction func placeTheOrder(_ sender: Any) {
         let newOrder = NewOrder(products: cartProducts)
-        let viewController = DeliveryMethodViewController()
-        viewController.setOrder(newOrder)
+        let viewController = DeliveryMethodViewController(newOrder: newOrder)
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true, completion: nil)

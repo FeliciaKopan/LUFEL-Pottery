@@ -20,7 +20,18 @@ class NewAddressViewController: UIViewController {
     
     // MARK: - Properties
 
-    private var newOrder: NewOrder?
+    private var newOrder: NewOrder
+
+    // MARK: - Initializer
+
+    init(newOrder: NewOrder) {
+        self.newOrder = newOrder
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - Lifecycle
 
@@ -30,12 +41,6 @@ class NewAddressViewController: UIViewController {
         setupNavigationBar()
         setupCountyView()
         setupSaveButton()
-    }
-
-    // MARK: - Public methods
-
-    func setOrder(_ order: NewOrder?) {
-        self.newOrder = order
     }
 
     // MARK: - Private methods

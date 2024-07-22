@@ -18,11 +18,22 @@ class CheckoutViewController: UIViewController {
     
     // MARK: - Properties
 
-    private var newOrder: NewOrder?
+    private var newOrder: NewOrder
     private var cancellables = Set<AnyCancellable>()
     private lazy var dataSource = makeDataSource()
 
     @Injected(\.cartProvider) var cartProvider: CartProviding
+
+    // MARK: - Initializer
+
+    init(newOrder: NewOrder) {
+        self.newOrder = newOrder
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - Lifecycle
 
@@ -42,7 +53,6 @@ class CheckoutViewController: UIViewController {
     }
 
     @IBAction func finalizeOrder(_ sender: Any) {
-        guard var newOrder = newOrder else { return }
         switch paymentMethodSegmentedControl.selectedSegmentIndex {
         case 0:
             newOrder.paymentMethod = .cashOnDelivery
@@ -68,12 +78,6 @@ class CheckoutViewController: UIViewController {
         }
     }
 
-    // MARK: - Public methods
-
-    func setOrder(_ order: NewOrder?) {
-        self.newOrder = order
-    }
-
     // MARK: - Private methods
 
     private func setupTableView() {
@@ -86,22 +90,18 @@ class CheckoutViewController: UIViewController {
     }
 
     private func calculateTotalPrice() -> Double {
-        return newOrder?.products.reduce(0) { $0 + $1.price * Double($1.quantity ?? 1) } ?? 0.0
+        return newOrder.products.reduce(0) { $0 + $1.price * Double($1.quantity ?? 1) }
     }
 
     private func loadCartProducts() {
-        if newOrder != nil {
-            totalPriceLabel.text = "Total Price: \(calculateTotalPrice()) lei"
-            applySnapshot()
-        }
+        totalPriceLabel.text = "Total Price: \(calculateTotalPrice()) lei"
+        applySnapshot()
     }
 
     private func removeProduct(_ product: Product) {
-        guard var newOrder = newOrder else { return }
         if let index = newOrder.products.firstIndex(where: { $0.id == product.id }) {
             newOrder.products.remove(at: index)
             cartProvider.removeProductFromCart(product)
-            self.newOrder = newOrder
             totalPriceLabel.text = "Total Price: \(calculateTotalPrice()) lei"
             applySnapshot()
 
@@ -145,7 +145,7 @@ class CheckoutViewController: UIViewController {
     private func applySnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<SingleSection, Product>()
         snapshot.appendSections([.main])
-        snapshot.appendItems(newOrder?.products ?? [])
+        snapshot.appendItems(newOrder.products)
         dataSource.apply(snapshot, animatingDifferences: false)
     }
 }
