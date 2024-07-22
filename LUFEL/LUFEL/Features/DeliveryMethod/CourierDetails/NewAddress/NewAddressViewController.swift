@@ -20,6 +20,8 @@ class NewAddressViewController: UIViewController {
     
     // MARK: - Properties
 
+    private var newOrder: NewOrder?
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -27,8 +29,15 @@ class NewAddressViewController: UIViewController {
 
         setupNavigationBar()
         setupCountyView()
+        setupSaveButton()
     }
-    
+
+    // MARK: - Public methods
+
+    func setOrder(_ order: NewOrder?) {
+        self.newOrder = order
+    }
+
     // MARK: - Private methods
 
     private func setupCountyView() {
@@ -48,5 +57,15 @@ class NewAddressViewController: UIViewController {
         let backButton = UIBarButtonItem()
         backButton.title = ""
         navigationItem.backBarButtonItem = backButton
+    }
+
+    private func setupSaveButton() {
+        saveButton.addTarget(self, action: #selector(saveAddress), for: .touchUpInside)
+    }
+
+    @objc private func saveAddress() {
+//        guard let address = addressView.text, !address.isEmpty else { return }
+//        newOrder?.address = address
+        navigationController?.popViewController(animated: true)
     }
 }

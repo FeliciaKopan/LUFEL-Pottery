@@ -18,7 +18,7 @@ class CheckoutViewController: UIViewController {
     
     // MARK: - Properties
 
-    private var cartProducts: [Product] = []
+    private var newOrder: NewOrder?
     private var cancellables = Set<AnyCancellable>()
 
     @Injected(\.cartProvider) var cartProvider: CartProviding
@@ -37,7 +37,34 @@ class CheckoutViewController: UIViewController {
     }
 
     @IBAction func finalizeOrder(_ sender: Any) {
+        guard var newOrder = newOrder else { return }
+        switch paymentMethodSegmentedControl.selectedSegmentIndex {
+        case 0:
+            newOrder.paymentMethod = .cashOnDelivery
+        case 1:
+            newOrder.paymentMethod = .creditCard
+        default:
+            break
+        }
 
+        do {
+            let jsonData = try JSONEncoder().encode(newOrder)
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                print(jsonString)
+            }
+
+            let alert = UIAlertController(title: "Order Saved", message: "Your order is in progress.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        } catch {
+            print("Failed to encode new order: \(error)")
+        }
+    }
+
+    // MARK: - Public methods
+
+    func setOrder(_ order: NewOrder?) {
+        self.newOrder = order
     }
 
     // MARK: - Private methods
@@ -52,21 +79,23 @@ class CheckoutViewController: UIViewController {
     }
 
     private func calculateTotalPrice() -> Double {
-        return cartProducts.reduce(0) { $0 + $1.price * Double($1.quantity ?? 1) }
+        return newOrder?.products.reduce(0) { $0 + $1.price * Double($1.quantity ?? 1) } ?? 0.0
     }
 
     private func loadCartProducts() {
-        let cart = cartProvider.getCartProducts()
-        cartProducts = cart.products
-        totalPriceLabel.text = "Total Price: \(calculateTotalPrice()) lei"
-        tableView.reloadData()
+        if newOrder != nil {
+            totalPriceLabel.text = "Total Price: \(calculateTotalPrice()) lei"
+            tableView.reloadData()
+        }
     }
 
     private func removeProduct(at indexPath: IndexPath) {
-        let product = cartProducts[indexPath.row]
+        guard var newOrder = newOrder else { return }
+        let product = newOrder.products[indexPath.row]
+        newOrder.products.remove(at: indexPath.row)
         cartProvider.removeProductFromCart(product)
-        cartProducts.remove(at: indexPath.row)
-        loadCartProducts()
+        tableView.reloadData()
+//        totalPriceLabel.text = "Total Price: \(calculateTotalPrice()) lei"
     }
 }
 
@@ -76,19 +105,19 @@ extension CheckoutViewController: UITableViewDelegate {
 
 extension CheckoutViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cartProducts.count
+        return newOrder?.products.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(of: CheckoutTableViewCell.self, for: indexPath) as? CheckoutTableViewCell else {
             return UITableViewCell()
         }
-        let product = cartProducts[indexPath.row]
-        if let imageUrl = product.imageUrl,
+        let product = newOrder?.products[indexPath.row]
+        if let imageUrl = product?.imageUrl,
            let url = URL(string: imageUrl),
-           let quantity = product.quantity {
+           let quantity = product?.quantity {
             cell.configure(with: .init(imageUrl: url,
-                                       title: product.title,
+                                       title: product?.title ?? "",
                                        quantity: quantity
                                       ))
         }

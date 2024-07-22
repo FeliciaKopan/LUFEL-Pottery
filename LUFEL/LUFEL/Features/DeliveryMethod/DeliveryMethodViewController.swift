@@ -20,6 +20,7 @@ class DeliveryMethodViewController: UIViewController {
     
     // MARK: - Properties
 
+    private var newOrder: NewOrder?
     private var selectedOption: DeliveryOption?
     private var cancellables = Set<AnyCancellable>()
 
@@ -36,13 +37,29 @@ class DeliveryMethodViewController: UIViewController {
     }
 
     @IBAction func continueButtonTapped(_ sender: Any) {
+        if let selectedOption = selectedOption {
+            switch selectedOption {
+            case .courier:
+                newOrder?.shippingMethod = .courier
+            case .easybox:
+                newOrder?.shippingMethod = .easybox
+            case .pickup:
+                newOrder?.shippingMethod = .pickup
+            }
+        }
         let viewController = CheckoutViewController()
-        viewController.cartProvider = cartProvider
+        viewController.setOrder(newOrder)
         navigationController?.pushViewController(viewController, animated: true)
     }
 
     @objc private func goBack() {
         dismiss(animated: true)
+    }
+
+    // MARK: - Public methods
+
+    func setOrder(_ order: NewOrder?) {
+        self.newOrder = order
     }
 
     // MARK: - Private methods
@@ -69,6 +86,7 @@ class DeliveryMethodViewController: UIViewController {
         courierDetailsView.addNewAddressPublisher
             .sink { [weak self] in
                 let viewController = NewAddressViewController()
+                viewController.setOrder(self?.newOrder)
                 self?.navigationController?.pushViewController(viewController, animated: true)
             }
             .store(in: &cancellables)
