@@ -29,6 +29,7 @@ class NewAddressViewController: UIViewController {
     private var cancellables = Set<AnyCancellable>()
 
     @Injected(\.countyProvider) var countyProvider: CountyProviding
+    @Injected(\.addressProvider) var addressProvider: AddressProviding
 
     lazy var addressPublisher = addressSubject.eraseToAnyPublisher()
     private let addressSubject = PassthroughSubject<AddressDetails, Never>()
@@ -114,6 +115,7 @@ class NewAddressViewController: UIViewController {
         )
 
         newOrder.address = address
+        addressProvider.addAddress(addressDetails)
         addressSubject.send(addressDetails)
         navigationController?.popViewController(animated: true)
     }

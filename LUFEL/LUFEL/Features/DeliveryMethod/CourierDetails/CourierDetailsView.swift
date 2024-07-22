@@ -18,6 +18,8 @@ class CourierDetailsView: UIView, NibLoadable {
     // MARK: - Private properties
 
     private var addresses: [AddressDetails] = []
+    
+    @Injected(\.addressProvider) var addressProvider: AddressProviding
 
     lazy var addNewAddressPublisher = addNewAddressSubject.eraseToAnyPublisher()
     private let addNewAddressSubject = PassthroughSubject<Void, Never>()
@@ -28,18 +30,22 @@ class CourierDetailsView: UIView, NibLoadable {
         super.init(frame: frame)
         loadNibContent()
         setupView()
+        loadAddresses()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadNibContent()
         setupView()
+        loadAddresses()
     }
 
     // MARK: - Public methods
 
     func addNewAddress(_ address: AddressDetails) {
         addresses.insert(address, at: 0)
+        addressProvider.addAddress(address)
+        loadAddresses()
         tableView.reloadData()
     }
 
@@ -57,13 +63,30 @@ class CourierDetailsView: UIView, NibLoadable {
         addAddressView.addGestureRecognizer(tapGesture)
     }
 
+    private func removeAddress(at indexPath: IndexPath) {
+        let address = addresses.remove(at: indexPath.row)
+        addressProvider.removeAddress(address)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+
+    private func loadAddresses() {
+        addresses = addressProvider.getAddresses()
+        tableView.reloadData()
+    }
+
     @objc private func addNewAddressTapped() {
         addNewAddressSubject.send()
     }
 }
 
 extension CourierDetailsView: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (_, _, completionHandler) in
+            self?.removeAddress(at: indexPath)
+            completionHandler(true)
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
 }
 
 extension CourierDetailsView: UITableViewDataSource {
