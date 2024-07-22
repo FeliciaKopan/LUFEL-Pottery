@@ -20,10 +20,15 @@ class CheckoutViewController: UIViewController {
 
     private var newOrder: NewOrder?
     private var cancellables = Set<AnyCancellable>()
+    private lazy var dataSource = makeDataSource()
 
     @Injected(\.cartProvider) var cartProvider: CartProviding
 
     // MARK: - Lifecycle
+
+    override func loadView() {
+        view = viewFromNib()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +79,7 @@ class CheckoutViewController: UIViewController {
     private func setupTableView() {
         tableView.backgroundColor = .clear
         tableView.delegate = self
-        tableView.dataSource = self
+        tableView.dataSource = dataSource
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(CheckoutTableViewCell.self)
         tableView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
@@ -87,54 +92,64 @@ class CheckoutViewController: UIViewController {
     private func loadCartProducts() {
         if newOrder != nil {
             totalPriceLabel.text = "Total Price: \(calculateTotalPrice()) lei"
-            tableView.reloadData()
+            applySnapshot()
         }
     }
 
-    private func removeProduct(at indexPath: IndexPath) {
+    private func removeProduct(_ product: Product) {
         guard var newOrder = newOrder else { return }
-        let product = newOrder.products[indexPath.row]
-        newOrder.products.remove(at: indexPath.row)
-        cartProvider.removeProductFromCart(product)
-        tableView.reloadData()
-//        totalPriceLabel.text = "Total Price: \(calculateTotalPrice()) lei"
+        if let index = newOrder.products.firstIndex(where: { $0.id == product.id }) {
+            newOrder.products.remove(at: index)
+            cartProvider.removeProductFromCart(product)
+            self.newOrder = newOrder
+            totalPriceLabel.text = "Total Price: \(calculateTotalPrice()) lei"
+            applySnapshot()
+
+            if newOrder.products.isEmpty {
+                dismiss(animated: true)
+            }
+        }
     }
 
     private func resetOrder() {
         newOrder = NewOrder(products: [])
         cartProvider.clearCart()
     }
+
+    private func makeDataSource() -> UITableViewDiffableDataSource<SingleSection, Product> {
+        return UITableViewDiffableDataSource(tableView: tableView) { tableView, indexPath, product in
+            guard let cell = tableView.dequeueReusableCell(of: CheckoutTableViewCell.self, for: indexPath) as? CheckoutTableViewCell else {
+                return UITableViewCell()
+            }
+
+            if let imageUrl = product.imageUrl,
+               let url = URL(string: imageUrl),
+               let quantity = product.quantity{
+                let identifier = CheckoutTableViewCell.Identifier(
+                    imageUrl: url,
+                    title: product.title,
+                    quantity: quantity
+                )
+                cell.configure(with: identifier)
+
+                cell.removeProductPublisher
+                    .sink { [weak self] _ in
+                        self?.removeProduct(product)
+                    }
+                    .store(in: &self.cancellables)
+            }
+            return cell
+        }
+    }
+
+    private func applySnapshot() {
+        var snapshot = NSDiffableDataSourceSnapshot<SingleSection, Product>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(newOrder?.products ?? [])
+        dataSource.apply(snapshot, animatingDifferences: false)
+    }
 }
 
 extension CheckoutViewController: UITableViewDelegate {
 
-}
-
-extension CheckoutViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return newOrder?.products.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(of: CheckoutTableViewCell.self, for: indexPath) as? CheckoutTableViewCell else {
-            return UITableViewCell()
-        }
-        let product = newOrder?.products[indexPath.row]
-        if let imageUrl = product?.imageUrl,
-           let url = URL(string: imageUrl),
-           let quantity = product?.quantity {
-            cell.configure(with: .init(imageUrl: url,
-                                       title: product?.title ?? "",
-                                       quantity: quantity
-                                      ))
-        }
-
-        cell.removeProductPublisher
-            .sink { [weak self] in
-                self?.removeProduct(at: indexPath)
-            }
-            .store(in: &cancellables)
-
-        return cell
-    }
 }
