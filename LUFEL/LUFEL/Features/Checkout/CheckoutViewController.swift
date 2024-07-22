@@ -36,12 +36,10 @@ class CheckoutViewController: UIViewController {
         dismiss(animated: true)
     }
 
-    @IBAction func chooseDeliveryMethod(_ sender: Any) {
-//        let viewController = DeliveryMethodViewController()
-//        viewController.modalPresentationStyle = .fullScreen
-//        present(viewController, animated: true)
+    @IBAction func finalizeOrder(_ sender: Any) {
+
     }
-    
+
     // MARK: - Private methods
 
     private func setupTableView() {
@@ -53,10 +51,14 @@ class CheckoutViewController: UIViewController {
         tableView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
     }
 
+    private func calculateTotalPrice() -> Double {
+        return cartProducts.reduce(0) { $0 + $1.price * Double($1.quantity ?? 1) }
+    }
+
     private func loadCartProducts() {
         let cart = cartProvider.getCartProducts()
         cartProducts = cart.products
-        totalPriceLabel.text = "Total Price: \(cart.totalPrice) lei"
+        totalPriceLabel.text = "Total Price: \(calculateTotalPrice()) lei"
         tableView.reloadData()
     }
 

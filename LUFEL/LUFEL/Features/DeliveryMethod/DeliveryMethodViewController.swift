@@ -22,7 +22,9 @@ class DeliveryMethodViewController: UIViewController {
 
     private var selectedOption: DeliveryOption?
     private var cancellables = Set<AnyCancellable>()
-    
+
+    @Injected(\.cartProvider) var cartProvider: CartProviding
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -35,6 +37,7 @@ class DeliveryMethodViewController: UIViewController {
 
     @IBAction func continueButtonTapped(_ sender: Any) {
         let viewController = CheckoutViewController()
+        viewController.cartProvider = cartProvider
         navigationController?.pushViewController(viewController, animated: true)
     }
 

@@ -9,20 +9,32 @@ import Foundation
 
 struct CartProducts: Codable, Hashable {
     var products: [Product]
-    var totalPrice: Double
+    var paymentMethod: PaymentMethod?
+    var shippingMethod: ShippingMethod?
 
     enum CodingKeys: String, CodingKey {
-        case products, totalPrice
+        case products, paymentMethod, shippingMethod
     }
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         products = try values.decode([Product].self, forKey: .products)
-        totalPrice = try values.decode(Double.self, forKey: .totalPrice)
+        paymentMethod = try? values.decode(PaymentMethod.self, forKey: .paymentMethod)
+        shippingMethod = try? values.decode(ShippingMethod.self, forKey: .shippingMethod)
     }
 
-    init(products: [Product] = [], totalPrice: Double = 0.0) {
+    init(products: [Product] = []) {
         self.products = products
-        self.totalPrice = totalPrice
     }
+}
+
+enum PaymentMethod: String, Codable {
+    case creditCard
+    case cashOnDelivery
+}
+
+enum ShippingMethod: String, Codable {
+    case courier
+    case easybox
+    case pickup
 }

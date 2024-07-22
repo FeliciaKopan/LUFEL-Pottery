@@ -72,10 +72,14 @@ class CartViewController: UIViewController {
         updatePlaceOrderButtonState()
     }
 
+    private func calculateTotalPrice() -> Double {
+        return cartProducts.reduce(0) { $0 + $1.price * Double($1.quantity ?? 1) }
+    }
+
     private func loadCartProducts() {
         let cart = cartProvider.getCartProducts()
         cartProducts = cart.products
-        totalPriceLabel.text = "Total Price: \(cart.totalPrice) lei"
+        totalPriceLabel.text = "Total Price: \(calculateTotalPrice()) lei"
         applySnapshot()
     }
 

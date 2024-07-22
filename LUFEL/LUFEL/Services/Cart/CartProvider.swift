@@ -25,14 +25,12 @@ final class CartProvider: CartProviding {
             }
             cartProducts.products.append(productToAdd)
         }
-        updateTotalPrice()
         saveCart()
         NotificationCenter.default.post(name: .cartUpdated, object: nil)
     }
 
     func removeProductFromCart(_ product: Product) {
         cartProducts.products.removeAll { $0.id == product.id }
-        updateTotalPrice()
         saveCart()
         NotificationCenter.default.post(name: .cartUpdated, object: nil)
     }
@@ -43,7 +41,6 @@ final class CartProvider: CartProviding {
             if cartProducts.products[index].quantity ?? 0 <= 0 {
                 removeProductFromCart(cartProduct)
             } else {
-                updateTotalPrice()
                 saveCart()
                 NotificationCenter.default.post(name: .cartUpdated, object: nil)
             }
@@ -52,10 +49,6 @@ final class CartProvider: CartProviding {
 
     func getCartProducts() -> CartProducts {
         return cartProducts
-    }
-
-    private func updateTotalPrice() {
-        cartProducts.totalPrice = cartProducts.products.reduce(0) { $0 + ($1.price * Double($1.quantity ?? 1)) }
     }
 
     private func saveCart() {

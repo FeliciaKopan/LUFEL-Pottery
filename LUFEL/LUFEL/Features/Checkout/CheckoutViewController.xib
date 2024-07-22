@@ -54,7 +54,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="chooseDeliveryMethod:" destination="-1" eventType="touchUpInside" id="Duu-Pg-kao"/>
+                        <action selector="finalizeOrder:" destination="-1" eventType="touchUpInside" id="Xaq-tw-5FV"/>
                     </connections>
                 </button>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FVI-KM-4ao">
