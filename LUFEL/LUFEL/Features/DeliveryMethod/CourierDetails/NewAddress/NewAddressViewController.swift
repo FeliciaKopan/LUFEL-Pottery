@@ -30,6 +30,9 @@ class NewAddressViewController: UIViewController {
 
     @Injected(\.countyProvider) var countyProvider: CountyProviding
 
+    lazy var addressPublisher = addressSubject.eraseToAnyPublisher()
+    private let addressSubject = PassthroughSubject<AddressDetails, Never>()
+
     // MARK: - Initializer
 
     init(newOrder: NewOrder) {
@@ -94,8 +97,24 @@ class NewAddressViewController: UIViewController {
     }
 
     @objc private func saveAddress() {
-        guard let address = addressTextField.text, !address.isEmpty else { return }
+        guard let fullName = fullNameTextField.text, !fullName.isEmpty,
+              let phoneNumber = phoneNumberTextField.text, !phoneNumber.isEmpty,
+              let address = addressTextField.text, !address.isEmpty,
+              let county = selectedCounty?.name,
+              let locality = selectedLocality else {
+            return
+        }
+
+        let addressDetails = AddressDetails(
+            fullName: fullName,
+            phoneNumber: phoneNumber,
+            address: address,
+            county: county,
+            locality: locality
+        )
+
         newOrder.address = address
+        addressSubject.send(addressDetails)
         navigationController?.popViewController(animated: true)
     }
 

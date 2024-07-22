@@ -17,7 +17,7 @@ class CourierDetailsView: UIView, NibLoadable {
     
     // MARK: - Private properties
 
-    private var addresses: [String] = []
+    private var addresses: [AddressDetails] = []
 
     lazy var addNewAddressPublisher = addNewAddressSubject.eraseToAnyPublisher()
     private let addNewAddressSubject = PassthroughSubject<Void, Never>()
@@ -36,6 +36,13 @@ class CourierDetailsView: UIView, NibLoadable {
         setupView()
     }
 
+    // MARK: - Public methods
+
+    func addNewAddress(_ address: AddressDetails) {
+        addresses.insert(address, at: 0)
+        tableView.reloadData()
+    }
+
     // MARK: - Private methods
 
     private func setupView() {
@@ -48,11 +55,6 @@ class CourierDetailsView: UIView, NibLoadable {
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(addNewAddressTapped))
         addAddressView.addGestureRecognizer(tapGesture)
-    }
-
-    private func addNewAddress(_ address: String) {
-        addresses.append(address)
-        tableView.reloadData()
     }
 
     @objc private func addNewAddressTapped() {
@@ -73,7 +75,8 @@ extension CourierDetailsView: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(of: CourierDetailsTableViewCell.self, for: indexPath) as? CourierDetailsTableViewCell else {
             return UITableViewCell()
         }
-        cell.configure(with: addresses[indexPath.row])
+        let addressDetails = addresses[indexPath.row]
+        cell.configure(with: addressDetails)
         return cell
     }
 }

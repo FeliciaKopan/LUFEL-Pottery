@@ -89,9 +89,14 @@ class DeliveryMethodViewController: UIViewController {
 
         courierDetailsView.addNewAddressPublisher
             .sink { [weak self] in
-                guard let newOrder = self?.newOrder else { return }
-                let viewController = NewAddressViewController(newOrder: newOrder)
-                self?.navigationController?.pushViewController(viewController, animated: true)
+                guard let self = self else { return }
+                let viewController = NewAddressViewController(newOrder: self.newOrder)
+                viewController.addressPublisher
+                    .sink { [weak self] address in
+                        self?.courierDetailsView.addNewAddress(address)
+                    }
+                    .store(in: &self.cancellables)
+                self.navigationController?.pushViewController(viewController, animated: true)
             }
             .store(in: &cancellables)
     }

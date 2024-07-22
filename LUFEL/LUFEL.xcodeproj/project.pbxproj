@@ -104,6 +104,7 @@
 		D07DC28F2C33E6A3003FEEA1 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07DC28D2C33E6A3003FEEA1 /* ProductDetailViewController.swift */; };
 		D07DC2902C33E6A3003FEEA1 /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D07DC28E2C33E6A3003FEEA1 /* ProductDetailViewController.xib */; };
 		D0B8903D2C4E3F4800270739 /* NewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B8903C2C4E3F4800270739 /* NewOrder.swift */; };
+		D0B890472C4EB96200270739 /* AddressDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B890462C4EB96200270739 /* AddressDetails.swift */; };
 		D0CCF7A82C35555600A7FF39 /* CourierDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCF7A72C35555600A7FF39 /* CourierDetailsView.swift */; };
 		D0CCF7AA2C35556400A7FF39 /* CourierDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7A92C35556400A7FF39 /* CourierDetailsView.xib */; };
 		D0CCF7AE2C35580300A7FF39 /* CourierDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0CCF7AD2C35580300A7FF39 /* CourierDetailsTableViewCell.xib */; };
@@ -220,6 +221,7 @@
 		D07DC28D2C33E6A3003FEEA1 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		D07DC28E2C33E6A3003FEEA1 /* ProductDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailViewController.xib; sourceTree = "<group>"; };
 		D0B8903C2C4E3F4800270739 /* NewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrder.swift; sourceTree = "<group>"; };
+		D0B890462C4EB96200270739 /* AddressDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressDetails.swift; sourceTree = "<group>"; };
 		D0CCF7A72C35555600A7FF39 /* CourierDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourierDetailsView.swift; sourceTree = "<group>"; };
 		D0CCF7A92C35556400A7FF39 /* CourierDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourierDetailsView.xib; sourceTree = "<group>"; };
 		D0CCF7AC2C35580300A7FF39 /* CourierDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourierDetailsTableViewCell.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 		D0245A732C259746005456AA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D0B890452C4EB95100270739 /* AddressDetails */,
 				D0CCF7D52C35952C00A7FF39 /* County */,
 				D05972B52C2EE4690023ADB5 /* Cart */,
 				D062BA212C3297F4006BC37E /* UserProfile */,
@@ -806,6 +809,14 @@
 			path = ProductDetail;
 			sourceTree = "<group>";
 		};
+		D0B890452C4EB95100270739 /* AddressDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D0B890462C4EB96200270739 /* AddressDetails.swift */,
+			);
+			path = AddressDetails;
+			sourceTree = "<group>";
+		};
 		D0CCF7A62C3554FA00A7FF39 /* CourierDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -979,6 +990,7 @@
 				D07DC28F2C33E6A3003FEEA1 /* ProductDetailViewController.swift in Sources */,
 				D05D7D902C131D7F00E2A126 /* OnboardingProvider.swift in Sources */,
 				D0CCF7CB2C35735700A7FF39 /* EasyboxDetailView.swift in Sources */,
+				D0B890472C4EB96200270739 /* AddressDetails.swift in Sources */,
 				D0245A6B2C257FFC005456AA /* ProductCollectionViewCell.swift in Sources */,
 				D05972A92C2D771E0023ADB5 /* HomeDetailsView.swift in Sources */,
 				D0245A6F2C25845F005456AA /* UITableView.swift in Sources */,
