@@ -55,6 +55,7 @@ class NewAddressViewController: UIViewController {
         setupSaveButton()
         setupPickerView()
         loadCounties()
+        setupTextFields()
     }
 
     // MARK: - Private methods
@@ -79,6 +80,18 @@ class NewAddressViewController: UIViewController {
         pickerView.isHidden = true
     }
 
+    private func setupTextFields() {
+        fullNameTextField.delegate = self
+        phoneNumberTextField.delegate = self
+        addressTextField.delegate = self
+
+        fullNameTextField.autocorrectionType = .no
+        phoneNumberTextField.autocorrectionType = .no
+        addressTextField.autocorrectionType = .no
+
+        updateSaveButtonState()
+    }
+
     private func loadCounties() {
         countyProvider.fetchCounties()
             .receive(on: DispatchQueue.main)
@@ -95,11 +108,47 @@ class NewAddressViewController: UIViewController {
 
     private func setupSaveButton() {
         saveButton.addTarget(self, action: #selector(saveAddress), for: .touchUpInside)
+        saveButton.isEnabled = false
+        updateSaveButtonStyle()
+    }
+
+    private func isValidName(_ name: String) -> Bool {
+        let regex = "^[A-Za-z ]+$"
+        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
+        return predicate.evaluate(with: name) && name.split(separator: " ").allSatisfy { $0.first?.isUppercase ?? false }
+    }
+
+    private func isValidPhoneNumber(_ phoneNumber: String) -> Bool {
+        let regex = "^[0-9]{10}$"
+        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
+        return predicate.evaluate(with: phoneNumber)
+    }
+
+    private func updateSaveButtonState() {
+        let isFullNameValid = fullNameTextField.text.flatMap(isValidName) ?? false
+        let isPhoneNumberValid = phoneNumberTextField.text.flatMap(isValidPhoneNumber) ?? false
+        let isAddressValid = !(addressTextField.text?.isEmpty ?? true)
+        let isCountyAndLocalitySelected = selectedCounty != nil && selectedLocality != nil
+
+        print("\(isFullNameValid), \(isPhoneNumberValid), \(isAddressValid), \(isCountyAndLocalitySelected)")
+
+        saveButton.isEnabled = isFullNameValid && isPhoneNumberValid && isAddressValid && isCountyAndLocalitySelected
+        updateSaveButtonStyle()
+    }
+
+    private func updateSaveButtonStyle() {
+        if saveButton.isEnabled {
+            saveButton.backgroundColor = .black
+            saveButton.setTitleColor(.white, for: .normal)
+        } else {
+            saveButton.backgroundColor = .lightGray
+            saveButton.setTitleColor(.darkGray, for: .normal)
+        }
     }
 
     @objc private func saveAddress() {
-        guard let fullName = fullNameTextField.text, !fullName.isEmpty,
-              let phoneNumber = phoneNumberTextField.text, !phoneNumber.isEmpty,
+        guard let fullName = fullNameTextField.text, isValidName(fullName),
+              let phoneNumber = phoneNumberTextField.text, isValidPhoneNumber(phoneNumber),
               let address = addressTextField.text, !address.isEmpty,
               let county = selectedCounty?.name,
               let locality = selectedLocality else {
@@ -162,6 +211,28 @@ extension NewAddressViewController: UIPickerViewDelegate {
                 countyAndLocalityLabel.text = "\(county.name), \(locality)"
                 pickerView.isHidden = true
             }
+        }
+
+        updateSaveButtonState()
+    }
+}
+
+extension NewAddressViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == fullNameTextField {
+            let allowedCharacters = CharacterSet.letters.union(.whitespaces)
+
+            return string.rangeOfCharacter(from: allowedCharacters.inverted) == nil
+        } else if textField == phoneNumberTextField {
+            let allowedCharacters = CharacterSet.decimalDigits
+            return string.rangeOfCharacter(from: allowedCharacters.inverted) == nil
+        }
+        return true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == fullNameTextField, let text = textField.text {
+            textField.text = text.split(separator: " ").map { $0.capitalized }.joined(separator: " ")
         }
     }
 }
