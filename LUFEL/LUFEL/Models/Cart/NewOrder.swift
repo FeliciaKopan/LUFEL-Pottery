@@ -11,10 +11,10 @@ struct NewOrder: Codable {
     var products: [Product]
     var paymentMethod: PaymentMethod?
     var shippingMethod: ShippingMethod?
-    var address: String?
+    var addressDetails: AddressDetails?
 
     enum CodingKeys: String, CodingKey {
-        case products, paymentMethod, shippingMethod, address
+        case products, paymentMethod, shippingMethod, addressDetails
     }
 
     init(from decoder: Decoder) throws {
@@ -22,14 +22,14 @@ struct NewOrder: Codable {
         products = try values.decode([Product].self, forKey: .products)
         paymentMethod = try? values.decode(PaymentMethod.self, forKey: .paymentMethod)
         shippingMethod = try? values.decode(ShippingMethod.self, forKey: .shippingMethod)
-        address = try? values.decode(String.self, forKey: .address)
+        addressDetails = try? values.decode(AddressDetails.self, forKey: .addressDetails)
     }
 
-    init(products: [Product] = [], payment: PaymentMethod? = .creditCard, shipping: ShippingMethod? = .courier, address: String? = nil) {
+    init(products: [Product] = [], payment: PaymentMethod? = .creditCard, shipping: ShippingMethod? = .courier, address: AddressDetails? = nil) {
         self.products = products
         self.paymentMethod = payment
         self.shippingMethod = shipping
-        self.address = address
+        self.addressDetails = address
     }
 }
 

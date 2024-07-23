@@ -24,6 +24,9 @@ class CourierDetailsView: UIView, NibLoadable {
     lazy var addNewAddressPublisher = addNewAddressSubject.eraseToAnyPublisher()
     private let addNewAddressSubject = PassthroughSubject<Void, Never>()
 
+    lazy var selectedAddressPublisher = selectedAddressSubject.eraseToAnyPublisher()
+    private let selectedAddressSubject = PassthroughSubject<AddressDetails, Never>()
+
     // MARK: - Init
 
     override init(frame: CGRect) {
@@ -86,6 +89,11 @@ extension CourierDetailsView: UITableViewDelegate {
             completionHandler(true)
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedAddress = addresses[indexPath.row]
+        selectedAddressSubject.send(selectedAddress)
     }
 }
 

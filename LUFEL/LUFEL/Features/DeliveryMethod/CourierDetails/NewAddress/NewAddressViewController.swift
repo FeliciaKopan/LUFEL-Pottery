@@ -114,8 +114,7 @@ class NewAddressViewController: UIViewController {
             locality: locality
         )
 
-        newOrder.address = address
-        addressProvider.addAddress(addressDetails)
+        newOrder.addressDetails = addressDetails
         addressSubject.send(addressDetails)
         navigationController?.popViewController(animated: true)
     }

@@ -99,6 +99,12 @@ class DeliveryMethodViewController: UIViewController {
                 self.navigationController?.pushViewController(viewController, animated: true)
             }
             .store(in: &cancellables)
+
+        courierDetailsView.selectedAddressPublisher
+              .sink { [weak self] address in
+                  self?.newOrder.addressDetails = address
+              }
+              .store(in: &cancellables)
     }
 
     private func didSelectOption(_ option: DeliveryOption) {
