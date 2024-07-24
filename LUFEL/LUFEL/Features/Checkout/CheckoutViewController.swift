@@ -15,6 +15,8 @@ class CheckoutViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var paymentMethodSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var deliveryMethodLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     
     // MARK: - Properties
 
@@ -46,10 +48,6 @@ class CheckoutViewController: UIViewController {
 
         setupTableView()
         loadCartProducts()
-    }
-
-    @IBAction func goBackButton(_ sender: Any) {
-        dismiss(animated: true)
     }
 
     @IBAction func finalizeOrder(_ sender: Any) {
