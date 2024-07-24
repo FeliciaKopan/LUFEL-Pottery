@@ -60,16 +60,16 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15e-E2-PpM">
-                    <rect key="frame" x="24" y="452" width="345" height="58"/>
+                    <rect key="frame" x="24" y="452" width="345" height="64.666666666666629"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metoda de transport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHJ-fg-92H">
-                            <rect key="frame" x="0.0" y="0.0" width="345" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metoda de transport" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHJ-fg-92H">
+                            <rect key="frame" x="4" y="7.9999999999999982" width="337" height="20.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adresa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqm-ZD-kV5">
-                            <rect key="frame" x="0.0" y="37" width="345" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adresa" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqm-ZD-kV5">
+                            <rect key="frame" x="4" y="36.333333333333314" width="337" height="20.333333333333329"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -78,23 +78,38 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="Bqm-ZD-kV5" firstAttribute="leading" secondItem="15e-E2-PpM" secondAttribute="leading" id="AwQ-ry-zfP"/>
-                        <constraint firstAttribute="trailing" secondItem="Bqm-ZD-kV5" secondAttribute="trailing" id="LlM-x4-0sk"/>
-                        <constraint firstItem="Bqm-ZD-kV5" firstAttribute="top" secondItem="cHJ-fg-92H" secondAttribute="bottom" constant="16" id="PNx-9l-X2e"/>
-                        <constraint firstItem="cHJ-fg-92H" firstAttribute="leading" secondItem="15e-E2-PpM" secondAttribute="leading" id="WdL-0H-hnp"/>
-                        <constraint firstItem="cHJ-fg-92H" firstAttribute="top" secondItem="15e-E2-PpM" secondAttribute="top" id="dx9-kj-7Ol"/>
-                        <constraint firstAttribute="trailing" secondItem="cHJ-fg-92H" secondAttribute="trailing" id="hYB-Oc-WrC"/>
-                        <constraint firstAttribute="bottom" secondItem="Bqm-ZD-kV5" secondAttribute="bottom" id="jki-FV-wxg"/>
+                        <constraint firstItem="Bqm-ZD-kV5" firstAttribute="leading" secondItem="15e-E2-PpM" secondAttribute="leading" constant="4" id="AwQ-ry-zfP"/>
+                        <constraint firstAttribute="trailing" secondItem="Bqm-ZD-kV5" secondAttribute="trailing" constant="4" id="LlM-x4-0sk"/>
+                        <constraint firstItem="Bqm-ZD-kV5" firstAttribute="top" secondItem="cHJ-fg-92H" secondAttribute="bottom" constant="8" id="PNx-9l-X2e"/>
+                        <constraint firstItem="cHJ-fg-92H" firstAttribute="leading" secondItem="15e-E2-PpM" secondAttribute="leading" constant="4" id="WdL-0H-hnp"/>
+                        <constraint firstItem="cHJ-fg-92H" firstAttribute="top" secondItem="15e-E2-PpM" secondAttribute="top" constant="8" id="dx9-kj-7Ol"/>
+                        <constraint firstAttribute="trailing" secondItem="cHJ-fg-92H" secondAttribute="trailing" constant="4" id="hYB-Oc-WrC"/>
+                        <constraint firstAttribute="bottom" secondItem="Bqm-ZD-kV5" secondAttribute="bottom" constant="8" id="jki-FV-wxg"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alege metoda de plata:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzP-XS-EFu">
-                    <rect key="frame" x="24" y="534" width="228" height="28"/>
+                    <rect key="frame" x="24" y="540.66666666666663" width="228" height="28"/>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FVI-KM-4ao">
-                    <rect key="frame" x="24" y="578" width="345" height="41"/>
+                    <rect key="frame" x="24" y="584.66666666666663" width="345" height="41"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="zSg-Tm-OyB"/>

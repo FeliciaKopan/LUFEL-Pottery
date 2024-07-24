@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import Stripe
 
 class CheckoutViewController: UIViewController {
 
@@ -48,6 +49,7 @@ class CheckoutViewController: UIViewController {
 
         setupTableView()
         loadCartProducts()
+        setupSegmentControl()
     }
 
     @IBAction func finalizeOrder(_ sender: Any) {
@@ -89,6 +91,10 @@ class CheckoutViewController: UIViewController {
 
     private func loadCartProducts() {
         totalPriceLabel.text = "Total Price: \(newOrder.totalPrice) lei"
+        deliveryMethodLabel.text = "Metoda de livrare: \(newOrder.shippingMethod?.rawValue.capitalized ?? "")"
+        if let addressDetails = newOrder.addressDetails {
+            addressLabel.text = "\(addressDetails.address), \(addressDetails.locality), \(addressDetails.county)"
+        }
         applySnapshot()
     }
 
@@ -108,6 +114,10 @@ class CheckoutViewController: UIViewController {
     private func resetOrder() {
         newOrder = NewOrder(products: [])
         cartProvider.clearCart()
+    }
+
+    private func setupSegmentControl() {
+        paymentMethodSegmentedControl.addTarget(self, action: #selector(paymentMethodChanged), for: .valueChanged)
     }
 
     private func makeDataSource() -> UITableViewDiffableDataSource<SingleSection, Product> {
@@ -142,8 +152,44 @@ class CheckoutViewController: UIViewController {
         snapshot.appendItems(newOrder.products)
         dataSource.apply(snapshot, animatingDifferences: false)
     }
+
+    @objc private func paymentMethodChanged() {
+        if paymentMethodSegmentedControl.selectedSegmentIndex == 1 {
+            let addCardViewController = STPAddCardViewController()
+            addCardViewController.delegate = self
+            let navigationController = UINavigationController(rootViewController: addCardViewController)
+            present(navigationController, animated: true, completion: nil)
+        }
+    }
+
+    private func simulatePaymentConfirmation(with paymentMethod: STPPaymentMethod) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            print("PaymentMethod ID: \(paymentMethod.stripeId)")
+            self.showAlert(title: "Payment Successful", message: "Your payment was successful.")
+        }
+    }
+
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.navigationController?.popToRootViewController(animated: true)
+        }))
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension CheckoutViewController: UITableViewDelegate {
 
+}
+
+extension CheckoutViewController: STPAddCardViewControllerDelegate {
+    func addCardViewControllerDidCancel(_ addCardViewController: STPAddCardViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+
+    func addCardViewController(_ addCardViewController: STPAddCardViewController, didCreatePaymentMethod paymentMethod: STPPaymentMethod, completion: @escaping STPErrorBlock) {
+        simulatePaymentConfirmation(with: paymentMethod)
+        completion(nil)
+        dismiss(animated: true, completion: nil)
+    }
 }
