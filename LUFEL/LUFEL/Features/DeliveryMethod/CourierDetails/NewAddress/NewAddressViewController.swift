@@ -19,6 +19,9 @@ class NewAddressViewController: UIViewController {
     @IBOutlet weak var countyAndLocalityLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var nameErrorLabel: UILabel!
+    @IBOutlet weak var phoneNumberErrorLabel: UILabel!
+    @IBOutlet weak var addressErrorLabel: UILabel!
     
     // MARK: - Properties
 
@@ -110,6 +113,10 @@ class NewAddressViewController: UIViewController {
         saveButton.addTarget(self, action: #selector(saveAddress), for: .touchUpInside)
         saveButton.isEnabled = false
         updateSaveButtonStyle()
+
+        nameErrorLabel.isHidden = true
+        phoneNumberErrorLabel.isHidden = true
+        addressErrorLabel.isHidden = true
     }
 
     private func isValidName(_ name: String) -> Bool {
@@ -130,10 +137,12 @@ class NewAddressViewController: UIViewController {
         let isAddressValid = !(addressTextField.text?.isEmpty ?? true)
         let isCountyAndLocalitySelected = selectedCounty != nil && selectedLocality != nil
 
-        print("\(isFullNameValid), \(isPhoneNumberValid), \(isAddressValid), \(isCountyAndLocalitySelected)")
-
         saveButton.isEnabled = isFullNameValid && isPhoneNumberValid && isAddressValid && isCountyAndLocalitySelected
         updateSaveButtonStyle()
+
+        nameErrorLabel.isHidden = isFullNameValid
+        phoneNumberErrorLabel.isHidden = isPhoneNumberValid
+        addressErrorLabel.isHidden = isAddressValid
     }
 
     private func updateSaveButtonStyle() {

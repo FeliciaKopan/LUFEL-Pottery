@@ -13,6 +13,10 @@ struct NewOrder: Codable {
     var shippingMethod: ShippingMethod?
     var addressDetails: AddressDetails?
 
+    var totalPrice: Double {
+        return products.reduce(0) { $0 + $1.price * Double($1.quantity ?? 1) }
+    }
+
     enum CodingKeys: String, CodingKey {
         case products, paymentMethod, shippingMethod, addressDetails
     }

@@ -89,12 +89,8 @@ class CheckoutViewController: UIViewController {
         tableView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
     }
 
-    private func calculateTotalPrice() -> Double {
-        return newOrder.products.reduce(0) { $0 + $1.price * Double($1.quantity ?? 1) }
-    }
-
     private func loadCartProducts() {
-        totalPriceLabel.text = "Total Price: \(calculateTotalPrice()) lei"
+        totalPriceLabel.text = "Total Price: \(newOrder.totalPrice) lei"
         applySnapshot()
     }
 
@@ -102,7 +98,7 @@ class CheckoutViewController: UIViewController {
         if let index = newOrder.products.firstIndex(where: { $0.id == product.id }) {
             newOrder.products.remove(at: index)
             cartProvider.removeProductFromCart(product)
-            totalPriceLabel.text = "Total Price: \(calculateTotalPrice()) lei"
+            totalPriceLabel.text = "Total Price: \(newOrder.totalPrice) lei"
             applySnapshot()
 
             if newOrder.products.isEmpty {
@@ -124,7 +120,7 @@ class CheckoutViewController: UIViewController {
 
             if let imageUrl = product.imageUrl,
                let url = URL(string: imageUrl),
-               let quantity = product.quantity{
+               let quantity = product.quantity {
                 let identifier = CheckoutTableViewCell.Identifier(
                     imageUrl: url,
                     title: product.title,
