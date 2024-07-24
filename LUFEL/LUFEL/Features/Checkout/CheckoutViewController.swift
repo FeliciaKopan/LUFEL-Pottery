@@ -18,12 +18,28 @@ class CheckoutViewController: UIViewController {
     
     // MARK: - Properties
 
-    private var cartProducts: [Product] = []
+    private var newOrder: NewOrder
     private var cancellables = Set<AnyCancellable>()
+    private lazy var dataSource = makeDataSource()
 
     @Injected(\.cartProvider) var cartProvider: CartProviding
 
+    // MARK: - Initializer
+
+    init(newOrder: NewOrder) {
+        self.newOrder = newOrder
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: - Lifecycle
+
+    override func loadView() {
+        view = viewFromNib()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,67 +52,100 @@ class CheckoutViewController: UIViewController {
         dismiss(animated: true)
     }
 
-    @IBAction func chooseDeliveryMethod(_ sender: Any) {
-//        let viewController = DeliveryMethodViewController()
-//        viewController.modalPresentationStyle = .fullScreen
-//        present(viewController, animated: true)
+    @IBAction func finalizeOrder(_ sender: Any) {
+        switch paymentMethodSegmentedControl.selectedSegmentIndex {
+        case 0:
+            newOrder.paymentMethod = .cashOnDelivery
+        case 1:
+            newOrder.paymentMethod = .creditCard
+        default:
+            break
+        }
+
+        do {
+            let jsonData = try JSONEncoder().encode(newOrder)
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                print(jsonString)
+            }
+
+            resetOrder()
+
+            let alert = UIAlertController(title: "Order Saved", message: "Your order is in process.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        } catch {
+            print("Failed to encode new order: \(error)")
+        }
     }
-    
+
     // MARK: - Private methods
 
     private func setupTableView() {
         tableView.backgroundColor = .clear
         tableView.delegate = self
-        tableView.dataSource = self
+        tableView.dataSource = dataSource
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(CheckoutTableViewCell.self)
         tableView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
     }
 
     private func loadCartProducts() {
-        let cart = cartProvider.getCartProducts()
-        cartProducts = cart.products
-        totalPriceLabel.text = "Total Price: \(cart.totalPrice) lei"
-        tableView.reloadData()
+        totalPriceLabel.text = "Total Price: \(newOrder.totalPrice) lei"
+        applySnapshot()
     }
 
-    private func removeProduct(at indexPath: IndexPath) {
-        let product = cartProducts[indexPath.row]
-        cartProvider.removeProductFromCart(product)
-        cartProducts.remove(at: indexPath.row)
-        loadCartProducts()
+    private func removeProduct(_ product: Product) {
+        if let index = newOrder.products.firstIndex(where: { $0.id == product.id }) {
+            newOrder.products.remove(at: index)
+            cartProvider.removeProductFromCart(product)
+            totalPriceLabel.text = "Total Price: \(newOrder.totalPrice) lei"
+            applySnapshot()
+
+            if newOrder.products.isEmpty {
+                dismiss(animated: true)
+            }
+        }
+    }
+
+    private func resetOrder() {
+        newOrder = NewOrder(products: [])
+        cartProvider.clearCart()
+    }
+
+    private func makeDataSource() -> UITableViewDiffableDataSource<SingleSection, Product> {
+        return UITableViewDiffableDataSource(tableView: tableView) { tableView, indexPath, product in
+            guard let cell = tableView.dequeueReusableCell(of: CheckoutTableViewCell.self, for: indexPath) as? CheckoutTableViewCell else {
+                return UITableViewCell()
+            }
+
+            if let imageUrl = product.imageUrl,
+               let url = URL(string: imageUrl),
+               let quantity = product.quantity {
+                let identifier = CheckoutTableViewCell.Identifier(
+                    imageUrl: url,
+                    title: product.title,
+                    quantity: quantity
+                )
+                cell.configure(with: identifier)
+
+                cell.removeProductPublisher
+                    .sink { [weak self] _ in
+                        self?.removeProduct(product)
+                    }
+                    .store(in: &self.cancellables)
+            }
+            return cell
+        }
+    }
+
+    private func applySnapshot() {
+        var snapshot = NSDiffableDataSourceSnapshot<SingleSection, Product>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(newOrder.products)
+        dataSource.apply(snapshot, animatingDifferences: false)
     }
 }
 
 extension CheckoutViewController: UITableViewDelegate {
 
-}
-
-extension CheckoutViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cartProducts.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(of: CheckoutTableViewCell.self, for: indexPath) as? CheckoutTableViewCell else {
-            return UITableViewCell()
-        }
-        let product = cartProducts[indexPath.row]
-        if let imageUrl = product.imageUrl,
-           let url = URL(string: imageUrl),
-           let quantity = product.quantity {
-            cell.configure(with: .init(imageUrl: url,
-                                       title: product.title,
-                                       quantity: quantity
-                                      ))
-        }
-
-        cell.removeProductPublisher
-            .sink { [weak self] in
-                self?.removeProduct(at: indexPath)
-            }
-            .store(in: &cancellables)
-
-        return cell
-    }
 }

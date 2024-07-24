@@ -20,9 +20,23 @@ class DeliveryMethodViewController: UIViewController {
     
     // MARK: - Properties
 
+    private var newOrder: NewOrder
     private var selectedOption: DeliveryOption?
     private var cancellables = Set<AnyCancellable>()
-    
+
+    @Injected(\.cartProvider) var cartProvider: CartProviding
+
+    // MARK: - Initializer
+
+    init(newOrder: NewOrder) {
+        self.newOrder = newOrder
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -34,7 +48,17 @@ class DeliveryMethodViewController: UIViewController {
     }
 
     @IBAction func continueButtonTapped(_ sender: Any) {
-        let viewController = CheckoutViewController()
+        if let selectedOption = selectedOption {
+            switch selectedOption {
+            case .courier:
+                newOrder.shippingMethod = .courier
+            case .easybox:
+                newOrder.shippingMethod = .easybox
+            case .pickup:
+                newOrder.shippingMethod = .pickup
+            }
+        }
+        let viewController = CheckoutViewController(newOrder: newOrder)
         navigationController?.pushViewController(viewController, animated: true)
     }
 
@@ -65,10 +89,22 @@ class DeliveryMethodViewController: UIViewController {
 
         courierDetailsView.addNewAddressPublisher
             .sink { [weak self] in
-                let viewController = NewAddressViewController()
-                self?.navigationController?.pushViewController(viewController, animated: true)
+                guard let self = self else { return }
+                let viewController = NewAddressViewController(newOrder: self.newOrder)
+                viewController.addressPublisher
+                    .sink { [weak self] address in
+                        self?.courierDetailsView.addNewAddress(address)
+                    }
+                    .store(in: &self.cancellables)
+                self.navigationController?.pushViewController(viewController, animated: true)
             }
             .store(in: &cancellables)
+
+        courierDetailsView.selectedAddressPublisher
+              .sink { [weak self] address in
+                  self?.newOrder.addressDetails = address
+              }
+              .store(in: &cancellables)
     }
 
     private func didSelectOption(_ option: DeliveryOption) {

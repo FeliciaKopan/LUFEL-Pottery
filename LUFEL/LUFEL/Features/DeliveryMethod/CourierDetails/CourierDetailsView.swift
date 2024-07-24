@@ -17,10 +17,15 @@ class CourierDetailsView: UIView, NibLoadable {
     
     // MARK: - Private properties
 
-    private var addresses: [String] = []
+    private var addresses: [AddressDetails] = []
+    
+    @Injected(\.addressProvider) var addressProvider: AddressProviding
 
     lazy var addNewAddressPublisher = addNewAddressSubject.eraseToAnyPublisher()
     private let addNewAddressSubject = PassthroughSubject<Void, Never>()
+
+    lazy var selectedAddressPublisher = selectedAddressSubject.eraseToAnyPublisher()
+    private let selectedAddressSubject = PassthroughSubject<AddressDetails, Never>()
 
     // MARK: - Init
 
@@ -28,12 +33,23 @@ class CourierDetailsView: UIView, NibLoadable {
         super.init(frame: frame)
         loadNibContent()
         setupView()
+        loadAddresses()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadNibContent()
         setupView()
+        loadAddresses()
+    }
+
+    // MARK: - Public methods
+
+    func addNewAddress(_ address: AddressDetails) {
+        addresses.insert(address, at: 0)
+        addressProvider.addAddress(address)
+        loadAddresses()
+        tableView.reloadData()
     }
 
     // MARK: - Private methods
@@ -50,8 +66,14 @@ class CourierDetailsView: UIView, NibLoadable {
         addAddressView.addGestureRecognizer(tapGesture)
     }
 
-    private func addNewAddress(_ address: String) {
-        addresses.append(address)
+    private func removeAddress(at indexPath: IndexPath) {
+        let address = addresses.remove(at: indexPath.row)
+        addressProvider.removeAddress(address)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+
+    private func loadAddresses() {
+        addresses = addressProvider.getAddresses()
         tableView.reloadData()
     }
 
@@ -61,7 +83,18 @@ class CourierDetailsView: UIView, NibLoadable {
 }
 
 extension CourierDetailsView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (_, _, completionHandler) in
+            self?.removeAddress(at: indexPath)
+            completionHandler(true)
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedAddress = addresses[indexPath.row]
+        selectedAddressSubject.send(selectedAddress)
+    }
 }
 
 extension CourierDetailsView: UITableViewDataSource {
@@ -73,7 +106,8 @@ extension CourierDetailsView: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(of: CourierDetailsTableViewCell.self, for: indexPath) as? CourierDetailsTableViewCell else {
             return UITableViewCell()
         }
-        cell.configure(with: addresses[indexPath.row])
+        let addressDetails = addresses[indexPath.row]
+        cell.configure(with: addressDetails)
         return cell
     }
 }

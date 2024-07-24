@@ -46,7 +46,8 @@ class CartViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func placeTheOrder(_ sender: Any) {
-        let viewController = DeliveryMethodViewController()
+        let newOrder = NewOrder(products: cartProducts)
+        let viewController = DeliveryMethodViewController(newOrder: newOrder)
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true, completion: nil)
@@ -75,7 +76,8 @@ class CartViewController: UIViewController {
     private func loadCartProducts() {
         let cart = cartProvider.getCartProducts()
         cartProducts = cart.products
-        totalPriceLabel.text = "Total Price: \(cart.totalPrice) lei"
+        let calculateTotalPrice = cartProducts.reduce(0) { $0 + $1.price * Double($1.quantity ?? 1) }
+        totalPriceLabel.text = "Total Price: \(calculateTotalPrice) lei"
         applySnapshot()
     }
 
