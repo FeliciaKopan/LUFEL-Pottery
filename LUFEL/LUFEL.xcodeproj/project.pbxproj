@@ -27,6 +27,7 @@
 		D02E22E92C3FD57C0050E830 /* SingleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E22E82C3FD57C0050E830 /* SingleSection.swift */; };
 		D02E22EC2C4124400050E830 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E22EB2C4124400050E830 /* EmptyStateView.swift */; };
 		D02E22EE2C41244A0050E830 /* EmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02E22ED2C41244A0050E830 /* EmptyStateView.xib */; };
+		D0489DE22C51213F009FCB8F /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = D0489DE12C51213F009FCB8F /* Stripe */; };
 		D059729E2C2C28BC0023ADB5 /* WishList.json in Resources */ = {isa = PBXBuildFile; fileRef = D059729D2C2C28BC0023ADB5 /* WishList.json */; };
 		D05972A12C2C29680023ADB5 /* WishListProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05972A02C2C29680023ADB5 /* WishListProducts.swift */; };
 		D05972A42C2C5A600023ADB5 /* FavoriteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05972A32C2C5A600023ADB5 /* FavoriteProvider.swift */; };
@@ -247,6 +248,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0489DE22C51213F009FCB8F /* Stripe in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -911,6 +913,9 @@
 			dependencies = (
 			);
 			name = LUFEL;
+			packageProductDependencies = (
+				D0489DE12C51213F009FCB8F /* Stripe */,
+			);
 			productName = LUFEL;
 			productReference = D05D7D3E2C107D4900E2A126 /* LUFEL.app */;
 			productType = "com.apple.product-type.application";
@@ -939,6 +944,9 @@
 				Base,
 			);
 			mainGroup = D05D7D352C107D4900E2A126;
+			packageReferences = (
+				D06191FB2C5110DC00BBD474 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */,
+			);
 			productRefGroup = D05D7D3F2C107D4900E2A126 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1289,6 +1297,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D06191FB2C5110DC00BBD474 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stripe/stripe-ios-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 23.28.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D0489DE12C51213F009FCB8F /* Stripe */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D06191FB2C5110DC00BBD474 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */;
+			productName = Stripe;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D05D7D362C107D4900E2A126 /* Project object */;
 }
