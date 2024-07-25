@@ -15,6 +15,7 @@ class CheckoutViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var paymentMethodSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var completionContainerView: OrderCompletionView!
     
     // MARK: - Properties
 

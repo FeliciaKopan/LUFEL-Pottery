@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckoutViewController" customModule="LUFEL" customModuleProvider="target">
             <connections>
+                <outlet property="completionContainerView" destination="Kam-AN-aZx" id="Z1E-3A-la4"/>
                 <outlet property="paymentMethodSegmentedControl" destination="FVI-KM-4ao" id="ejh-d7-LaG"/>
                 <outlet property="tableView" destination="U9E-sq-ZeX" id="5pu-lc-52F"/>
                 <outlet property="totalPriceLabel" destination="prP-J7-Mxe" id="sBC-XC-bdc"/>
@@ -68,10 +69,15 @@
                         <segment title="Card"/>
                     </segments>
                 </segmentedControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kam-AN-aZx" customClass="OrderCompletionView" customModule="LUFEL" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="appBackground"/>
             <constraints>
+                <constraint firstItem="Kam-AN-aZx" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="4mx-2v-6hf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Jgo-6P-pBB" secondAttribute="bottom" constant="24" id="8td-yI-sVJ"/>
                 <constraint firstItem="U9E-sq-ZeX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="8vi-gX-xww"/>
                 <constraint firstItem="Jgo-6P-pBB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Gwi-V0-wZj"/>
@@ -79,12 +85,15 @@
                 <constraint firstItem="prP-J7-Mxe" firstAttribute="top" secondItem="U9E-sq-ZeX" secondAttribute="bottom" constant="24" id="M7c-Fg-JyO"/>
                 <constraint firstItem="U9E-sq-ZeX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="MDA-Du-mUr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="prP-J7-Mxe" secondAttribute="trailing" constant="24" id="Nw0-cW-uno"/>
+                <constraint firstItem="Kam-AN-aZx" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Vo7-XO-gSC"/>
                 <constraint firstItem="FVI-KM-4ao" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="euU-rd-oKh"/>
+                <constraint firstItem="Kam-AN-aZx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hZl-dO-x5I"/>
                 <constraint firstItem="FVI-KM-4ao" firstAttribute="top" secondItem="prP-J7-Mxe" secondAttribute="bottom" constant="24" id="rB4-jQ-MAS"/>
                 <constraint firstItem="Jgo-6P-pBB" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="v81-lb-SjS"/>
+                <constraint firstItem="Kam-AN-aZx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wvW-XL-Siv"/>
                 <constraint firstItem="prP-J7-Mxe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="wy8-5t-2oG"/>
             </constraints>
-            <point key="canvasLocation" x="28" y="20"/>
+            <point key="canvasLocation" x="26.717557251908396" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
