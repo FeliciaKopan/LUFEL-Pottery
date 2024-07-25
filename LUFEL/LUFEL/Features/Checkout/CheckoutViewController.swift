@@ -163,9 +163,9 @@ class CheckoutViewController: UIViewController {
     }
 
     private func simulatePaymentConfirmation(with paymentMethod: STPPaymentMethod) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
             print("PaymentMethod ID: \(paymentMethod.stripeId)")
-            self.showAlert(title: "Payment Successful", message: "Your payment was successful.")
+            self?.showAlert(title: "Payment Successful", message: "Your payment was successful.")
         }
     }
 
