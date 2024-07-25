@@ -25,13 +25,16 @@ class OrderCompletionView: UIView, NibLoadable {
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNibContent()
-        setAnimation()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadNibContent()
-        setAnimation()
+    }
+
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        animationView.frame = animationContainerView.bounds
     }
 
     // MARK: - Actions
@@ -40,15 +43,17 @@ class OrderCompletionView: UIView, NibLoadable {
 
     }
 
-    // MARK: - Private methods
+    // MARK: - Public methods
 
-    private func setAnimation() {
+    func setAnimation() {
         animationContainerView.addSubview(animationView, withEdgeInsets: .zero)
         LottieConfiguration.shared.renderingEngine = .mainThread
         let animation = LottieAnimation.named("SuccessAnimation")
-        animationView.contentMode = .scaleAspectFit
+        LottieConfiguration.shared.renderingEngine = .mainThread
         animationView.animation = animation
-        animationView.tintColor = .black
-
+        animationView.loopMode = .playOnce
+        animationView.animationSpeed = 1
+        animationView.contentMode = .scaleAspectFill
+        animationView.play()
     }
 }

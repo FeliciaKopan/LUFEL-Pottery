@@ -11,8 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckoutViewController" customModule="LUFEL" customModuleProvider="target">
             <connections>
-                <outlet property="completionContainerView" destination="Kam-AN-aZx" id="Z1E-3A-la4"/>
                 <outlet property="addressLabel" destination="Bqm-ZD-kV5" id="rgx-vo-5G5"/>
+                <outlet property="completionContainerView" destination="Kam-AN-aZx" id="Z1E-3A-la4"/>
                 <outlet property="deliveryMethodLabel" destination="cHJ-fg-92H" id="uIr-mX-cX7"/>
                 <outlet property="paymentMethodSegmentedControl" destination="FVI-KM-4ao" id="ejh-d7-LaG"/>
                 <outlet property="tableView" destination="U9E-sq-ZeX" id="5pu-lc-52F"/>
@@ -128,8 +128,8 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="appBackground"/>
             <constraints>
-                <constraint firstItem="Kam-AN-aZx" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="4mx-2v-6hf"/>
                 <constraint firstItem="FVI-KM-4ao" firstAttribute="top" secondItem="VzP-XS-EFu" secondAttribute="bottom" constant="16" id="2NB-Qk-XXM"/>
+                <constraint firstItem="Kam-AN-aZx" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="4mx-2v-6hf"/>
                 <constraint firstItem="15e-E2-PpM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="50u-Xd-eZK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Jgo-6P-pBB" secondAttribute="bottom" constant="24" id="8td-yI-sVJ"/>
                 <constraint firstItem="U9E-sq-ZeX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="8vi-gX-xww"/>
@@ -138,14 +138,13 @@
                 <constraint firstItem="prP-J7-Mxe" firstAttribute="top" secondItem="U9E-sq-ZeX" secondAttribute="bottom" constant="24" id="M7c-Fg-JyO"/>
                 <constraint firstItem="U9E-sq-ZeX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="MDA-Du-mUr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="prP-J7-Mxe" secondAttribute="trailing" constant="24" id="Nw0-cW-uno"/>
-                <constraint firstItem="Kam-AN-aZx" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Vo7-XO-gSC"/>
-                <constraint firstItem="FVI-KM-4ao" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="euU-rd-oKh"/>
-                <constraint firstItem="Kam-AN-aZx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hZl-dO-x5I"/>
-                <constraint firstItem="FVI-KM-4ao" firstAttribute="top" secondItem="prP-J7-Mxe" secondAttribute="bottom" constant="24" id="rB4-jQ-MAS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="15e-E2-PpM" secondAttribute="trailing" constant="24" id="OWQ-Kq-Zrg"/>
+                <constraint firstItem="Kam-AN-aZx" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Vo7-XO-gSC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FVI-KM-4ao" secondAttribute="trailing" constant="24" id="WJ2-HX-nip"/>
                 <constraint firstItem="VzP-XS-EFu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="XmF-KI-szR"/>
                 <constraint firstItem="15e-E2-PpM" firstAttribute="top" secondItem="prP-J7-Mxe" secondAttribute="bottom" constant="24" id="ZGW-nk-YjQ"/>
+                <constraint firstItem="FVI-KM-4ao" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="euU-rd-oKh"/>
+                <constraint firstItem="Kam-AN-aZx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hZl-dO-x5I"/>
                 <constraint firstItem="VzP-XS-EFu" firstAttribute="top" secondItem="15e-E2-PpM" secondAttribute="bottom" constant="24" id="ioN-7b-uBu"/>
                 <constraint firstItem="Jgo-6P-pBB" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="v81-lb-SjS"/>
                 <constraint firstItem="Kam-AN-aZx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wvW-XL-Siv"/>

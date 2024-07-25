@@ -51,6 +51,7 @@ class CheckoutViewController: UIViewController {
         setupTableView()
         loadCartProducts()
         setupSegmentControl()
+        setupCompletionView()
     }
 
     @IBAction func finalizeOrder(_ sender: Any) {
@@ -70,10 +71,8 @@ class CheckoutViewController: UIViewController {
             }
 
             resetOrder()
-
-            let alert = UIAlertController(title: "Order Saved", message: "Your order is in process.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
+            completionContainerView.isHidden = false
+            completionContainerView.setAnimation()
         } catch {
             print("Failed to encode new order: \(error)")
         }
@@ -119,6 +118,10 @@ class CheckoutViewController: UIViewController {
 
     private func setupSegmentControl() {
         paymentMethodSegmentedControl.addTarget(self, action: #selector(paymentMethodChanged), for: .valueChanged)
+    }
+
+    private func setupCompletionView() {
+        completionContainerView.isHidden = true
     }
 
     private func makeDataSource() -> UITableViewDiffableDataSource<SingleSection, Product> {

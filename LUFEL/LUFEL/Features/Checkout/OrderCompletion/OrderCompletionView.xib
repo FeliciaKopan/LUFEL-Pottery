@@ -21,20 +21,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8RW-kR-rU5">
-                    <rect key="frame" x="80" y="199" width="233" height="233"/>
+                    <rect key="frame" x="80" y="159" width="233" height="233"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="8RW-kR-rU5" secondAttribute="height" multiplier="1:1" id="dM8-qz-niq"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comanda ta e un curs de pregatire" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Knp-aC-IdM">
-                    <rect key="frame" x="24" y="467" width="345" height="27.666666666666686"/>
+                    <rect key="frame" x="24" y="427" width="345" height="27.666666666666686"/>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multumim ca sustineti afacerile locale" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiv-Fv-amv">
-                    <rect key="frame" x="36" y="518.66666666666663" width="321" height="48"/>
+                    <rect key="frame" x="36" y="478.66666666666669" width="321" height="48.000000000000057"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -74,7 +74,7 @@
                 <constraint firstItem="iiv-Fv-amv" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="X0W-Q8-4eT"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="42l-oY-jOY" secondAttribute="bottom" constant="36" id="X6G-1W-oIg"/>
                 <constraint firstItem="iiv-Fv-amv" firstAttribute="top" secondItem="Knp-aC-IdM" secondAttribute="bottom" constant="24" id="iaJ-fN-Sxa"/>
-                <constraint firstItem="8RW-kR-rU5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="140" id="k8e-Le-Gig"/>
+                <constraint firstItem="8RW-kR-rU5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="100" id="k8e-Le-Gig"/>
                 <constraint firstItem="iiv-Fv-amv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="36" id="taE-fc-lbe"/>
                 <constraint firstItem="Knp-aC-IdM" firstAttribute="top" secondItem="8RW-kR-rU5" secondAttribute="bottom" constant="35" id="yqs-IN-58A"/>
             </constraints>
