@@ -27,10 +27,12 @@
 		D02E22E92C3FD57C0050E830 /* SingleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E22E82C3FD57C0050E830 /* SingleSection.swift */; };
 		D02E22EC2C4124400050E830 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E22EB2C4124400050E830 /* EmptyStateView.swift */; };
 		D02E22EE2C41244A0050E830 /* EmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02E22ED2C41244A0050E830 /* EmptyStateView.xib */; };
+		D0489DE22C51213F009FCB8F /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = D0489DE12C51213F009FCB8F /* Stripe */; };
 		D0489DEA2C524131009FCB8F /* OrderCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0489DE92C524131009FCB8F /* OrderCompletionView.swift */; };
 		D0489DEC2C52413E009FCB8F /* OrderCompletionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0489DEB2C52413E009FCB8F /* OrderCompletionView.xib */; };
 		D0489DEF2C524758009FCB8F /* SuccessAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = D0489DEE2C524758009FCB8F /* SuccessAnimation.json */; };
-		D0489DF22C5247CB009FCB8F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D0489DF12C5247CB009FCB8F /* Lottie */; };
+		D0489DF22C5247CB009FCB8F /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		D0489DF52C5260C3009FCB8F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D0489DF42C5260C3009FCB8F /* Lottie */; };
 		D059729E2C2C28BC0023ADB5 /* WishList.json in Resources */ = {isa = PBXBuildFile; fileRef = D059729D2C2C28BC0023ADB5 /* WishList.json */; };
 		D05972A12C2C29680023ADB5 /* WishListProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05972A02C2C29680023ADB5 /* WishListProducts.swift */; };
 		D05972A42C2C5A600023ADB5 /* FavoriteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05972A32C2C5A600023ADB5 /* FavoriteProvider.swift */; };
@@ -254,7 +256,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0489DF22C5247CB009FCB8F /* Lottie in Frameworks */,
+				D0489DF22C5247CB009FCB8F /* (null) in Frameworks */,
+				D0489DE22C51213F009FCB8F /* Stripe in Frameworks */,
+				D0489DF52C5260C3009FCB8F /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -939,7 +943,8 @@
 			);
 			name = LUFEL;
 			packageProductDependencies = (
-				D0489DF12C5247CB009FCB8F /* Lottie */,
+				D0489DE12C51213F009FCB8F /* Stripe */,
+				D0489DF42C5260C3009FCB8F /* Lottie */,
 			);
 			productName = LUFEL;
 			productReference = D05D7D3E2C107D4900E2A126 /* LUFEL.app */;
@@ -970,7 +975,8 @@
 			);
 			mainGroup = D05D7D352C107D4900E2A126;
 			packageReferences = (
-				D0489DF02C5247CB009FCB8F /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				D06191FB2C5110DC00BBD474 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */,
+				D0489DF32C5260C3009FCB8F /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = D05D7D3F2C107D4900E2A126 /* Products */;
 			projectDirPath = "";
@@ -1327,7 +1333,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D0489DF02C5247CB009FCB8F /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+		D0489DF32C5260C3009FCB8F /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
 			requirement = {
@@ -1335,12 +1341,25 @@
 				minimumVersion = 4.5.0;
 			};
 		};
+		D06191FB2C5110DC00BBD474 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stripe/stripe-ios-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 23.28.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D0489DF12C5247CB009FCB8F /* Lottie */ = {
+		D0489DE12C51213F009FCB8F /* Stripe */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D0489DF02C5247CB009FCB8F /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			package = D06191FB2C5110DC00BBD474 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */;
+			productName = Stripe;
+		};
+		D0489DF42C5260C3009FCB8F /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0489DF32C5260C3009FCB8F /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
