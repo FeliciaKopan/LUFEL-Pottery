@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import Combine
 
 class OrderCompletionView: UIView, NibLoadable {
 
@@ -19,6 +20,9 @@ class OrderCompletionView: UIView, NibLoadable {
     // MARK: - Properties
 
     private let animationView = LottieAnimationView()
+
+    lazy var goToHomeScreenPublisher = goToHomeScreenSubject.eraseToAnyPublisher()
+    private let goToHomeScreenSubject = PassthroughSubject<Void, Never>()
 
     // MARK: - Init
 
@@ -40,7 +44,7 @@ class OrderCompletionView: UIView, NibLoadable {
     // MARK: - Actions
 
     @IBAction func finishButton(_ sender: Any) {
-
+        goToHomeScreenSubject.send()
     }
 
     // MARK: - Public methods

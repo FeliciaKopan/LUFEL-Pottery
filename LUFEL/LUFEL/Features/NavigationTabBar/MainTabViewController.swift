@@ -31,6 +31,10 @@ class MainTabViewController: UITabBarController {
         customTabBar.set(color: color)
     }
 
+    func navigateToHomePage() {
+        selectedIndex = 0
+    }
+
     // MARK: - Private methods
 
     private func setupViews() {

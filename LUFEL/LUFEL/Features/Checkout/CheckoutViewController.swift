@@ -52,6 +52,7 @@ class CheckoutViewController: UIViewController {
         loadCartProducts()
         setupSegmentControl()
         setupCompletionView()
+        setupFinishButton()
     }
 
     @IBAction func finalizeOrder(_ sender: Any) {
@@ -72,6 +73,7 @@ class CheckoutViewController: UIViewController {
 
             resetOrder()
             completionContainerView.isHidden = false
+            navigationItem.hidesBackButton = true
             completionContainerView.setAnimation()
         } catch {
             print("Failed to encode new order: \(error)")
@@ -122,6 +124,17 @@ class CheckoutViewController: UIViewController {
 
     private func setupCompletionView() {
         completionContainerView.isHidden = true
+        navigationItem.hidesBackButton = false
+    }
+
+    private func setupFinishButton() {
+        completionContainerView.goToHomeScreenPublisher
+            .sink { [weak self] in
+                let mainTabBarController = MainTabViewController()
+                mainTabBarController.navigateToHomePage()
+                self?.dismiss(animated: true)
+            }
+            .store(in: &cancellables)
     }
 
     private func makeDataSource() -> UITableViewDiffableDataSource<SingleSection, Product> {
