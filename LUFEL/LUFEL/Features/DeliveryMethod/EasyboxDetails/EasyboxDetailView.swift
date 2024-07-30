@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import MapKit
 
 class EasyboxDetailView: UIView, NibLoadable {
 
     // MARK: - Views
 
+    @IBOutlet weak var mapView: MKMapView!
+    
     // MARK: - Init
 
     override init(frame: CGRect) {
