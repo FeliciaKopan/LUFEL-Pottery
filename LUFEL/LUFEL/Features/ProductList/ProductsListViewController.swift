@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class ProductsListViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class ProductsListViewController: UIViewController {
     // MARK: - Properties
 
     private var sections: [ProductCategory] = []
+    private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Lifecycle
 
@@ -55,6 +57,15 @@ class ProductsListViewController: UIViewController {
             print("Error decoding JSON: \(error)")
         }
     }
+
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        present(alert, animated: true)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            alert.dismiss(animated: true)
+        }
+    }
 }
 
 // MARK: - Extensions
@@ -77,6 +88,12 @@ extension ProductsListViewController: UICollectionViewDataSource {
            let url = URL(string: imageUrl) {
             cell.configure(with: .init(imageUrl: url, title: product.title, price: product.price), product: product)
         }
+
+        cell.addToCartPublisher
+            .sink { [weak self] product in
+                self?.showAlert(message: L10n.Cart.addToCart)
+            }
+            .store(in: &cancellables)
         return cell
     }
 

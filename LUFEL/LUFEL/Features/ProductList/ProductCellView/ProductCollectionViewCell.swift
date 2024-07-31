@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class ProductCollectionViewCell: UICollectionViewCell {
 
@@ -23,12 +24,14 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var addToCartView: UIView!
     @IBOutlet weak var favoriteView: UIView!
     @IBOutlet weak var favoriteImageView: UIImageView!
-    @IBOutlet weak var cartImageView: UIImageView!
 
     // MARK: - Properties
 
     private var currentProduct: Product?
     private var isFavorite: Bool = false
+
+    lazy var addToCartPublisher = addToCartSubject.eraseToAnyPublisher()
+    private let addToCartSubject = PassthroughSubject<Product, Never>()
 
     @Injected(\.favoriteProvider) var favoriteProvider: FavoriteProviding
     @Injected(\.cartProvider) var cartProvider: CartProviding
@@ -74,6 +77,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @objc private func addToCartTapped() {
         if let product = currentProduct {
             cartProvider.addProductToCart(product)
+            addToCartSubject.send(product)
         }
     }
 

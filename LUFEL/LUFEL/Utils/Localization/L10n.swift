@@ -17,5 +17,6 @@ enum L10n {
 
     enum Cart {
         static let emptyTitle = String(localized: "cart.emptyTitle")
+        static let addToCart = String(localized: "cart.addToCart")
     }
 }

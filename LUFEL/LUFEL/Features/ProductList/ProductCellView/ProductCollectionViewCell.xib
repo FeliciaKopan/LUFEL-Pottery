@@ -59,6 +59,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart" translatesAutoresizingMaskIntoConstraints="NO" id="I7i-sL-7DB">
                                 <rect key="frame" x="0.0" y="0.0" width="27" height="27"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="6W8-qP-qUb"/>
                                     <constraint firstAttribute="width" constant="27" id="xfE-20-gIa"/>
@@ -135,7 +136,6 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="addToCartView" destination="3sp-Et-jMt" id="kHv-ap-zwG"/>
-                <outlet property="cartImageView" destination="I7i-sL-7DB" id="yJP-dM-Rbb"/>
                 <outlet property="favoriteImageView" destination="r7T-R0-APJ" id="8RG-rm-Z1p"/>
                 <outlet property="favoriteView" destination="MpP-qY-Lhe" id="hVY-a4-4kZ"/>
                 <outlet property="imageView" destination="8sP-XG-nrk" id="q6X-as-C2m"/>
