@@ -87,10 +87,10 @@ extension ProductsListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath)
         headerView.subviews.forEach { $0.removeFromSuperview() }
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: collectionView.frame.width, height: 40))
+        let label = UILabel(frame: CGRect(x: 24, y: 0, width: collectionView.frame.width, height: 40))
         label.text = sections[indexPath.section].title
         label.textAlignment = .left
-        label.textColor = .white
+        label.textColor = .black
         headerView.addSubview(label)
         return headerView
     }
@@ -108,6 +108,10 @@ extension ProductsListViewController: UICollectionViewDelegate {
 }
 
 extension ProductsListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 40)
     }
