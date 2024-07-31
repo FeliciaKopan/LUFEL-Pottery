@@ -29,11 +29,13 @@ class OrderCompletionView: UIView, NibLoadable {
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNibContent()
+        setupAnimation()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadNibContent()
+        setupAnimation()
     }
 
     override func draw(_ rect: CGRect) {
@@ -49,7 +51,11 @@ class OrderCompletionView: UIView, NibLoadable {
 
     // MARK: - Public methods
 
-    func setAnimation() {
+    func playAnimation() {
+        animationView.play()
+    }
+
+    private func setupAnimation() {
         animationContainerView.addSubview(animationView, withEdgeInsets: .zero)
         LottieConfiguration.shared.renderingEngine = .mainThread
         let animation = LottieAnimation.named("SuccessAnimation")
@@ -58,6 +64,5 @@ class OrderCompletionView: UIView, NibLoadable {
         animationView.loopMode = .playOnce
         animationView.animationSpeed = 1
         animationView.contentMode = .scaleAspectFill
-        animationView.play()
     }
 }

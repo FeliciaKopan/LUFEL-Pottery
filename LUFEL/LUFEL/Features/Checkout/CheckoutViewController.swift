@@ -74,7 +74,7 @@ class CheckoutViewController: UIViewController {
             resetOrder()
             completionContainerView.isHidden = false
             navigationItem.hidesBackButton = true
-            completionContainerView.setAnimation()
+            completionContainerView.playAnimation()
         } catch {
             print("Failed to encode new order: \(error)")
         }
