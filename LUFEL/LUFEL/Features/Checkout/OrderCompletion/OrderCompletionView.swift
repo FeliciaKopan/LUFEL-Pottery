@@ -1,0 +1,68 @@
+//
+//  OrderCompletionView.swift
+//  LUFEL
+//
+//  Created by Felicia Alamorean on 25.07.2024.
+//
+
+import UIKit
+import Lottie
+import Combine
+
+class OrderCompletionView: UIView, NibLoadable {
+
+    // MARK: - Views
+
+    @IBOutlet weak var animationContainerView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    // MARK: - Properties
+
+    private let animationView = LottieAnimationView()
+
+    lazy var goToHomeScreenPublisher = goToHomeScreenSubject.eraseToAnyPublisher()
+    private let goToHomeScreenSubject = PassthroughSubject<Void, Never>()
+
+    // MARK: - Init
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        loadNibContent()
+        setupAnimation()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        loadNibContent()
+        setupAnimation()
+    }
+
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        animationView.frame = animationContainerView.bounds
+    }
+
+    // MARK: - Actions
+
+    @IBAction func finishButton(_ sender: Any) {
+        goToHomeScreenSubject.send()
+    }
+
+    // MARK: - Public methods
+
+    func playAnimation() {
+        animationView.play()
+    }
+
+    private func setupAnimation() {
+        animationContainerView.addSubview(animationView, withEdgeInsets: .zero)
+        LottieConfiguration.shared.renderingEngine = .mainThread
+        let animation = LottieAnimation.named("SuccessAnimation")
+        LottieConfiguration.shared.renderingEngine = .mainThread
+        animationView.animation = animation
+        animationView.loopMode = .playOnce
+        animationView.animationSpeed = 1
+        animationView.contentMode = .scaleAspectFill
+    }
+}

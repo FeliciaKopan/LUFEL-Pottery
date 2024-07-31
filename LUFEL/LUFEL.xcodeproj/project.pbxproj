@@ -28,6 +28,11 @@
 		D02E22EC2C4124400050E830 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E22EB2C4124400050E830 /* EmptyStateView.swift */; };
 		D02E22EE2C41244A0050E830 /* EmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02E22ED2C41244A0050E830 /* EmptyStateView.xib */; };
 		D0489DE22C51213F009FCB8F /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = D0489DE12C51213F009FCB8F /* Stripe */; };
+		D0489DEA2C524131009FCB8F /* OrderCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0489DE92C524131009FCB8F /* OrderCompletionView.swift */; };
+		D0489DEC2C52413E009FCB8F /* OrderCompletionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0489DEB2C52413E009FCB8F /* OrderCompletionView.xib */; };
+		D0489DEF2C524758009FCB8F /* SuccessAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = D0489DEE2C524758009FCB8F /* SuccessAnimation.json */; };
+		D0489DF22C5247CB009FCB8F /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		D0489DF52C5260C3009FCB8F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D0489DF42C5260C3009FCB8F /* Lottie */; };
 		D059729E2C2C28BC0023ADB5 /* WishList.json in Resources */ = {isa = PBXBuildFile; fileRef = D059729D2C2C28BC0023ADB5 /* WishList.json */; };
 		D05972A12C2C29680023ADB5 /* WishListProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05972A02C2C29680023ADB5 /* WishListProducts.swift */; };
 		D05972A42C2C5A600023ADB5 /* FavoriteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05972A32C2C5A600023ADB5 /* FavoriteProvider.swift */; };
@@ -145,6 +150,9 @@
 		D02E22E82C3FD57C0050E830 /* SingleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSection.swift; sourceTree = "<group>"; };
 		D02E22EB2C4124400050E830 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		D02E22ED2C41244A0050E830 /* EmptyStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStateView.xib; sourceTree = "<group>"; };
+		D0489DE92C524131009FCB8F /* OrderCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompletionView.swift; sourceTree = "<group>"; };
+		D0489DEB2C52413E009FCB8F /* OrderCompletionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderCompletionView.xib; sourceTree = "<group>"; };
+		D0489DEE2C524758009FCB8F /* SuccessAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SuccessAnimation.json; sourceTree = "<group>"; };
 		D059729D2C2C28BC0023ADB5 /* WishList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WishList.json; sourceTree = "<group>"; };
 		D05972A02C2C29680023ADB5 /* WishListProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListProducts.swift; sourceTree = "<group>"; };
 		D05972A32C2C5A600023ADB5 /* FavoriteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProvider.swift; sourceTree = "<group>"; };
@@ -248,7 +256,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0489DF22C5247CB009FCB8F /* (null) in Frameworks */,
 				D0489DE22C51213F009FCB8F /* Stripe in Frameworks */,
+				D0489DF52C5260C3009FCB8F /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +352,23 @@
 				D02E22ED2C41244A0050E830 /* EmptyStateView.xib */,
 			);
 			path = EmptyState;
+			sourceTree = "<group>";
+		};
+		D0489DE82C5240F0009FCB8F /* OrderCompletion */ = {
+			isa = PBXGroup;
+			children = (
+				D0489DE92C524131009FCB8F /* OrderCompletionView.swift */,
+				D0489DEB2C52413E009FCB8F /* OrderCompletionView.xib */,
+			);
+			path = OrderCompletion;
+			sourceTree = "<group>";
+		};
+		D0489DED2C52472D009FCB8F /* LottieAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				D0489DEE2C524758009FCB8F /* SuccessAnimation.json */,
+			);
+			path = LottieAnimations;
 			sourceTree = "<group>";
 		};
 		D059729F2C2C29450023ADB5 /* WishList */ = {
@@ -452,6 +479,7 @@
 		D05D7D572C10800100E2A126 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D0489DED2C52472D009FCB8F /* LottieAnimations */,
 				D0245A702C259240005456AA /* JsonFiles */,
 				D05D7D762C11B17A00E2A126 /* Localization */,
 				D05D7D4A2C107D4A00E2A126 /* Assets.xcassets */,
@@ -631,6 +659,7 @@
 		D05D7D952C1C42A600E2A126 /* Checkout */ = {
 			isa = PBXGroup;
 			children = (
+				D0489DE82C5240F0009FCB8F /* OrderCompletion */,
 				D00A25882C2F2DD5007158F3 /* CellView */,
 				D05D7DA02C1C438400E2A126 /* CheckoutViewController.swift */,
 				D05D7DA12C1C438400E2A126 /* CheckoutViewController.xib */,
@@ -915,6 +944,7 @@
 			name = LUFEL;
 			packageProductDependencies = (
 				D0489DE12C51213F009FCB8F /* Stripe */,
+				D0489DF42C5260C3009FCB8F /* Lottie */,
 			);
 			productName = LUFEL;
 			productReference = D05D7D3E2C107D4900E2A126 /* LUFEL.app */;
@@ -946,6 +976,7 @@
 			mainGroup = D05D7D352C107D4900E2A126;
 			packageReferences = (
 				D06191FB2C5110DC00BBD474 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */,
+				D0489DF32C5260C3009FCB8F /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = D05D7D3F2C107D4900E2A126 /* Products */;
 			projectDirPath = "";
@@ -984,8 +1015,10 @@
 				D0245A722C259263005456AA /* Products.json in Resources */,
 				D062BA292C329AAD006BC37E /* EditNameViewController.xib in Resources */,
 				D05D7DB32C1C723400E2A126 /* SetNameViewController.xib in Resources */,
+				D0489DEF2C524758009FCB8F /* SuccessAnimation.json in Resources */,
 				D0755C532C34423F0039AD71 /* DeliveryMethodViewController.xib in Resources */,
 				D0CCF7CD2C35736300A7FF39 /* EasyboxDetailView.xib in Resources */,
+				D0489DEC2C52413E009FCB8F /* OrderCompletionView.xib in Resources */,
 				D05D7D662C10A4FE00E2A126 /* LogInViewController.xib in Resources */,
 				D05D7D4E2C107D4A00E2A126 /* Base in Resources */,
 				D00A258C2C2F2DF0007158F3 /* CheckoutTableViewCell.xib in Resources */,
@@ -1011,6 +1044,7 @@
 				D05D7D722C10B38000E2A126 /* UIViewExtensions.swift in Sources */,
 				D07DC28F2C33E6A3003FEEA1 /* ProductDetailViewController.swift in Sources */,
 				D05D7D902C131D7F00E2A126 /* OnboardingProvider.swift in Sources */,
+				D0489DEA2C524131009FCB8F /* OrderCompletionView.swift in Sources */,
 				D0CCF7CB2C35735700A7FF39 /* EasyboxDetailView.swift in Sources */,
 				D0B890472C4EB96200270739 /* AddressDetails.swift in Sources */,
 				D0245A6B2C257FFC005456AA /* ProductCollectionViewCell.swift in Sources */,
@@ -1299,6 +1333,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D0489DF32C5260C3009FCB8F /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
 		D06191FB2C5110DC00BBD474 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stripe/stripe-ios-spm";
@@ -1314,6 +1356,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D06191FB2C5110DC00BBD474 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */;
 			productName = Stripe;
+		};
+		D0489DF42C5260C3009FCB8F /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0489DF32C5260C3009FCB8F /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

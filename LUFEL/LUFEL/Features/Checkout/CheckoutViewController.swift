@@ -16,6 +16,7 @@ class CheckoutViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var paymentMethodSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var completionContainerView: OrderCompletionView!
     @IBOutlet weak var deliveryMethodLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     
@@ -50,6 +51,8 @@ class CheckoutViewController: UIViewController {
         setupTableView()
         loadCartProducts()
         setupSegmentControl()
+        setupCompletionView()
+        setupFinishButton()
     }
 
     @IBAction func finalizeOrder(_ sender: Any) {
@@ -69,10 +72,9 @@ class CheckoutViewController: UIViewController {
             }
 
             resetOrder()
-
-            let alert = UIAlertController(title: "Order Saved", message: "Your order is in process.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
+            completionContainerView.isHidden = false
+            navigationItem.hidesBackButton = true
+            completionContainerView.playAnimation()
         } catch {
             print("Failed to encode new order: \(error)")
         }
@@ -118,6 +120,21 @@ class CheckoutViewController: UIViewController {
 
     private func setupSegmentControl() {
         paymentMethodSegmentedControl.addTarget(self, action: #selector(paymentMethodChanged), for: .valueChanged)
+    }
+
+    private func setupCompletionView() {
+        completionContainerView.isHidden = true
+        navigationItem.hidesBackButton = false
+    }
+
+    private func setupFinishButton() {
+        completionContainerView.goToHomeScreenPublisher
+            .sink { [weak self] in
+                let mainTabBarController = MainTabViewController()
+                mainTabBarController.navigateToHomePage()
+                self?.dismiss(animated: true)
+            }
+            .store(in: &cancellables)
     }
 
     private func makeDataSource() -> UITableViewDiffableDataSource<SingleSection, Product> {
