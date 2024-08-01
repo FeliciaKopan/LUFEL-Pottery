@@ -31,6 +31,10 @@ final class FavoriteProvider: FavoriteProviding {
         return favorites
     }
 
+    func isFavorite(_ product: Product) -> Bool {
+        return favorites.products.contains { $0.id == product.id }
+    }
+
     private func saveFavorites() {
         do {
             let encoded = try JSONEncoder().encode(favorites)

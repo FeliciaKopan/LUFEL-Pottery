@@ -15,3 +15,4 @@
 // MARK: - CART - DONE TW_V01
 
 "cart.emptyTitle" = "Cosul tau de cumparaturi este gol!";
+"cart.addToCart" = "Produsul a fost adăugat în coș";
