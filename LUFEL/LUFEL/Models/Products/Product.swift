@@ -14,9 +14,10 @@ struct Product: Codable, Hashable {
     let imageUrl: String?
     let description: String?
     var quantity: Int?
+    let type: ProductType?
 
     enum CodingKeys: String, CodingKey {
-        case id, title, price, imageUrl = "image_url", description, quantity
+        case id, title, price, imageUrl = "image_url", description, quantity, type
     }
 
     init(from decoder: Decoder) throws {
@@ -27,5 +28,13 @@ struct Product: Codable, Hashable {
         imageUrl = try? values.decode(String.self, forKey: .imageUrl)
         description = try? values.decode(String.self, forKey: .description)
         quantity = try? values.decode(Int.self, forKey: .quantity)
+        type = try? values.decode(ProductType.self, forKey: .type)
     }
+}
+
+enum ProductType: String, Codable {
+    case cups
+    case plates
+    case vases
+    case bowls
 }

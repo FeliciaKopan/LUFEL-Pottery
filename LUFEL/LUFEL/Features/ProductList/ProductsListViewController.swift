@@ -12,7 +12,9 @@ class ProductsListViewController: UIViewController {
     // MARK: - Views
 
     @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var filterButtonView: UIView!
+    @IBOutlet weak var filterView: FilterProductsView!
+    
     // MARK: - Properties
 
     private var sections: [ProductCategory] = []
@@ -27,6 +29,7 @@ class ProductsListViewController: UIViewController {
         super.viewDidLoad()
 
         setupCollectionView()
+        setupFilterView()
         loadProducts()
     }
 
@@ -42,6 +45,10 @@ class ProductsListViewController: UIViewController {
         collectionView.delegate = self
         collectionView.registerCell(type: ProductCollectionViewCell.self)
         collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
+    }
+
+    private func setupFilterView() {
+        filterView.isHidden = true
     }
 
     private func loadProducts() {
