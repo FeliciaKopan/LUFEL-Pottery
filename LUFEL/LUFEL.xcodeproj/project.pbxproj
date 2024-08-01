@@ -11,6 +11,8 @@
 		D008C1FD2C5B8A0A00175153 /* FilterProductsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D008C1FC2C5B8A0A00175153 /* FilterProductsView.xib */; };
 		D008C2012C5B8EED00175153 /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D008C2002C5B8EED00175153 /* FilterCollectionViewCell.xib */; };
 		D008C2022C5B8EED00175153 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D008C1FF2C5B8EED00175153 /* FilterCollectionViewCell.swift */; };
+		D008C2042C5BA8C200175153 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D008C2032C5BA8C200175153 /* LeftAlignedCollectionViewFlowLayout.swift */; };
+		D008C2062C5BB76400175153 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D008C2052C5BB76400175153 /* StringExtension.swift */; };
 		D00A25852C2EF524007158F3 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A25842C2EF524007158F3 /* Notifications.swift */; };
 		D00A258B2C2F2DF0007158F3 /* CheckoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A25892C2F2DF0007158F3 /* CheckoutTableViewCell.swift */; };
 		D00A258C2C2F2DF0007158F3 /* CheckoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D00A258A2C2F2DF0007158F3 /* CheckoutTableViewCell.xib */; };
@@ -138,6 +140,8 @@
 		D008C1FC2C5B8A0A00175153 /* FilterProductsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterProductsView.xib; sourceTree = "<group>"; };
 		D008C1FF2C5B8EED00175153 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		D008C2002C5B8EED00175153 /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
+		D008C2032C5BA8C200175153 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		D008C2052C5BB76400175153 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		D00A25842C2EF524007158F3 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		D00A25892C2F2DF0007158F3 /* CheckoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutTableViewCell.swift; sourceTree = "<group>"; };
 		D00A258A2C2F2DF0007158F3 /* CheckoutTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckoutTableViewCell.xib; sourceTree = "<group>"; };
@@ -602,6 +606,8 @@
 				D0245A792C259D38005456AA /* UIImageExtensions.swift */,
 				D00A25842C2EF524007158F3 /* Notifications.swift */,
 				D02E22E82C3FD57C0050E830 /* SingleSection.swift */,
+				D008C2032C5BA8C200175153 /* LeftAlignedCollectionViewFlowLayout.swift */,
+				D008C2052C5BB76400175153 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1077,6 +1083,7 @@
 				D0489DEA2C524131009FCB8F /* OrderCompletionView.swift in Sources */,
 				D0CCF7CB2C35735700A7FF39 /* EasyboxDetailView.swift in Sources */,
 				D0B890472C4EB96200270739 /* AddressDetails.swift in Sources */,
+				D008C2062C5BB76400175153 /* StringExtension.swift in Sources */,
 				D0245A6B2C257FFC005456AA /* ProductCollectionViewCell.swift in Sources */,
 				D05972A92C2D771E0023ADB5 /* HomeDetailsView.swift in Sources */,
 				D0245A6F2C25845F005456AA /* UITableView.swift in Sources */,
@@ -1091,6 +1098,7 @@
 				D062BA202C32978E006BC37E /* UserProviding.swift in Sources */,
 				D05D7D9A2C1C433F00E2A126 /* HomeViewController.swift in Sources */,
 				D0CCF7D72C35954600A7FF39 /* CountyData.swift in Sources */,
+				D008C2042C5BA8C200175153 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				D05D7D462C107D4900E2A126 /* SplashScreenViewController.swift in Sources */,
 				D05D7D702C10B33A00E2A126 /* UIViewControllerExtensions.swift in Sources */,
 				D05D7D832C13107700E2A126 /* InjectedValues.swift in Sources */,

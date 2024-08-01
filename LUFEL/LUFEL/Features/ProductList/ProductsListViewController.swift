@@ -18,6 +18,9 @@ class ProductsListViewController: UIViewController {
     // MARK: - Properties
 
     private var sections: [ProductCategory] = []
+    private var filteredSections: [ProductCategory] = []
+    private var selectedFilters: [String] = []
+    private var isFilteringByType = false
 
     // MARK: - Lifecycle
 
@@ -48,6 +51,7 @@ class ProductsListViewController: UIViewController {
     }
 
     private func setupFilterView() {
+        filterButtonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toggleFilterView)))
         filterView.isHidden = true
     }
 
@@ -61,6 +65,10 @@ class ProductsListViewController: UIViewController {
         } catch {
             print("Error decoding JSON: \(error)")
         }
+    }
+
+    @objc private func toggleFilterView() {
+        filterView.isHidden.toggle()
     }
 }
 
