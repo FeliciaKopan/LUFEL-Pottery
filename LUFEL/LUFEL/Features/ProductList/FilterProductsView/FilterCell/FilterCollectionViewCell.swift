@@ -35,8 +35,8 @@ class FilterCollectionViewCell: UICollectionViewCell {
             borderColor = .black
             backgroundColor = .darkGray
         case .unselected:
-            filterLabel.textColor = .lightGrey
-            borderColor = .lightGrey
+            filterLabel.textColor = .black
+            borderColor = .gray
             backgroundColor = .clear
         }
     }
