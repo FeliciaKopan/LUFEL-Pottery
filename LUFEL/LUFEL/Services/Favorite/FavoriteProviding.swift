@@ -11,4 +11,5 @@ protocol FavoriteProviding {
     func addFavorite(_ product: Product)
     func removeFavorite(_ product: Product)
     func getFavorites() -> WishListProducts
+    func isFavorite(_ product: Product) -> Bool
 }

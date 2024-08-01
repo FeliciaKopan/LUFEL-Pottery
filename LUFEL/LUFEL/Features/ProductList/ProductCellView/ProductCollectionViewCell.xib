@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -41,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uVe-UT-0e1" firstAttribute="centerX" secondItem="sf6-NF-AYu" secondAttribute="centerX" id="FaL-sl-pqp"/>
                             <constraint firstItem="uVe-UT-0e1" firstAttribute="centerY" secondItem="sf6-NF-AYu" secondAttribute="centerY" id="IYp-go-fKY"/>
@@ -60,6 +59,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart" translatesAutoresizingMaskIntoConstraints="NO" id="I7i-sL-7DB">
                                 <rect key="frame" x="0.0" y="0.0" width="27" height="27"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="6W8-qP-qUb"/>
                                     <constraint firstAttribute="width" constant="27" id="xfE-20-gIa"/>
@@ -79,6 +79,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wishlist" translatesAutoresizingMaskIntoConstraints="NO" id="r7T-R0-APJ">
                                 <rect key="frame" x="0.0" y="0.0" width="27" height="27"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="27" id="63Z-pY-Reu"/>
                                     <constraint firstAttribute="height" constant="27" id="XI1-t1-Hkx"/>
@@ -96,7 +97,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" name="lightGrey"/>
+            <color key="backgroundColor" name="appBackground"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="3sp-Et-jMt" secondAttribute="bottom" constant="24" id="2GB-aI-4vK"/>
                 <constraint firstAttribute="trailing" secondItem="8sP-XG-nrk" secondAttribute="trailing" constant="24" id="ABi-VP-sh0"/>
@@ -118,8 +119,24 @@
                 <constraint firstItem="2iG-6x-1Av" firstAttribute="top" secondItem="sEn-dj-feN" secondAttribute="bottom" constant="16" id="x9I-dD-ete"/>
             </constraints>
             <size key="customSize" width="192" height="344"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                    <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                    <real key="value" value="1"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="addToCartView" destination="3sp-Et-jMt" id="kHv-ap-zwG"/>
+                <outlet property="favoriteImageView" destination="r7T-R0-APJ" id="8RG-rm-Z1p"/>
                 <outlet property="favoriteView" destination="MpP-qY-Lhe" id="hVY-a4-4kZ"/>
                 <outlet property="imageView" destination="8sP-XG-nrk" id="q6X-as-C2m"/>
                 <outlet property="priceLabel" destination="2iG-6x-1Av" id="mav-HJ-P0g"/>
@@ -132,11 +149,8 @@
         <image name="cart" width="512" height="512"/>
         <image name="profile" width="512" height="512"/>
         <image name="wishlist" width="512" height="512"/>
-        <namedColor name="lightGrey">
-            <color red="0.63899999856948853" green="0.63899999856948853" blue="0.63899999856948853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="appBackground">
+            <color red="1" green="0.97600001096725464" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

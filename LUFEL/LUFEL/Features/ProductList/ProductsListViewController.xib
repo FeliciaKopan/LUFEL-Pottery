@@ -54,7 +54,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="appBackground"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7fF-8i-igZ" secondAttribute="trailing" constant="24" id="AA7-Gx-eds"/>
                 <constraint firstItem="TJd-Vm-SGm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="BlW-65-2CI"/>

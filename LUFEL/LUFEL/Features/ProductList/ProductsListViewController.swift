@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class ProductsListViewController: UIViewController {
 
@@ -21,6 +22,7 @@ class ProductsListViewController: UIViewController {
     private var filteredSections: [ProductCategory] = []
     private var selectedFilters: [String] = []
     private var isFilteringByType = false
+    private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Lifecycle
 
@@ -70,6 +72,15 @@ class ProductsListViewController: UIViewController {
     @objc private func toggleFilterView() {
         filterView.isHidden.toggle()
     }
+
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        present(alert, animated: true)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            alert.dismiss(animated: true)
+        }
+    }
 }
 
 // MARK: - Extensions
@@ -92,6 +103,12 @@ extension ProductsListViewController: UICollectionViewDataSource {
            let url = URL(string: imageUrl) {
             cell.configure(with: .init(imageUrl: url, title: product.title, price: product.price), product: product)
         }
+
+        cell.addToCartPublisher
+            .sink { [weak self] product in
+                self?.showAlert(message: L10n.Cart.addToCart)
+            }
+            .store(in: &cancellables)
         return cell
     }
 
@@ -102,10 +119,10 @@ extension ProductsListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath)
         headerView.subviews.forEach { $0.removeFromSuperview() }
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: collectionView.frame.width, height: 40))
+        let label = UILabel(frame: CGRect(x: 24, y: 0, width: collectionView.frame.width, height: 40))
         label.text = sections[indexPath.section].title
         label.textAlignment = .left
-        label.textColor = .white
+        label.textColor = .black
         headerView.addSubview(label)
         return headerView
     }
@@ -123,6 +140,10 @@ extension ProductsListViewController: UICollectionViewDelegate {
 }
 
 extension ProductsListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 40)
     }
