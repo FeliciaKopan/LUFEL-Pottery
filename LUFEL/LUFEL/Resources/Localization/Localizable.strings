@@ -16,3 +16,8 @@
 
 "cart.emptyTitle" = "Cosul tau de cumparaturi este gol!";
 "cart.addToCart" = "Produsul a fost adăugat în coș";
+
+// MARK: - PRODUCTS LIST - DONE TW_V01
+
+"productsList.emptyListTitle" = "Niciun produs gasit";
+"productsList.emptyListDescription" = "Niciun produs nu corespunde filtrelor selectate. Va rugam sa incercati alte filtre.";

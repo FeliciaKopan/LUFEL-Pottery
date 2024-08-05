@@ -87,8 +87,12 @@ class ProductsListViewController: UIViewController {
             }
         }
 
-        collectionView.reloadData()
-        toggleFilterView()
+        if filteredSections.flatMap({ $0.products }).isEmpty {
+            showNoProductsAlert()
+        } else {
+            collectionView.reloadData()
+            toggleFilterView() 
+        }
     }
 
     private func loadProducts() {
@@ -116,6 +120,16 @@ class ProductsListViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             alert.dismiss(animated: true)
         }
+    }
+
+    private func showNoProductsAlert() {
+        let alert = UIAlertController(title: L10n.ProductsList.emptyListTitle, message: L10n.ProductsList.emptyListDescription, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.filterView.isHidden = false
+            self.filterButtonView.isHidden = true
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
 }
 
