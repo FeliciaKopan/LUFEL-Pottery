@@ -106,6 +106,7 @@ class ProductsListViewController: UIViewController {
 
     @objc private func toggleFilterView() {
         filterView.isHidden.toggle()
+        filterButtonView.isHidden = !filterView.isHidden
     }
 
     private func showAlert(message: String) {

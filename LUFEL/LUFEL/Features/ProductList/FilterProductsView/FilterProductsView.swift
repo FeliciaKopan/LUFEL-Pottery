@@ -46,7 +46,8 @@ class FilterProductsView: UIView, NibLoadable {
     private var selectedFilters: [String] = []
     private let colorFilters: [ProductColor] = [.alb, .galben, .albastru]
     private let volumeFilters: [ProductVolume] = [.fiftyML, .oneHundredML, .oneHundredFiftyML, .twoHundredML, .threeHundredML]
-    private var isFilteringByColor = true
+    private var isFilteringByColor = false
+    private var isFilteringByVolume = false
 
     // MARK: - Publishers
 
@@ -109,11 +110,13 @@ class FilterProductsView: UIView, NibLoadable {
 
     @objc private func showColorFilters() {
         isFilteringByColor = true
+        isFilteringByVolume = false
         collectionView.reloadData()
     }
 
     @objc private func showVolumeFilters() {
         isFilteringByColor = false
+        isFilteringByVolume = true
         collectionView.reloadData()
     }
 }
@@ -136,9 +139,10 @@ extension FilterProductsView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if isFilteringByColor {
             return colorFilters.count
-        } else {
+        } else if isFilteringByVolume {
             return volumeFilters.count
         }
+        return 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
