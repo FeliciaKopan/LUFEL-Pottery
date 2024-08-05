@@ -8,17 +8,6 @@
 import UIKit
 import Combine
 
-//enum ProductType: String {
-//    case cups = "Cani"
-//    case plates = "Farfurii"
-//    case vases = "Vaze"
-//    case bowls = "Boluri"
-//
-//    var title: String {
-//        return self.rawValue
-//    }
-//}
-
 enum ProductColor: String, Codable {
     case alb = "Alb"
     case albastru = "Albastru"
@@ -29,11 +18,24 @@ enum ProductColor: String, Codable {
     }
 }
 
+enum ProductVolume: String, Codable {
+    case fiftyML = "50 ml"
+    case oneHundredML = "100 ml"
+    case oneHundredFiftyML = "150 ml"
+    case twoHundredML = "200 ml"
+    case threeHundredML = "300 ml"
+
+    var title: String {
+        return self.rawValue
+    }
+}
+
+
 class FilterProductsView: UIView, NibLoadable {
 
     // MARK: - Views
 
-    @IBOutlet weak var typeFilterView: UIView!
+    @IBOutlet weak var volumeFilterView: UIView!
     @IBOutlet weak var colorFilterView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var clearAllButton: UIButton!
@@ -43,6 +45,8 @@ class FilterProductsView: UIView, NibLoadable {
 
     private var selectedFilters: [String] = []
     private let colorFilters: [ProductColor] = [.alb, .galben, .albastru]
+    private let volumeFilters: [ProductVolume] = [.fiftyML, .oneHundredML, .oneHundredFiftyML, .twoHundredML, .threeHundredML]
+    private var isFilteringByColor = true
 
     // MARK: - Publishers
 
@@ -76,7 +80,6 @@ class FilterProductsView: UIView, NibLoadable {
     }
     
     @IBAction func applyFilters(_ sender: Any) {
-        print("Applying filters: \(selectedFilters)")
         selectedSubject.send(selectedFilters)
         clearAllButton.isHidden = selectedFilters.isEmpty
     }
@@ -96,32 +99,33 @@ class FilterProductsView: UIView, NibLoadable {
     private func setupViews() {
         clearAllButton.isHidden = true
 
-//        typeFilterView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showTypeFilters)))
+        volumeFilterView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showVolumeFilters)))
         colorFilterView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showColorFilters)))
     }
 
-//    @objc private func showTypeFilters() {
-//        isFilteringByType = true
-//        selectedFilters = typeFilters.map { $0.title }
-//        print(selectedFilters)
-//        collectionView.reloadData()
-//    }
+    @objc private func showTypeFilters() {
+        collectionView.reloadData()
+    }
 
     @objc private func showColorFilters() {
-        selectedFilters = colorFilters.map { $0.title }
+        isFilteringByColor = true
+        collectionView.reloadData()
+    }
+
+    @objc private func showVolumeFilters() {
+        isFilteringByColor = false
         collectionView.reloadData()
     }
 }
 
 extension FilterProductsView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let filter = colorFilters[indexPath.item].title
+        let filter = isFilteringByColor ? colorFilters[indexPath.item].title : volumeFilters[indexPath.item].title
         if let index = selectedFilters.firstIndex(of: filter) {
             selectedFilters.remove(at: index)
         } else {
             selectedFilters.append(filter)
         }
-        print("Selected Filters after selection: \(selectedFilters)")
         
         collectionView.reloadItems(at: [indexPath])
         clearAllButton.isHidden = selectedFilters.isEmpty
@@ -130,12 +134,16 @@ extension FilterProductsView: UICollectionViewDelegate {
 
 extension FilterProductsView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return colorFilters.count
+        if isFilteringByColor {
+            return colorFilters.count
+        } else {
+            return volumeFilters.count
+        }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterCollectionViewCell", for: indexPath) as! FilterCollectionViewCell
-        let filter = colorFilters[indexPath.row].title
+        let filter = isFilteringByColor ? colorFilters[indexPath.row].title : volumeFilters[indexPath.row].title
         let isSelected = selectedFilters.contains(filter)
         cell.configure(title: filter, isSelected: isSelected)
         return cell
@@ -148,7 +156,7 @@ extension FilterProductsView: UICollectionViewDelegateFlowLayout {
       layout collectionViewLayout: UICollectionViewLayout,
       sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        let filterTitle = colorFilters[indexPath.item].title
+        let filterTitle = isFilteringByColor ? colorFilters[indexPath.item].title : volumeFilters[indexPath.item].title
         let font = UIFont.systemFont(ofSize: 17)
         let size = filterTitle.size(withAttributes: [NSAttributedString.Key.font: font])
         return CGSize(width: size.width + 20, height: size.height + 20)

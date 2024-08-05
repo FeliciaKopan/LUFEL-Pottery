@@ -14,7 +14,7 @@
                 <outlet property="collectionView" destination="8cA-0p-gT0" id="J71-xZ-Von"/>
                 <outlet property="colorFilterView" destination="DEr-RY-czi" id="KzX-WI-vHz"/>
                 <outlet property="showAllButton" destination="bea-VY-zoW" id="a00-eS-YiD"/>
-                <outlet property="typeFilterView" destination="9Yq-JH-L80" id="MDp-R7-UbE"/>
+                <outlet property="volumeFilterView" destination="9Yq-JH-L80" id="bAU-Sm-72g"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -64,10 +64,10 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Yq-JH-L80">
-                    <rect key="frame" x="24.000000000000007" y="59" width="117.66666666666669" height="40"/>
+                    <rect key="frame" x="24" y="59" width="87" height="40"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categorie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NK3-Nd-jlb">
-                            <rect key="frame" x="16" y="8" width="85.666666666666671" height="24"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NK3-Nd-jlb">
+                            <rect key="frame" x="16" y="8" width="55" height="24"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>

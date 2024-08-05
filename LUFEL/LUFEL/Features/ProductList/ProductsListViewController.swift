@@ -21,6 +21,7 @@ class ProductsListViewController: UIViewController {
     private var sections: [ProductCategory] = []
     private var filteredSections: [ProductCategory] = []
     private var selectedColors: [ProductColor] = []
+    private var selectedVolumes: [ProductVolume] = []
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -62,28 +63,28 @@ class ProductsListViewController: UIViewController {
         filterView.selectedPublisher
             .sink { [weak self] selectedFilters in
                 guard let self = self else { return }
-                print("Received Filters: \(selectedFilters)")
                 self.selectedColors = selectedFilters.compactMap { ProductColor(rawValue: $0) }
+                self.selectedVolumes = selectedFilters.compactMap { ProductVolume(rawValue: $0) }
                 self.applyFilters()
             }
             .store(in: &cancellables)
     }
 
     private func applyFilters() {
-        print("Selected Colors: \(selectedColors)")
-
-        if selectedColors.isEmpty {
+        if selectedColors.isEmpty && selectedVolumes.isEmpty {
             filteredSections = sections
         } else {
-            filteredSections = sections.map { category in
-                let filteredProducts = category.products.filter { product in
-                    if let color = product.color {
-                        return selectedColors.contains(color)
+            filteredSections = sections.compactMap { category -> ProductCategory? in
+                let filteredProducts = category.products.compactMap { product -> Product? in
+                    guard let color = product.color, let volume = product.volume else {
+                        return nil
                     }
-                    return false
+                    let isColorMatch = selectedColors.isEmpty || selectedColors.contains(color)
+                    let isVolumeMatch = selectedVolumes.isEmpty || selectedVolumes.contains(volume)
+                    return (isColorMatch && isVolumeMatch) ? product : nil
                 }
-                return ProductCategory(title: category.title, products: filteredProducts)
-            }.filter { !$0.products.isEmpty }
+                return filteredProducts.isEmpty ? nil : ProductCategory(title: category.title, products: filteredProducts)
+            }
         }
 
         collectionView.reloadData()

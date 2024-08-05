@@ -9,21 +9,24 @@
           "price": 50.00,
           "image_url": "https://chicville.ro/media/catalog/product/cache/1/image/370x370/9df78eab33525d08d6e5fb8d27136e95/c/a/cana-ceramica-crem-din-ceramica-10-cm.jpg",
           "description": "Produs 100% lucrat manual, din ceramica",
-          "color": "Alb"
+          "color": "Alb",
+          "volume": "100 ml"
         },
         {
           "id": 2,
           "title": "Cana Rustic",
           "price": 60.00,
           "image_url": "https://cdn.www.kitchenshop.ro/images/thumbs/0071273_cana-ceramica-280-ml-essential-gri-nuova-r2s_550.jpeg",
-          "color": "Albastru"
+          "color": "Albastru",
+          "volume": "150 ml"
         },
         {
           "id": 3,
           "title": "Cana Rustic",
           "price": 60.00,
           "image_url": "https://cdn.www.kitchenshop.ro/images/thumbs/0071273_cana-ceramica-280-ml-essential-gri-nuova-r2s_550.jpeg",
-          "color": "Albastru"
+          "color": "Albastru",
+          "volume": "200 ml"
         }
       ]
     },
@@ -36,7 +39,8 @@
           "price": 79.99,
           "image_url": "https://www.decodepot.ro/images/detailed/34/decodepot_bol_ceramica_4007698380106.jpg",
           "description": "Produs 100% lucrat manual, din ceramica. Produs fabricat in Romania, din pasiune pentru arta si ceramica.",
-          "color": "Alb"
+          "color": "Alb",
+          "volume": "150 ml"
         }
       ]
     },
@@ -60,7 +64,8 @@
           "title": "Vas Ceramic",
           "price": 119.99,
           "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNiVcyeSS--sdDBtQpEZJugyUqQluM_7lTww&s",
-          "color": "Galben"
+          "color": "Galben",
+          "volume": "300 ml"
         }
       ]
     }
