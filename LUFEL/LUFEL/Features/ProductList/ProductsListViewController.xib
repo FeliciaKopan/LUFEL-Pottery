@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="h4O-Ec-DPD">
-                    <rect key="frame" x="24" y="147" width="345" height="635"/>
+                    <rect key="frame" x="0.0" y="131" width="393" height="651"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AfW-AY-Ewp">
                         <size key="itemSize" width="128" height="128"/>
@@ -32,39 +32,39 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJd-Vm-SGm">
-                    <rect key="frame" x="329" y="83" width="40" height="40"/>
+                    <rect key="frame" x="345" y="83" width="24" height="24"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="iho-Qz-m0r">
-                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                            <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" name="appBackground"/>
                     <constraints>
                         <constraint firstItem="iho-Qz-m0r" firstAttribute="top" secondItem="TJd-Vm-SGm" secondAttribute="top" id="7GD-rW-Bid"/>
-                        <constraint firstAttribute="width" constant="40" id="FvN-C6-zaU"/>
+                        <constraint firstAttribute="width" constant="24" id="FvN-C6-zaU"/>
                         <constraint firstAttribute="bottom" secondItem="iho-Qz-m0r" secondAttribute="bottom" id="MrS-fQ-36N"/>
                         <constraint firstItem="iho-Qz-m0r" firstAttribute="leading" secondItem="TJd-Vm-SGm" secondAttribute="leading" id="QyI-7i-yac"/>
                         <constraint firstAttribute="trailing" secondItem="iho-Qz-m0r" secondAttribute="trailing" id="RDy-wh-qhv"/>
-                        <constraint firstAttribute="height" constant="40" id="RQ7-u1-Vnv"/>
+                        <constraint firstAttribute="height" constant="24" id="RQ7-u1-Vnv"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fF-8i-igZ" customClass="FilterProductsView" customModule="LUFEL" customModuleProvider="target">
-                    <rect key="frame" x="24" y="147" width="345" height="635"/>
+                    <rect key="frame" x="0.0" y="131" width="393" height="651"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="appBackground"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7fF-8i-igZ" secondAttribute="trailing" constant="24" id="AA7-Gx-eds"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7fF-8i-igZ" secondAttribute="trailing" id="AA7-Gx-eds"/>
                 <constraint firstItem="TJd-Vm-SGm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="BlW-65-2CI"/>
-                <constraint firstItem="7fF-8i-igZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="E0j-yH-u8S"/>
+                <constraint firstItem="7fF-8i-igZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="E0j-yH-u8S"/>
                 <constraint firstItem="h4O-Ec-DPD" firstAttribute="top" secondItem="TJd-Vm-SGm" secondAttribute="bottom" constant="24" id="Jha-QK-z3R"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7fF-8i-igZ" secondAttribute="bottom" constant="36" id="e0J-xS-XAA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="h4O-Ec-DPD" secondAttribute="bottom" constant="36" id="fID-si-h8j"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="h4O-Ec-DPD" secondAttribute="trailing" constant="24" id="iyF-rM-wAw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="h4O-Ec-DPD" secondAttribute="trailing" id="iyF-rM-wAw"/>
                 <constraint firstItem="7fF-8i-igZ" firstAttribute="top" secondItem="TJd-Vm-SGm" secondAttribute="bottom" constant="24" id="o8K-qt-cfi"/>
-                <constraint firstItem="h4O-Ec-DPD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="tbD-Cb-x0z"/>
+                <constraint firstItem="h4O-Ec-DPD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tbD-Cb-x0z"/>
                 <constraint firstAttribute="trailing" secondItem="TJd-Vm-SGm" secondAttribute="trailing" constant="24" id="vfy-2j-HyI"/>
             </constraints>
             <point key="canvasLocation" x="116.79389312977099" y="19.718309859154932"/>

@@ -14,18 +14,25 @@ enum CellType {
 
 class FilterCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - Views
+
     @IBOutlet weak var filterLabel: UILabel!
+
+    // MARK: - Properties
+
+    private var isSelectedCell = false
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
     }
 
     // MARK: - Public methods
 
-    func configure(title: String) {
+    func configure(title: String, isSelected: Bool = false) {
         filterLabel.text = title
-        setSelected(.unselected)
+        isSelectedCell = isSelected
+        setSelected(isSelected ? .selected : .unselected)
     }
 
     func setSelected(_ type: CellType) {
@@ -40,5 +47,4 @@ class FilterCollectionViewCell: UICollectionViewCell {
             backgroundColor = .clear
         }
     }
-
 }

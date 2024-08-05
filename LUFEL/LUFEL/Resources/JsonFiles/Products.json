@@ -1,26 +1,29 @@
 {
   "sections": [
     {
-      "title": "Căni",
+      "title": "Cani",
       "products": [
         {
           "id": 1,
           "title": "Cana Personalizata",
           "price": 50.00,
           "image_url": "https://chicville.ro/media/catalog/product/cache/1/image/370x370/9df78eab33525d08d6e5fb8d27136e95/c/a/cana-ceramica-crem-din-ceramica-10-cm.jpg",
-          "description": "Produs 100% lucrat manual, din ceramica"
+          "description": "Produs 100% lucrat manual, din ceramica",
+          "color": "Alb"
         },
         {
           "id": 2,
           "title": "Cana Rustic",
           "price": 60.00,
-          "image_url": "https://cdn.www.kitchenshop.ro/images/thumbs/0071273_cana-ceramica-280-ml-essential-gri-nuova-r2s_550.jpeg"
+          "image_url": "https://cdn.www.kitchenshop.ro/images/thumbs/0071273_cana-ceramica-280-ml-essential-gri-nuova-r2s_550.jpeg",
+          "color": "Albastru"
         },
         {
           "id": 3,
           "title": "Cana Rustic",
           "price": 60.00,
-          "image_url": "https://cdn.www.kitchenshop.ro/images/thumbs/0071273_cana-ceramica-280-ml-essential-gri-nuova-r2s_550.jpeg"
+          "image_url": "https://cdn.www.kitchenshop.ro/images/thumbs/0071273_cana-ceramica-280-ml-essential-gri-nuova-r2s_550.jpeg",
+          "color": "Albastru"
         }
       ]
     },
@@ -32,7 +35,8 @@
           "title": "Bol Mare",
           "price": 79.99,
           "image_url": "https://www.decodepot.ro/images/detailed/34/decodepot_bol_ceramica_4007698380106.jpg",
-          "description": "Produs 100% lucrat manual, din ceramica. Produs fabricat in Romania, din pasiune pentru arta si ceramica."
+          "description": "Produs 100% lucrat manual, din ceramica. Produs fabricat in Romania, din pasiune pentru arta si ceramica.",
+          "color": "Alb"
         }
       ]
     },
@@ -43,7 +47,8 @@
           "id": 5,
           "title": "Farfurie Decorativa",
           "price": 85.50,
-          "image_url": "https://rotdesign.ro/wp-content/uploads/2022/03/Farfurie-mica-alba-hand-made-din-gresie-ceramica-1-scaled.jpg"
+          "image_url": "https://rotdesign.ro/wp-content/uploads/2022/03/Farfurie-mica-alba-hand-made-din-gresie-ceramica-1-scaled.jpg",
+          "color": "Galben"
         }
       ]
     },
@@ -54,7 +59,8 @@
           "id": 6,
           "title": "Vas Ceramic",
           "price": 119.99,
-          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNiVcyeSS--sdDBtQpEZJugyUqQluM_7lTww&s"
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNiVcyeSS--sdDBtQpEZJugyUqQluM_7lTww&s",
+          "color": "Galben"
         }
       ]
     }
