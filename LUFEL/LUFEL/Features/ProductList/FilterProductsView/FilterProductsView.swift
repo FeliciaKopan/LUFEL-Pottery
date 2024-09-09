@@ -9,9 +9,9 @@ import UIKit
 import Combine
 
 enum ProductColor: String, Codable {
-    case alb = "Alb"
-    case albastru = "Albastru"
-    case galben = "Galben"
+    case white = "Alb"
+    case blue = "Albastru"
+    case yellow = "Galben"
 
     var title: String {
         return self.rawValue
@@ -44,7 +44,7 @@ class FilterProductsView: UIView, NibLoadable {
     // MARK: - Properties
 
     private var selectedFilters: [String] = []
-    private let colorFilters: [ProductColor] = [.alb, .galben, .albastru]
+    private let colorFilters: [ProductColor] = [.white, .yellow, .blue]
     private let volumeFilters: [ProductVolume] = [.fiftyML, .oneHundredML, .oneHundredFiftyML, .twoHundredML, .threeHundredML]
     private var isFilteringByColor = false
     private var isFilteringByVolume = false

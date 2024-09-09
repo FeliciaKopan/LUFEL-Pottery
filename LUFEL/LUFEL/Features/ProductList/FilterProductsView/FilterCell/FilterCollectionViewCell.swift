@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum CellType {
+enum CellSelectionType {
     case selected
     case unselected
 }
@@ -35,16 +35,9 @@ class FilterCollectionViewCell: UICollectionViewCell {
         setSelected(isSelected ? .selected : .unselected)
     }
 
-    func setSelected(_ type: CellType) {
-        switch type {
-        case .selected:
-            filterLabel.textColor = .white
-            borderColor = .black
-            backgroundColor = .darkGray
-        case .unselected:
-            filterLabel.textColor = .black
-            borderColor = .gray
-            backgroundColor = .clear
-        }
+    func setSelected(_ type: CellSelectionType) {
+        filterLabel.textColor = (type == .selected) ? .white : .black
+        borderColor = (type == .selected) ? .black : .gray
+        backgroundColor = (type == .selected) ? .darkGray : .clear
     }
 }

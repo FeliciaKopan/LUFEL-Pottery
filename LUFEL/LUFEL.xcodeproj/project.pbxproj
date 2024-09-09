@@ -473,6 +473,7 @@
 				D062BA2B2C329DE8006BC37E /* Networking */,
 				D05D7D562C107FDD00E2A126 /* Features */,
 				D05D7D5E2C109F9300E2A126 /* Utils */,
+				D008C2032C5BA8C200175153 /* LeftAlignedCollectionViewFlowLayout.swift */,
 				D05D7D6E2C10B31E00E2A126 /* Extensions */,
 				D05D7D572C10800100E2A126 /* Resources */,
 				D05D7D4F2C107D4A00E2A126 /* Info.plist */,
@@ -606,7 +607,6 @@
 				D0245A792C259D38005456AA /* UIImageExtensions.swift */,
 				D00A25842C2EF524007158F3 /* Notifications.swift */,
 				D02E22E82C3FD57C0050E830 /* SingleSection.swift */,
-				D008C2032C5BA8C200175153 /* LeftAlignedCollectionViewFlowLayout.swift */,
 				D008C2052C5BB76400175153 /* StringExtension.swift */,
 			);
 			path = Extensions;

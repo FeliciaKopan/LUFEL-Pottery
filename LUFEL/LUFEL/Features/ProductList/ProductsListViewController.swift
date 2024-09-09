@@ -124,9 +124,9 @@ class ProductsListViewController: UIViewController {
 
     private func showNoProductsAlert() {
         let alert = UIAlertController(title: L10n.ProductsList.emptyListTitle, message: L10n.ProductsList.emptyListDescription, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.filterView.isHidden = false
-            self.filterButtonView.isHidden = true
+        let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+            self?.filterView.isHidden = false
+            self?.filterButtonView.isHidden = true
         }
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
