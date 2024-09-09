@@ -3,8 +3,8 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -75,7 +75,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="wwr-SA-wea"/>
                             </constraints>
@@ -109,7 +109,7 @@
                             <rect key="frame" x="10" y="10" width="40" height="40"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="Fnl-kg-nOI"/>
                         <constraint firstItem="IqG-s6-Gv5" firstAttribute="leading" secondItem="A0T-zh-2BA" secondAttribute="leading" constant="10" id="IHu-uE-ITf"/>
@@ -141,7 +141,7 @@
                             <rect key="frame" x="10" y="10" width="40" height="40"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="YPz-rG-pyh" firstAttribute="centerY" secondItem="ato-Yu-4qx" secondAttribute="centerY" id="0nX-tZ-Nay"/>
                         <constraint firstItem="YPz-rG-pyh" firstAttribute="top" secondItem="ato-Yu-4qx" secondAttribute="top" constant="10" id="N4m-w5-zKb"/>
@@ -168,7 +168,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="appBackground"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ato-Yu-4qx" secondAttribute="trailing" constant="24" id="Bfx-sw-VR5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="A0T-zh-2BA" secondAttribute="bottom" constant="36" id="Lha-NE-fDj"/>
@@ -186,8 +186,8 @@
         <image name="backArrow" width="24" height="24"/>
         <image name="cart" width="512" height="512"/>
         <image name="wishlist" width="512" height="512"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="appBackground">
+            <color red="1" green="0.97600001096725464" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
