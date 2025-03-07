@@ -13,10 +13,16 @@ class ProductsListViewController: UIViewController {
     // MARK: - Views
 
     @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var filterButtonView: UIView!
+    @IBOutlet weak var filterView: FilterProductsView!
+    
     // MARK: - Properties
 
     private var sections: [ProductCategory] = []
+    private var filteredSections: [ProductCategory] = []
+    private var selectedColors: [ProductColor] = []
+    private var selectedVolumes: [ProductVolume] = []
+
     private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Lifecycle
@@ -29,7 +35,9 @@ class ProductsListViewController: UIViewController {
         super.viewDidLoad()
 
         setupCollectionView()
+        setupFilterView()
         loadProducts()
+        observeFilters()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -46,16 +54,63 @@ class ProductsListViewController: UIViewController {
         collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
     }
 
+    private func setupFilterView() {
+        filterButtonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toggleFilterView)))
+        filterView.isHidden = true
+    }
+
+    private func observeFilters() {
+        filterView.selectedPublisher
+            .sink { [weak self] selectedFilters in
+                guard let self = self else { return }
+                self.selectedColors = selectedFilters.compactMap { ProductColor(rawValue: $0) }
+                self.selectedVolumes = selectedFilters.compactMap { ProductVolume(rawValue: $0) }
+                self.applyFilters()
+            }
+            .store(in: &cancellables)
+    }
+
+    private func applyFilters() {
+        if selectedColors.isEmpty && selectedVolumes.isEmpty {
+            filteredSections = sections
+        } else {
+            filteredSections = sections.compactMap { category -> ProductCategory? in
+                let filteredProducts = category.products.compactMap { product -> Product? in
+                    guard let color = product.color, let volume = product.volume else {
+                        return nil
+                    }
+                    let isColorMatch = selectedColors.isEmpty || selectedColors.contains(color)
+                    let isVolumeMatch = selectedVolumes.isEmpty || selectedVolumes.contains(volume)
+                    return (isColorMatch && isVolumeMatch) ? product : nil
+                }
+                return filteredProducts.isEmpty ? nil : ProductCategory(title: category.title, products: filteredProducts)
+            }
+        }
+
+        if filteredSections.flatMap({ $0.products }).isEmpty {
+            showNoProductsAlert()
+        } else {
+            collectionView.reloadData()
+            toggleFilterView() 
+        }
+    }
+
     private func loadProducts() {
         guard let path = Bundle.main.path(forResource: "Products", ofType: "json") else { return }
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: path))
             let decodedResponse = try JSONDecoder().decode(CategoryResponse.self, from: data)
             sections = decodedResponse.sections
+            filteredSections = sections
             collectionView.reloadData()
         } catch {
             print("Error decoding JSON: \(error)")
         }
+    }
+
+    @objc private func toggleFilterView() {
+        filterView.isHidden.toggle()
+        filterButtonView.isHidden = !filterView.isHidden
     }
 
     private func showAlert(message: String) {
@@ -66,24 +121,34 @@ class ProductsListViewController: UIViewController {
             alert.dismiss(animated: true)
         }
     }
+
+    private func showNoProductsAlert() {
+        let alert = UIAlertController(title: L10n.ProductsList.emptyListTitle, message: L10n.ProductsList.emptyListDescription, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+            self?.filterView.isHidden = false
+            self?.filterButtonView.isHidden = true
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: - Extensions
 
 extension ProductsListViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return sections.count
+        return filteredSections.count
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sections[section].products.count
+        return filteredSections[section].products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueCell(withType: ProductCollectionViewCell.self, for: indexPath) as? ProductCollectionViewCell else {
             return UICollectionViewCell()
         }
-        let product = sections[indexPath.section].products[indexPath.item]
+        let product = filteredSections[indexPath.section].products[indexPath.item]
         if let imageUrl = product.imageUrl,
            let url = URL(string: imageUrl) {
             cell.configure(with: .init(imageUrl: url, title: product.title, price: product.price), product: product)
@@ -105,7 +170,7 @@ extension ProductsListViewController: UICollectionViewDataSource {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath)
         headerView.subviews.forEach { $0.removeFromSuperview() }
         let label = UILabel(frame: CGRect(x: 24, y: 0, width: collectionView.frame.width, height: 40))
-        label.text = sections[indexPath.section].title
+        label.text = filteredSections[indexPath.section].title
         label.textAlignment = .left
         label.textColor = .black
         headerView.addSubview(label)
@@ -113,7 +178,7 @@ extension ProductsListViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let product = sections[indexPath.section].products[indexPath.row]
+        let product = filteredSections[indexPath.section].products[indexPath.row]
         let viewController = ProductDetailViewController(product: product)
         viewController.modalPresentationStyle = .overFullScreen
         present(viewController, animated: true)

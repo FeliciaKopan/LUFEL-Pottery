@@ -19,4 +19,9 @@ enum L10n {
         static let emptyTitle = String(localized: "cart.emptyTitle")
         static let addToCart = String(localized: "cart.addToCart")
     }
+
+    enum ProductsList {
+        static let emptyListTitle = String(localized: "productsList.emptyListTitle")
+        static let emptyListDescription = String(localized: "productsList.emptyListDescription")
+    }
 }

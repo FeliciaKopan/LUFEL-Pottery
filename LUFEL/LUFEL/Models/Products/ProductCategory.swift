@@ -20,6 +20,11 @@ struct ProductCategory: Decodable {
         title = try values.decode(String.self, forKey: .title)
         products = try values.decode([Product].self, forKey: .products)
     }
+
+    init(title: String, products: [Product]) {
+        self.title = title
+        self.products = products
+    }
 }
 
 struct CategoryResponse: Decodable {
